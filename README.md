@@ -9,3 +9,5 @@ When you planned your trip from home and are ready to go you can enter you trave
 Sounds good doesn't it? But how do you add a person, and do you need internet connection for it? Well first every registered person has an unique ID, an by sharing that with another person who has the app, that person will retrieve all the information you put on your profile! If the person doesn't have an internet connection, the app will remember the ID you entered and as soon as there is an internet connection it will retrieve your information!
 
 If in any case the person wasn't paying attention and missed the enormous rise of TravelBook, you can select an option to send a card/invitation via Whattapp/Facebook/email/etc. if you have an internet connection and that person you see your profile through the send link.
+
+![afbeelding van app](screen.png)
