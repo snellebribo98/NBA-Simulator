@@ -1,6 +1,6 @@
 # Project-proposal
 ### Problem statement
-So you're in the middle of nowhere in a country like Nepal, and you meet this funny group from Estonia. After a while you find out they are, just like you, traveling to Beijing next. Great! You should do something together while you're there, but what's are current methods of exchanging contacts with a person? Through a phone, pen/paper? But with a whole group that is a waste of time and, inconvenient since everybody needs your number, etc.
+So you're in the middle of nowhere in a country like Nepal, and you meet this funny group from Estonia. After a while you find out they are, just like you, traveling to Beijing next. Great! You should do something together while you're there, but what's are current methods of exchanging contacts with a person? Through a phone, pen/paper? But with a whole group that is a waste of time, and inconvenient since everybody needs your number, etc.
 ### Proposal
 Well, soon to be there will be an app that will fix this problem, called TravelBook! In this app you sign up and give all the information you want to share with other. Information like: name, place you're from, languages you speak, email, phone number. 
 
