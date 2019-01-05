@@ -1,14 +1,15 @@
 # Project-proposal
 ### Problem statement
-So you're in the middle of nowhere in a country like Nepal, and you meet this funny group from Estonia. After a while you find out they are, just like you, traveling to Beijing next. Great! You should do something together while you're there, but what's are current methods of exchanging contacts with a person? Through a phone, pen/paper? But with a whole group that is a waste of time, and inconvenient since everybody needs your number, etc.
+You're an NBA fan and like to watch some games once in a while. As a NBA "Expert" you probably have a clue which team is going to win each night. Since teh NBA has around 2.460 regular seasons games in a timespan of 6 months it could be fun to hold a competition with your friends on who can guess the winner the most. But at this moment there isn't an app that offers this. 
+You can also have a pretty good idea on who is going to win, but are not sure about it. For this reason a simulator will be available to simulate the end score of that particulair game.
+
 ### Proposal
-Well, soon to be there will be an app that will fix this problem, called TravelBook! In this app you sign up and give all the information you want to share with others. Information like: name, place you're from, languages you speak, email, phone number, etc. 
+As said before, a simulator will be made so users can simulate games with up to date data. For this a NBA Schedule API will be used.
 
-When you planned your trip from home, and are ready to go you can enter you travel details so others can see them as well! Travel details like: countries you're visiting, an agenda which tells your location for each day, hotels/motels/hostels you're staying at (including a map of the location), and lasty the things/places you want to visit or do while you are at a specific location.
+To see which player is better than the other player, ratings are going to be made for each player to compare them. For this a NBA Player Stats API will be used with up to date states, alongside a NBA Player API, to show all current NBA Players. 
+With these ratings certain offensive, defensive and overal ratings can be designed for each team. These team ratings, along side the home playing team factor, will determine the outcome of the simulator. To get each up to date NBA Team and their specifications, a NBA Team API will be used. 
 
-Sounds good doesn't it? But how do you add a person, and do you need internet connection for it? Well first every registered person has an unique ID, and by sharing that with another person who has the app, that person will retrieve all the information you put on your profile! If the person doesn't have an internet connection, the app will remember the ID you entered and as soon as there is an internet connection it will retrieve your information! Another way to connect to people is by using a QR code!
-
-If in any case the person wasn't paying attention and missed the enormous rise of TravelBook, you can select an option to send an card/invitation via Whattapp/Facebook/email/etc. If you have an internet connection, that person can open a webpape through the link and see your profile.
+Now all the tools are there for NBA experts and rookies to participate in the NBA Guessed Games Leaderboard. Players who signed up can enter the worldwide leaderboard, and create own leaderboards to compete with friends!
 
 ### Minimum
 All of the above is the minimum that the app is required to do
