@@ -16,8 +16,11 @@ All of the above is the minimum that the app is required to do
 
 ### Data sources
 Players: http://data.nba.net/10s/prod/v1/2018/players.json
-Player stats: http://data.nba.net//data/10s/prod/v1/2018/players/203500_profile.json 
+
+Player stats: http://data.nba.net//data/10s/prod/v1/2018/players/203500_profile.json
+
 Teams: http://data.nba.net/10s/prod/v1/2018/teams.json
+
 Schedule/uitslagen: http://data.nba.com/data/10s/v2015/json/mobile_teams/nba/2018/league/00_full_schedule.json 
 
 ![afbeelding van app](NBAV.png)
