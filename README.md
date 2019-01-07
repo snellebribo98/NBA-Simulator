@@ -14,4 +14,4 @@ Now all the tools are there for NBA experts and rookies to participate in the NB
 ### Minimum
 All of the above is the minimum that the app is required to do
 
-![afbeelding van app](screen.png)
+![afbeelding van app](NBAV.png)
