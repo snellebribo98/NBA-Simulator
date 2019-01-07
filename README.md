@@ -14,7 +14,7 @@ Now all the tools are there for NBA experts and rookies to participate in the NB
 ### Minimum
 All of the above is the minimum that the app is required to do
 
-### Data sources
+### Prerequisites
 Players: http://data.nba.net/10s/prod/v1/2018/players.json
 
 Player stats: http://data.nba.net//data/10s/prod/v1/2018/players/203500_profile.json
@@ -22,5 +22,12 @@ Player stats: http://data.nba.net//data/10s/prod/v1/2018/players/203500_profile.
 Teams: http://data.nba.net/10s/prod/v1/2018/teams.json
 
 Schedule/uitslagen: http://data.nba.com/data/10s/v2015/json/mobile_teams/nba/2018/league/00_full_schedule.json 
+
+Not sure if i'm going to use Firebase or mySQL for user register/login
+
+Some apps that have some simularities are:
+- NBA 2k19 
+
+Hardest part will be to get all the data in the correct places
 
 ![afbeelding van app](NBAV.png)
