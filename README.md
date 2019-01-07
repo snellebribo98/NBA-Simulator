@@ -9,7 +9,7 @@ As said before, a simulator will be made so users can simulate games with up to 
 To see which player is better than the other player, ratings are going to be made for each player to compare them. For this a NBA Player Stats API will be used with up to date states, alongside a NBA Player API, to show all current NBA Players. 
 With these ratings certain offensive, defensive and overal ratings can be designed for each team. These team ratings, along side the home playing team factor, will determine the outcome of the simulator. To get each up to date NBA Team and their specifications, a NBA Team API will be used. 
 
-Now all the tools are there for NBA experts and rookies to participate in the NBA Guessed Games Leaderboard. Players who signed up can enter the worldwide leaderboard, and create own leaderboards to compete with friends!
+Now all the tools are there for NBA experts and rookies to participate in the NBA Guessed Games Leaderboard. Players who signed up can enter the worldwide leaderboard, and create own leaderboards to compete with friends! When creating a new leaderboard, you can set a goal/award for the one who has the most correct games guessed. Each correct game will be rewarded with 1 point. When the play-offs start this will double the rewarded point each round the play-offs progresses. 
 
 ### Minimum
 All of the above is the minimum that the app is required to do
