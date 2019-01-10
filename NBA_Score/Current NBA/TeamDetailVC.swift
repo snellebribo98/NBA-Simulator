@@ -18,6 +18,9 @@ class TeamDetailVC: UIViewController
     @IBOutlet weak var divisionLabel: UILabel!
     @IBOutlet weak var TeamImage: UIImageView!
     
+    var teamss: teamDetails2?
+    var TeamChosen = ""
+    
     override func viewDidLoad()
     {
         super.viewDidLoad()
@@ -26,14 +29,14 @@ class TeamDetailVC: UIViewController
     
     func updateUI()
     {
-//        TeamChosen = NBATeam.fullname
-//        teamNameLabel.text = NBATeam.fullName
-//        cityNameLabel.text = NBATeam.city
-//        nicknameLabel.text = NBATeam.nickname
-//        tricodeLabel.text = NBATeam.tricode
-//        conferanceLabel.text = NBATeam.confName
-//        divisionLabel.text = NBATeam.divName
-        
+//        TeamChosen = teamss?.league.standard[0].fullName
+//        teamNameLabel.text = teamss.fullName
+//        cityNameLabel.text = teamss.city
+//        nicknameLabel.text = teamss.nickname
+//        tricodeLabel.text = teamss.tricode
+//        conferanceLabel.text = teamss.confName
+//        divisionLabel.text = teamss.divName
+//
 //        if TeamChosen == "Boston Celtics"
 //        {
 //            self.view.backgroundColor = UIColor.init(red:0.25, green:0.78, blue:0.49, alpha:1.0)

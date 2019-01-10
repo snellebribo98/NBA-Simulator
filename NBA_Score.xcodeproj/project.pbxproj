@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		F310427B21D64BE100CA20CD /* lebron.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F310427A21D64BE000CA20CD /* lebron.jpg */; };
 		F310427D21D6577500CA20CD /* TeamDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F310427C21D6577500CA20CD /* TeamDetailVC.swift */; };
-		F310427F21D658E700CA20CD /* NBATeam.swift in Sources */ = {isa = PBXBuildFile; fileRef = F310427E21D658E700CA20CD /* NBATeam.swift */; };
 		F310428121D6A55600CA20CD /* modesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F310428021D6A55600CA20CD /* modesVC.swift */; };
 		F310428721D7ED6A00CA20CD /* SimulatorVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F310428621D7ED6A00CA20CD /* SimulatorVC.swift */; };
 		F324F20521CD28D800806ABC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F324F20421CD28D800806ABC /* AppDelegate.swift */; };
@@ -53,16 +52,22 @@
 		F324F29A21CEA1EF00806ABC /* rockets.png in Resources */ = {isa = PBXBuildFile; fileRef = F324F29921CEA1EF00806ABC /* rockets.png */; };
 		F324F29C21CEA1FA00806ABC /* suns.png in Resources */ = {isa = PBXBuildFile; fileRef = F324F29B21CEA1FA00806ABC /* suns.png */; };
 		F324F29E21CECCC700806ABC /* LoginStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = F324F29D21CECCC700806ABC /* LoginStruct.swift */; };
+		F34546F621E761E00015EEE3 /* TeamTV.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34546F521E761E00015EEE3 /* TeamTV.swift */; };
+		F34546F921E767200015EEE3 /* LeaderboardModesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34546F821E7671F0015EEE3 /* LeaderboardModesVC.swift */; };
+		F34546FB21E779280015EEE3 /* TeamCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34546FA21E779280015EEE3 /* TeamCell.swift */; };
+		F34546FF21E78CBA0015EEE3 /* PlayerTV.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34546FE21E78CBA0015EEE3 /* PlayerTV.swift */; };
+		F345470121E78CDA0015EEE3 /* PlayerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F345470021E78CDA0015EEE3 /* PlayerCell.swift */; };
 		F3CAA82621E4D44400FEC5A9 /* PlayerStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3CAA82521E4D44400FEC5A9 /* PlayerStruct.swift */; };
 		F3CAA82A21E4D67D00FEC5A9 /* NBAPlayersStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3CAA82921E4D67D00FEC5A9 /* NBAPlayersStruct.swift */; };
 		F3CAA82E21E4E80D00FEC5A9 /* ScheduleStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3CAA82D21E4E80D00FEC5A9 /* ScheduleStruct.swift */; };
 		F3CAA83021E4F2FF00FEC5A9 /* TeamDetailsStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3CAA82F21E4F2FF00FEC5A9 /* TeamDetailsStruct.swift */; };
+		F3F54FC121E62BA50098A55E /* celtics.ico in Resources */ = {isa = PBXBuildFile; fileRef = F3F54FC021E62BA40098A55E /* celtics.ico */; };
+		F3F54FC321E62C4D0098A55E /* lakers.ico in Resources */ = {isa = PBXBuildFile; fileRef = F3F54FC221E62C4D0098A55E /* lakers.ico */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		F310427A21D64BE000CA20CD /* lebron.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = lebron.jpg; path = "../../../../NBA App/lebron.jpg"; sourceTree = "<group>"; };
 		F310427C21D6577500CA20CD /* TeamDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamDetailVC.swift; sourceTree = "<group>"; };
-		F310427E21D658E700CA20CD /* NBATeam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NBATeam.swift; sourceTree = "<group>"; };
 		F310428021D6A55600CA20CD /* modesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = modesVC.swift; sourceTree = "<group>"; };
 		F310428621D7ED6A00CA20CD /* SimulatorVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimulatorVC.swift; sourceTree = "<group>"; };
 		F324F20121CD28D800806ABC /* NBA_Score.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NBA_Score.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -108,10 +113,17 @@
 		F324F29921CEA1EF00806ABC /* rockets.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = rockets.png; path = "../../../../NBA App/rockets.png"; sourceTree = "<group>"; };
 		F324F29B21CEA1FA00806ABC /* suns.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = suns.png; path = "../../../../NBA App/suns.png"; sourceTree = "<group>"; };
 		F324F29D21CECCC700806ABC /* LoginStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginStruct.swift; path = /Users/brianvandevelde/Desktop/Apps/NBA_Score/NBA_Score/LoginStruct.swift; sourceTree = "<absolute>"; };
+		F34546F521E761E00015EEE3 /* TeamTV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamTV.swift; sourceTree = "<group>"; };
+		F34546F821E7671F0015EEE3 /* LeaderboardModesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardModesVC.swift; sourceTree = "<group>"; };
+		F34546FA21E779280015EEE3 /* TeamCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamCell.swift; sourceTree = "<group>"; };
+		F34546FE21E78CBA0015EEE3 /* PlayerTV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerTV.swift; sourceTree = "<group>"; };
+		F345470021E78CDA0015EEE3 /* PlayerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerCell.swift; sourceTree = "<group>"; };
 		F3CAA82521E4D44400FEC5A9 /* PlayerStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerStruct.swift; sourceTree = "<group>"; };
 		F3CAA82921E4D67D00FEC5A9 /* NBAPlayersStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NBAPlayersStruct.swift; sourceTree = "<group>"; };
 		F3CAA82D21E4E80D00FEC5A9 /* ScheduleStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleStruct.swift; sourceTree = "<group>"; };
 		F3CAA82F21E4F2FF00FEC5A9 /* TeamDetailsStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamDetailsStruct.swift; sourceTree = "<group>"; };
+		F3F54FC021E62BA40098A55E /* celtics.ico */ = {isa = PBXFileReference; lastKnownFileType = image.ico; name = celtics.ico; path = ../../../../../Downloads/celtics.ico; sourceTree = "<group>"; };
+		F3F54FC221E62C4D0098A55E /* lakers.ico */ = {isa = PBXFileReference; lastKnownFileType = image.ico; name = lakers.ico; path = ../../../../../Downloads/lakers.ico; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,8 +159,11 @@
 		F310428521D7ECE600CA20CD /* Current NBA */ = {
 			isa = PBXGroup;
 			children = (
+				F34546F521E761E00015EEE3 /* TeamTV.swift */,
+				F34546FA21E779280015EEE3 /* TeamCell.swift */,
+				F34546FE21E78CBA0015EEE3 /* PlayerTV.swift */,
+				F345470021E78CDA0015EEE3 /* PlayerCell.swift */,
 				F310427C21D6577500CA20CD /* TeamDetailVC.swift */,
-				F310427E21D658E700CA20CD /* NBATeam.swift */,
 			);
 			path = "Current NBA";
 			sourceTree = "<group>";
@@ -178,6 +193,7 @@
 				F310428021D6A55600CA20CD /* modesVC.swift */,
 				F310428521D7ECE600CA20CD /* Current NBA */,
 				F310428421D7ECA900CA20CD /* Simulator */,
+				F34546F721E766FE0015EEE3 /* Leaderboard */,
 				F3CAA82421E4D40400FEC5A9 /* structs */,
 				F324F20821CD28D800806ABC /* Main.storyboard */,
 				F324F20B21CD28DA00806ABC /* Assets.xcassets */,
@@ -190,6 +206,8 @@
 		F324F25A21CE9C9F00806ABC /* pictures */ = {
 			isa = PBXGroup;
 			children = (
+				F3F54FC221E62C4D0098A55E /* lakers.ico */,
+				F3F54FC021E62BA40098A55E /* celtics.ico */,
 				F310427A21D64BE000CA20CD /* lebron.jpg */,
 				F324F29B21CEA1FA00806ABC /* suns.png */,
 				F324F29921CEA1EF00806ABC /* rockets.png */,
@@ -226,6 +244,14 @@
 				F324F26221CE9CA900806ABC /* toronto.png */,
 			);
 			path = pictures;
+			sourceTree = "<group>";
+		};
+		F34546F721E766FE0015EEE3 /* Leaderboard */ = {
+			isa = PBXGroup;
+			children = (
+				F34546F821E7671F0015EEE3 /* LeaderboardModesVC.swift */,
+			);
+			path = Leaderboard;
 			sourceTree = "<group>";
 		};
 		F3CAA82421E4D40400FEC5A9 /* structs */ = {
@@ -312,9 +338,11 @@
 				F324F26821CE9CCD00806ABC /* nets.png in Resources */,
 				F324F28021CE9F4D00806ABC /* lakers.png in Resources */,
 				F324F29121CE9F8D00806ABC /* warriors.png in Resources */,
+				F3F54FC121E62BA50098A55E /* celtics.ico in Resources */,
 				F324F29521CEA1D900806ABC /* dallas.png in Resources */,
 				F324F28D21CE9F8000806ABC /* thunder.png in Resources */,
 				F324F28E21CE9F8000806ABC /* spurs.png in Resources */,
+				F3F54FC321E62C4D0098A55E /* lakers.ico in Resources */,
 				F324F20C21CD28DA00806ABC /* Assets.xcassets in Resources */,
 				F310427B21D64BE100CA20CD /* lebron.jpg in Resources */,
 				F324F26421CE9CC400806ABC /* nba-logo.png in Resources */,
@@ -345,15 +373,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				F3CAA82E21E4E80D00FEC5A9 /* ScheduleStruct.swift in Sources */,
+				F34546F921E767200015EEE3 /* LeaderboardModesVC.swift in Sources */,
+				F34546FB21E779280015EEE3 /* TeamCell.swift in Sources */,
 				F324F21B21CD342B00806ABC /* RegisterVC.swift in Sources */,
 				F3CAA82621E4D44400FEC5A9 /* PlayerStruct.swift in Sources */,
+				F34546FF21E78CBA0015EEE3 /* PlayerTV.swift in Sources */,
 				F310428121D6A55600CA20CD /* modesVC.swift in Sources */,
+				F34546F621E761E00015EEE3 /* TeamTV.swift in Sources */,
 				F3CAA82A21E4D67D00FEC5A9 /* NBAPlayersStruct.swift in Sources */,
-				F310427F21D658E700CA20CD /* NBATeam.swift in Sources */,
 				F324F20721CD28D800806ABC /* LoginVC.swift in Sources */,
 				F310428721D7ED6A00CA20CD /* SimulatorVC.swift in Sources */,
 				F324F20521CD28D800806ABC /* AppDelegate.swift in Sources */,
 				F324F29E21CECCC700806ABC /* LoginStruct.swift in Sources */,
+				F345470121E78CDA0015EEE3 /* PlayerCell.swift in Sources */,
 				F310427D21D6577500CA20CD /* TeamDetailVC.swift in Sources */,
 				F324F21F21CE440100806ABC /* NexRegisterVC.swift in Sources */,
 				F3CAA83021E4F2FF00FEC5A9 /* TeamDetailsStruct.swift in Sources */,

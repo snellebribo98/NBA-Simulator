@@ -10,6 +10,8 @@ import UIKit
 
 class SimulatorVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource
 {
+    @IBAction func unwindToSimulator(segue:UIStoryboardSegue) { }
+    
     @IBOutlet weak var visitingImage: UIImageView!
     @IBOutlet weak var visitingOffenseLabel: UILabel!
     @IBOutlet weak var visitingDefenseLabel: UILabel!
