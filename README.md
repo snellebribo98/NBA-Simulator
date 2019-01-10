@@ -1,6 +1,6 @@
 # Project-proposal
 ### Problem statement
-You're an NBA fan and like to watch some games once in a while. As a NBA "Expert" you probably have a clue which team is going to win each night. Since teh NBA has around 2.460 regular seasons games in a timespan of 6 months it could be fun to hold a competition with your friends on who can guess the winner the most. But at this moment there isn't an app that offers this. 
+You're an NBA fan and like to watch some games once in a while. As a NBA "Expert" you probably have a clue which team is going to win each night. Since the NBA has around 2.460 regular seasons games in a timespan of 6 months it could be fun to hold a competition with your friends on who can guess the winner the most. But at this moment there isn't an app that offers this. 
 You can also have a pretty good idea on who is going to win, but are not sure about it. For this reason a simulator will be available to simulate the end score of that particulair game.
 
 ### Proposal
