@@ -43,8 +43,6 @@ class modesVC: UIViewController
     
     @IBAction func unwindToModes(segue:UIStoryboardSegue) { }
     
-    
-    
     func fetchTeams()
     {
         let url: URL = URL(string: "http://data.nba.net/10s/prod/v1/2018/teams.json")!
@@ -66,38 +64,11 @@ class modesVC: UIViewController
                     
                     for team1 in teams25.standard
                     {
-//                        if team1.isNBAFranchise == true && self.teamDetailss.count != 0 {
-//                            for team in self.teamDetailss {
-//                                if team.fullName != team1.fullName {
-//                                    self.teamDetailss.append(team1)
-//                                }
-//                            }
-//
-//                        }
-                        self.teamDetailss.append(team1)
-                        
+                        if team1.isNBAFranchise == true
+                        {
+                            self.teamDetailss.append(team1)
+                        }
                     }
-                    
-                    for team2 in teams25.sacramento
-                    {
-                        self.teamDetailss.append(team2)
-                    }
-                    
-                    for team3 in teams25.vegas
-                    {
-                        self.teamDetailss.append(team3)
-                    }
-                    
-                    for team4 in teams25.utah
-                    {
-                        self.teamDetailss.append(team4)
-                    }
-                    
-                    for team5 in teams25.africa
-                    {
-                        self.teamDetailss.append(team5)
-                    }
-                    // print(teamDetails)
                 }
             }
         }
@@ -124,36 +95,8 @@ class modesVC: UIViewController
                 {
                     self.playerss = allPlayers
                     let test = self.playerss?.league.standard
-                    let test2 = self.playerss?.league.africa
-                    let test3 = self.playerss?.league.sacramento
-                    let test4 = self.playerss?.league.vegas
-                    let test5 = self.playerss?.league.utah
                     
                     for player in test!
-                    {
-                        self.idList.append(player.personId)
-                        self.playerList.append(player)
-                    }
-                    
-                    for player in test2!
-                    {
-                        self.idList.append(player.personId)
-                        self.playerList.append(player)
-                    }
-                    
-                    for player in test3!
-                    {
-                        self.idList.append(player.personId)
-                        self.playerList.append(player)
-                    }
-                    
-                    for player in test4!
-                    {
-                        self.idList.append(player.personId)
-                        self.playerList.append(player)
-                    }
-                    
-                    for player in test5!
                     {
                         self.idList.append(player.personId)
                         self.playerList.append(player)

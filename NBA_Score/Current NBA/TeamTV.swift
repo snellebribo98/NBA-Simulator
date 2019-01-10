@@ -8,13 +8,17 @@
 
 import UIKit
 
-class TeamTV: UITableViewController
+class TeamTV: UITableViewController, UISearchBarDelegate
 {
     var teamDetailss: [Team]?
+    var currentTeamDetailss: [Team]?
+    
+    @IBOutlet weak var searchBarTeam: UISearchBar!
     
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        Copy()
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
@@ -34,13 +38,27 @@ class TeamTV: UITableViewController
         return cell!
     }
     
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool
+    private func SearchBar ()
     {
-        return false
+        searchBarTeam.delegate = self
     }
     
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath)
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String)
     {
-       
+        guard !searchText.isEmpty else
+        {
+            teamDetailss = currentTeamDetailss
+            tableView.reloadData()
+            return
+        }
+//        teamDetailss = currentTeamDetailss?.filter({ (ToDo) -> Bool in
+//            Team.fullName.lowercased().contains(searchText.lowercased())
+//        })
+        tableView.reloadData()
+    }
+    
+    func Copy()
+    {
+        currentTeamDetailss = teamDetailss
     }
 }

@@ -24,10 +24,10 @@ struct InternalTest2: Codable
 struct Standard2: Codable
 {
     var standard: [Player]
-    var africa: [Player]
-    var sacramento: [Player]
-    var vegas: [Player]
-    var utah: [Player]
+//    var africa: [Player]
+//    var sacramento: [Player]
+//    var vegas: [Player]
+//    var utah: [Player]
 }
 
 struct Player: Codable

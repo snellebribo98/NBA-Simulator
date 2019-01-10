@@ -15,11 +15,11 @@ class PlayerTV: UITableViewController
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        print(playerList)
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
+        print(playerList!.count)
         return playerList!.count
     }
     
