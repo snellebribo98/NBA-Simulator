@@ -19,13 +19,15 @@ class SimulatorResultVC: UIViewController
     
     var TeamChosen: String = "Boston Celtics"
     var awayTeamChosen: String = "Boston Celtics"
+    var homeScore: Int = 0
+    var visitingScore: Int = 0
     
     override func viewDidLoad()
     {
         super.viewDidLoad()
         
-        homeScoreLabel.text = "0"
-        awayScoreLabel.text = "0"
+        homeScoreLabel.text = String(homeScore)
+        awayScoreLabel.text = String(visitingScore)
         
         homeTeamLabel.text = TeamChosen
         visitingTeamLabel.text = awayTeamChosen

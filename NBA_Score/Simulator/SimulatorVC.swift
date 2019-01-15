@@ -29,14 +29,73 @@ class SimulatorVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
     private var homeComponent = 0
     private var awayComponent = 1
     
+    var homeScore: Int = 0
+    var visitingScore: Int = 0
+    
     var TeamChosen: String = "Boston Celtics"
     var awayTeamChosen: String = "Boston Celtics"
+    
+    @IBAction func simulateGame(_ sender: Any)
+    {
+        simulator()
+    }
+    
     
     override func viewDidLoad()
     {
         super.viewDidLoad()
         homePicker.dataSource = self
         homePicker.delegate = self
+        
+        simulator()
+    }
+    
+    func simulator()
+    {
+        let HO = 83
+        let HD = 77
+        let H = 81
+        let VO = 85
+        let VD = 83
+        let V = 84
+        
+        visitingOffenseLabel.text = String(HO)
+        visitingDefenseLabel.text = String(HD)
+        visitingTotalLabel.text = String(H)
+        
+        homeOffenseLabel.text = String(VO)
+        homeDefenseLabel.text = String(VD)
+        homeOveralLabel.text = String(V)
+        
+        let homeSuck = Int.random(in: 1 ... 5)
+        if homeSuck == 5
+        {
+            let HL = min(HO, HD, H) + 10
+            let HU = max(HO, HD, H) + 10
+            homeScore = Int.random(in: HL ... HU)
+        }
+        else
+        {
+            let HL = min(HO, HD, H) + 25
+            let HU = max(HO, HD, H) + 25
+            homeScore = Int.random(in: HL ... HU)
+        }
+        print(homeScore)
+        
+        let awayBlowout = Int.random(in: 1 ... 5)
+        if awayBlowout == 5
+        {
+            let VL = min(VO, VD, V) + 30
+            let VU = max(VO, VD, V) + 30
+            visitingScore = Int.random(in: VL ... VU)
+        }
+        else
+        {
+            let VL = min(VO, VD, V) + 15
+            let VU = max(VO, VD, V) + 15
+            visitingScore = Int.random(in: VL ... VU)
+        }
+        print(visitingScore)
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int
@@ -390,6 +449,8 @@ class SimulatorVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
             let SRVC = segue.destination as! SimulatorResultVC
             SRVC.TeamChosen = self.TeamChosen
             SRVC.awayTeamChosen = self.awayTeamChosen
+            SRVC.homeScore = self.homeScore
+            SRVC.visitingScore = self.visitingScore
         }
     }
 

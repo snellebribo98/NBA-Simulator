@@ -35,18 +35,5 @@ struct Team: Codable {
     var urlName: String
     var confName: String
     var divName: String
-    
-    enum CodingKeys: String, CodingKey {
-        case isNBAFranchise
-        case isAllStar
-        case city
-        case altCityName
-        case fullName
-        case tricode
-        case teamId
-        case nickname
-        case urlName
-        case confName
-        case divName
-    }
+    var players: [Player]?
 }

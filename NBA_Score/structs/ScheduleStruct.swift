@@ -33,17 +33,6 @@ struct Details: Codable
     var h: H
     var gdtutc: String
     var utctm: String
-    
-    enum CodingKeys: String, CodingKey
-    {
-        case gdte
-        case etm
-        case stt
-        case v
-        case h
-        case gdtutc
-        case utctm
-    }
 }
 
 struct V: Codable
@@ -53,15 +42,6 @@ struct V: Codable
     var tn: String
     var tc: String
     var s: String
-    
-    enum CodingKeys: String, CodingKey
-    {
-        case tid
-        case ta
-        case tn
-        case tc
-        case s
-    }
 }
 
 struct H: Codable
@@ -71,13 +51,4 @@ struct H: Codable
     var tn: String
     var tc: String
     var s: String
-    
-    enum CodingKeys: String, CodingKey
-    {
-        case tid
-        case ta
-        case tn
-        case tc
-        case s
-    }
 }

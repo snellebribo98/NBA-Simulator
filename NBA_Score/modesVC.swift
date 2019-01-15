@@ -14,16 +14,16 @@ class modesVC: UIViewController
     var stats: Latest?
     var idList = [String]()
     var playerStatss = [PlayersStats]()
-    var teamDetailss = [Team]()
+    var teamDetailss = [String: Team]()
     var playerList = [Player]()
+    
+    var Boston = [String]()
     
     var activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView()
     
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        
-        fetchTeams()
         
         activityIndicator.center = self.view.center
         activityIndicator.hidesWhenStopped = true
@@ -32,19 +32,23 @@ class modesVC: UIViewController
         activityIndicator.startAnimating()
         UIApplication.shared.beginIgnoringInteractionEvents()
         
-        fetchPlayers { (success) -> Void in
-            if success
-            {
-//                self.fetchPlayerStats(idList: self.idList)
-                
-                self.fetchPlayerStats(idList: self.idList) { (success2) -> Void in
-                    if success2
-                    {
-                        DispatchQueue.main.async {
-                            self.activityIndicator.stopAnimating()
-                            UIApplication.shared.endIgnoringInteractionEvents()
-                        }
+        fetchTeams { (success3) -> Void in
+            if success3 {
+                self.fetchPlayers { (success) -> Void in
+                    if success {
                         
+                        print(self.playerList)
+                        
+                        self.fetchPlayerStats(idList: self.idList) { (success2) -> Void in
+                            if success2 {
+                                DispatchQueue.main.async {
+                                    self.activityIndicator.stopAnimating()
+                                    UIApplication.shared.endIgnoringInteractionEvents()
+                                    
+//                                    print(self.teamDetailss)
+                                }
+                            }
+                        }
                     }
                 }
             }
@@ -70,61 +74,52 @@ class modesVC: UIViewController
     
     @IBAction func unwindToModes(segue:UIStoryboardSegue) { }
     
-    func fetchTeams()
-    {
+    func fetchTeams(completion: @escaping (_ success3: Bool) -> Void) {
         let url: URL = URL(string: "http://data.nba.net/10s/prod/v1/2018/teams.json")!
         let defaultSession = Foundation.URLSession(configuration: URLSessionConfiguration.default)
         
         let task = defaultSession.dataTask(with: url)
         { (data, response, error) in
-            if error != nil
-            {
+            if error != nil{
                 print("Failed to download Data")
             }
-            else
-            {
+            else {
                 print(data!)
                 let jsonDecoder = JSONDecoder()
-                if let data = data, let teamDetails = try? jsonDecoder.decode(teamDetails2.self, from: data)
-                {
+                if let data = data, let teamDetails = try? jsonDecoder.decode(teamDetails2.self, from: data) {
                     let teams25 = teamDetails.league
                     
-                    for team1 in teams25.standard
-                    {
-                        if team1.isNBAFranchise == true
-                        {
-                            self.teamDetailss.append(team1)
+                    for team1 in teams25.standard {
+                        if team1.isNBAFranchise == true {
+                            self.teamDetailss[team1.teamId] = team1
                         }
                     }
                 }
             }
+            completion(true)
         }
         task.resume()
        
     }
     
-    func fetchPlayers(completion: @escaping (_ success: Bool) -> Void)
-    {
+    func fetchPlayers(completion: @escaping (_ success: Bool) -> Void) {
         let url: URL = URL(string: "http://data.nba.net/10s/prod/v1/2018/players.json")!
         let defaultSession = Foundation.URLSession(configuration: URLSessionConfiguration.default)
         
-        let task = defaultSession.dataTask(with: url)
-        { (data, response, error) in
-            if error != nil
-            {
+        let task = defaultSession.dataTask(with: url) { (data, response, error) in
+            if error != nil {
                 print("Failed to download Data")
             }
-            else
-            {
+            else {
                 print(data!)
                 let jsonDecoder = JSONDecoder()
-                if let data = data, let allPlayers = try? jsonDecoder.decode(Players.self, from: data)
-                {
+                if let data = data, let allPlayers = try? jsonDecoder.decode(Players.self, from: data) {
                     self.playerss = allPlayers
-                    let test = self.playerss?.league.standard
+                    let players = self.playerss?.league.standard
                     
-                    for player in test!
-                    {
+                    for player in players! {
+                        self.teamDetailss[player.teamId]?.players?.append(player)
+                        
                         self.idList.append(player.personId)
                         self.playerList.append(player)
                     }
@@ -136,32 +131,24 @@ class modesVC: UIViewController
         
     }
     
-    func fetchPlayerStats(idList: [String], completion: @escaping (_ success2: Bool) -> Void)
-    {
-        for (num, id) in idList.enumerated()
-        {
+    func fetchPlayerStats(idList: [String], completion: @escaping (_ success2: Bool) -> Void) {
+        for (num, id) in idList.enumerated() {
             let url: URL = URL(string: "http://data.nba.net//data/10s/prod/v1/2018/players/\(id)_profile.json")!
             let defaultSession = Foundation.URLSession(configuration: URLSessionConfiguration.default)
 
-            let task = defaultSession.dataTask(with: url)
-            { (data, response, error) in
-                if error != nil
-                {
+            let task = defaultSession.dataTask(with: url) { (data, response, error) in
+                if error != nil {
                     print("Failed to download Data")
                 }
-                else
-                {
+                else {
 //                    print(data!)
                     let jsonDecoder = JSONDecoder()
-                    if let data = data, let PlayerStatsDetails = try? jsonDecoder.decode(PlayersStats.self, from: data)
-                    {
+                    if let data = data, let PlayerStatsDetails = try? jsonDecoder.decode(PlayersStats.self, from: data) {
                         self.playerStatss.append(PlayerStatsDetails)
                     }
                 }
-                print(self.playerStatss.count)
                 
-                if num == idList.count - 1
-                {
+                if num == idList.count - 1 {
                     completion(true)
                 }
             }

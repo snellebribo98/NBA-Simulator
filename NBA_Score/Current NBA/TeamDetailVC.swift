@@ -210,13 +210,13 @@ class TeamDetailVC: UIViewController
             TeamImage.image = UIImage(named:"timberwolves.png")
             self.view.addSubview(TeamImage)
         }
-        else if TeamChosen == "Oklahoma Thunder"
+        else if TeamChosen == "Oklahoma City Thunder"
         {
             self.view.backgroundColor = UIColor.init(red:0.20, green:0.69, blue:0.97, alpha:1.0)
             TeamImage.image = UIImage(named:"thunder.png")
             self.view.addSubview(TeamImage)
         }
-        else if TeamChosen == "Portland Trail Blaizers"
+        else if TeamChosen == "Portland Trail Blazers"
         {
             self.view.backgroundColor = UIColor.init(red:0.81, green:0.02, blue:0.22, alpha:1.0)
             TeamImage.image = UIImage(named:"blazers.png")

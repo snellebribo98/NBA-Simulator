@@ -10,7 +10,7 @@ import UIKit
 
 class TeamTV: UITableViewController
 {
-    var teamDetailss = [Team]()
+    var teamDetailss = [String: Team]()
     var teamDetail: Team?
     
     @IBOutlet var teamsTableView: UITableView!
@@ -29,7 +29,7 @@ class TeamTV: UITableViewController
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TeamIdentifier") as? TeamCell
-        let teamDetail = teamDetailss[indexPath.row]
+        let teamDetail = Array(teamDetailss.values)[indexPath.row]
         if teamDetail.isNBAFranchise == true
         {
             cell?.titleLabel?.text = teamDetail.fullName
@@ -43,7 +43,7 @@ class TeamTV: UITableViewController
         {
             let ip = teamsTableView.indexPathForSelectedRow
             let TDVC = segue.destination as! TeamDetailVC
-            TDVC.teamDetails = teamDetailss[ip!.row]
+            TDVC.teamDetails = Array(teamDetailss.values)[ip!.row]
         }
     }
 }

@@ -49,28 +49,8 @@ struct Player: Codable
     var lastAffiliation: String
     var country: String
     
-    enum CodingKeys: String, CodingKey
-    {
-        case firstName
-        case lastName
-        case personId
-        case teamId
-        case jersey
-        case isActive
-        case pos
-        case heightFeet
-        case heightInches
-        case heightMeters
-        case weightPounds
-        case weightKilograms
-        case dateOfBirthUTC
-        case teams
-        case draft
-        case nbaDebutYear
-        case yearsPro
-        case collegeName
-        case lastAffiliation
-        case country
+    var fullName: [String] {
+        return [lastName, firstName]
     }
 }
 
@@ -79,13 +59,6 @@ struct Teams: Codable
     var teamId: String
     var seasonStart: String
     var seasonEnd: String
-    
-    enum CodingKeys: String, CodingKey
-    {
-        case teamId
-        case seasonStart
-        case seasonEnd
-    }
 }
 
 struct Draft: Codable
@@ -94,12 +67,4 @@ struct Draft: Codable
     var pickNum: String
     var roundNum: String
     var seasonYear: String
-    
-    enum CodingKeys: String, CodingKey
-    {
-        case teamId
-        case pickNum
-        case roundNum
-        case seasonYear
-    }
 }
