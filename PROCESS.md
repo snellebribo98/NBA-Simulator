@@ -30,3 +30,4 @@ After this I took a quick look at the simulator. I made a picker with two variab
 - completion leaderboard
 - player roster
 - completion teams API
+- simulator made
