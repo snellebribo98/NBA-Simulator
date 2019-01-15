@@ -24,3 +24,9 @@ I wanted to show that my NBA Playerstats API is loading, since the app crashes i
 Another thing I wanted to do today is a completion to make sure the playerstats API is loaded after the player API is loaded. Before this I used a sleep of about 3 seconds. Inorder to fix this I made a completion to fix this. After this I wanted to show the API's were still loading. For this I used a activity indicator and while it shows, disables all user interactions. I decided to start this while the player API starts loading. Not before the team API since it is so small and loads very quick, it doesn't need to be put infront. I put the end of the activity indicator inside my playerstats API, but that didn't work since it is a for-loop, so after one playerstats was loaded it would end. For this is made a completion handler inside the previous mentioned completion handler. So as soon as the playerstats is loaded completely it would end the activity indicator and thus enables the user to interact again. To know when the playerstats API is fully loaded I made an if statement that if the current number of loops is equal to the idList (- 1), the playerstats loading is complete. 
 
 After this I took a quick look at the simulator. I made a picker with two variables to choose (two NBA teams) and the selected teams are prepared to show on the next view (that will show the simulated score eventually).
+
+# day 6
+- date yesterday, today, tomorrow
+- completion leaderboard
+- player roster
+- completion teams API
