@@ -16,7 +16,6 @@ class SimulatorVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
     @IBOutlet weak var visitingOffenseLabel: UILabel!
     @IBOutlet weak var visitingDefenseLabel: UILabel!
     @IBOutlet weak var visitingTotalLabel: UILabel!
-    @IBOutlet weak var visitingPicker: UIPickerView!
     
     @IBOutlet weak var homeImage: UIImageView!
     @IBOutlet weak var homeOffenseLabel: UILabel!
@@ -25,18 +24,17 @@ class SimulatorVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
     @IBOutlet weak var homePicker: UIPickerView!
     
     private let NBA_Data_Home = ["Boston Celtics", "Brooklyn Nets", "New York Knicks", "Philadelphia 76ers", "Toronto Raptors", "Chicago Bulls", "Cleveland Cavaliers", "Detroit Pistons", "Indiana Pacers", "Milwaukee Bucks", "Atlanta Hawks", "Charlotte Hornets", "Miami Heat", "Orlando Magic", "Washington Wizards", "Golden State Warriors", "Los Angeles Clippers", "Los Angeles Lakers", "Phoenix Suns", "Sacramento Kings", "Dallas Mavericks", "Houston Rockets", "Memphis Grizzilies", "New Orleans Pelicans", "San Antonio Spurs", "Denver Nuggets", "Minnesota Timberwolves", "Oklahoma Thunder", "Portland Trail Blaizers", "Utah Jazz"]
-    private let NBA_Data_Away = ["Boston Celtics", "Brooklyn Nets", "New York Knicks"]
+    private let NBA_Data_Away = ["Boston Celtics", "Brooklyn Nets", "New York Knicks", "Philadelphia 76ers", "Toronto Raptors", "Chicago Bulls", "Cleveland Cavaliers", "Detroit Pistons", "Indiana Pacers", "Milwaukee Bucks", "Atlanta Hawks", "Charlotte Hornets", "Miami Heat", "Orlando Magic", "Washington Wizards", "Golden State Warriors", "Los Angeles Clippers", "Los Angeles Lakers", "Phoenix Suns", "Sacramento Kings", "Dallas Mavericks", "Houston Rockets", "Memphis Grizzilies", "New Orleans Pelicans", "San Antonio Spurs", "Denver Nuggets", "Minnesota Timberwolves", "Oklahoma Thunder", "Portland Trail Blaizers", "Utah Jazz"]
     
     private var homeComponent = 0
     private var awayComponent = 1
     
     var TeamChosen: String = "Boston Celtics"
+    var awayTeamChosen: String = "Boston Celtics"
     
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        visitingPicker.dataSource = self
-        visitingPicker.delegate = self
         homePicker.dataSource = self
         homePicker.delegate = self
     }
@@ -69,14 +67,304 @@ class SimulatorVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
                 homeImage.image = UIImage(named:"celtics.png")
                 self.view.addSubview(homeImage)
             }
+            else if TeamChosen == "Brooklyn Nets"
+            {
+                homeImage.image = UIImage(named:"nets.png")
+                self.view.addSubview(homeImage)
+            }
+            else if TeamChosen == "New York Knicks"
+            {
+                homeImage.image = UIImage(named:"knicks.png")
+                self.view.addSubview(homeImage)
+            }
+            else if TeamChosen == "Philadelphia 76ers"
+            {
+                homeImage.image = UIImage(named:"philly.png")
+                self.view.addSubview(homeImage)
+            }
+            else if TeamChosen == "Toronto Raptors"
+            {
+                homeImage.image = UIImage(named:"toronto.png")
+                self.view.addSubview(homeImage)
+            }
+            else if TeamChosen == "Chicago Bulls"
+            {
+                homeImage.image = UIImage(named:"bulls.png")
+                self.view.addSubview(homeImage)
+            }
+            else if TeamChosen == "Cleveland Cavaliers"
+            {
+                homeImage.image = UIImage(named:"cavs.png")
+                self.view.addSubview(homeImage)
+            }
+            else if TeamChosen == "Detroit Pistons"
+            {
+                homeImage.image = UIImage(named:"pistons.png")
+                self.view.addSubview(homeImage)
+            }
+            else if TeamChosen == "Indiana Pacers"
+            {
+                homeImage.image = UIImage(named:"pacers.png")
+                self.view.addSubview(homeImage)
+            }
+            else if TeamChosen == "Milwaukee Bucks"
+            {
+                homeImage.image = UIImage(named:"bucks.png")
+                self.view.addSubview(homeImage)
+            }
+            else if TeamChosen == "Atlanta Hawks"
+            {
+                homeImage.image = UIImage(named:"hawks.png")
+                self.view.addSubview(homeImage)
+            }
+            else if TeamChosen == "Charlotte Hornets"
+            {
+                homeImage.image = UIImage(named:"hornets.png")
+                self.view.addSubview(homeImage)
+            }
+            else if TeamChosen == "Miami Heat"
+            {
+                homeImage.image = UIImage(named:"heat.png")
+                self.view.addSubview(homeImage)
+            }
+            else if TeamChosen == "Orlando Magic"
+            {
+                homeImage.image = UIImage(named:"magic.png")
+                self.view.addSubview(homeImage)
+            }
+            else if TeamChosen == "Washington Wizards"
+            {
+                homeImage.image = UIImage(named:"wizards.png")
+                self.view.addSubview(homeImage)
+            }
+            else if TeamChosen == "Golden State Warriors"
+            {
+                homeImage.image = UIImage(named:"warriors.png")
+                self.view.addSubview(homeImage)
+            }
+            else if TeamChosen == "Los Angeles Clippers"
+            {
+                homeImage.image = UIImage(named:"clippers.png")
+                self.view.addSubview(homeImage)
+            }
+            else if TeamChosen == "Los Angeles Lakers"
+            {
+                homeImage.image = UIImage(named:"lakers.png")
+                self.view.addSubview(homeImage)
+            }
+            else if TeamChosen == "Phoenix Suns"
+            {
+                homeImage.image = UIImage(named:"suns.png")
+                self.view.addSubview(homeImage)
+            }
+            else if TeamChosen == "Sacramento Kings"
+            {
+                homeImage.image = UIImage(named:"kings.png")
+                self.view.addSubview(homeImage)
+            }
+            else if TeamChosen == "Dallas Mavericks"
+            {
+                homeImage.image = UIImage(named:"dallas.png")
+                self.view.addSubview(homeImage)
+            }
+            else if TeamChosen == "Houston Rockets"
+            {
+                homeImage.image = UIImage(named:"rockets.png")
+                self.view.addSubview(homeImage)
+            }
+            else if TeamChosen == "Memphis Grizzilies"
+            {
+                homeImage.image = UIImage(named:"memphis.png")
+                self.view.addSubview(homeImage)
+            }
+            else if TeamChosen == "New Orleans Pelicans"
+            {
+                homeImage.image = UIImage(named:"pelicans.png")
+                self.view.addSubview(homeImage)
+            }
+            else if TeamChosen == "San Antonio Spurs"
+            {
+                homeImage.image = UIImage(named:"spurs.png")
+                self.view.addSubview(homeImage)
+            }
+            else if TeamChosen == "Denver Nuggets"
+            {
+                homeImage.image = UIImage(named:"nuggets.png")
+                self.view.addSubview(homeImage)
+            }
+            else if TeamChosen == "Minnesota Timberwolves"
+            {
+                homeImage.image = UIImage(named:"timberwolves.png")
+                self.view.addSubview(homeImage)
+            }
+            else if TeamChosen == "Oklahoma Thunder"
+            {
+                homeImage.image = UIImage(named:"thunder.png")
+                self.view.addSubview(homeImage)
+            }
+            else if TeamChosen == "Portland Trail Blaizers"
+            {
+                homeImage.image = UIImage(named:"blazers.png")
+                self.view.addSubview(homeImage)
+            }
+            else if TeamChosen == "Utah Jazz"
+            {
+                homeImage.image = UIImage(named:"jazz.png")
+                self.view.addSubview(homeImage)
+            }
         }
         else if component == awayComponent
         {
-            TeamChosen = NBA_Data_Away[row]
+            awayTeamChosen = NBA_Data_Away[row]
             
-            if TeamChosen == "Boston Celtics"
+            if awayTeamChosen == "Boston Celtics"
             {
                 visitingImage.image = UIImage(named:"celtics.png")
+                self.view.addSubview(visitingImage)
+            }
+            else if awayTeamChosen == "Brooklyn Nets"
+            {
+                visitingImage.image = UIImage(named:"nets.png")
+                self.view.addSubview(visitingImage)
+            }
+            else if awayTeamChosen == "New York Knicks"
+            {
+                visitingImage.image = UIImage(named:"knicks.png")
+                self.view.addSubview(visitingImage)
+            }
+            else if awayTeamChosen == "Philadelphia 76ers"
+            {
+                visitingImage.image = UIImage(named:"philly.png")
+                self.view.addSubview(visitingImage)
+            }
+            else if awayTeamChosen == "Toronto Raptors"
+            {
+                visitingImage.image = UIImage(named:"toronto.png")
+                self.view.addSubview(visitingImage)
+            }
+            else if awayTeamChosen == "Chicago Bulls"
+            {
+                visitingImage.image = UIImage(named:"bulls.png")
+                self.view.addSubview(visitingImage)
+            }
+            else if awayTeamChosen == "Cleveland Cavaliers"
+            {
+                visitingImage.image = UIImage(named:"cavs.png")
+                self.view.addSubview(visitingImage)
+            }
+            else if awayTeamChosen == "Detroit Pistons"
+            {
+                visitingImage.image = UIImage(named:"pistons.png")
+                self.view.addSubview(visitingImage)
+            }
+            else if awayTeamChosen == "Indiana Pacers"
+            {
+                visitingImage.image = UIImage(named:"pacers.png")
+                self.view.addSubview(visitingImage)
+            }
+            else if awayTeamChosen == "Milwaukee Bucks"
+            {
+                visitingImage.image = UIImage(named:"bucks.png")
+                self.view.addSubview(visitingImage)
+            }
+            else if awayTeamChosen == "Atlanta Hawks"
+            {
+                visitingImage.image = UIImage(named:"hawks.png")
+                self.view.addSubview(visitingImage)
+            }
+            else if awayTeamChosen == "Charlotte Hornets"
+            {
+                visitingImage.image = UIImage(named:"hornets.png")
+                self.view.addSubview(visitingImage)
+            }
+            else if awayTeamChosen == "Miami Heat"
+            {
+                visitingImage.image = UIImage(named:"heat.png")
+                self.view.addSubview(visitingImage)
+            }
+            else if awayTeamChosen == "Orlando Magic"
+            {
+                visitingImage.image = UIImage(named:"magic.png")
+                self.view.addSubview(visitingImage)
+            }
+            else if awayTeamChosen == "Washington Wizards"
+            {
+                visitingImage.image = UIImage(named:"wizards.png")
+                self.view.addSubview(visitingImage)
+            }
+            else if awayTeamChosen == "Golden State Warriors"
+            {
+                visitingImage.image = UIImage(named:"warriors.png")
+                self.view.addSubview(visitingImage)
+            }
+            else if awayTeamChosen == "Los Angeles Clippers"
+            {
+                visitingImage.image = UIImage(named:"clippers.png")
+                self.view.addSubview(visitingImage)
+            }
+            else if awayTeamChosen == "Los Angeles Lakers"
+            {
+                visitingImage.image = UIImage(named:"lakers.png")
+                self.view.addSubview(visitingImage)
+            }
+            else if awayTeamChosen == "Phoenix Suns"
+            {
+                visitingImage.image = UIImage(named:"suns.png")
+                self.view.addSubview(visitingImage)
+            }
+            else if awayTeamChosen == "Sacramento Kings"
+            {
+                visitingImage.image = UIImage(named:"kings.png")
+                self.view.addSubview(visitingImage)
+            }
+            else if awayTeamChosen == "Dallas Mavericks"
+            {
+                visitingImage.image = UIImage(named:"dallas.png")
+                self.view.addSubview(visitingImage)
+            }
+            else if awayTeamChosen == "Houston Rockets"
+            {
+                visitingImage.image = UIImage(named:"rockets.png")
+                self.view.addSubview(visitingImage)
+            }
+            else if awayTeamChosen == "Memphis Grizzilies"
+            {
+                visitingImage.image = UIImage(named:"memphis.png")
+                self.view.addSubview(visitingImage)
+            }
+            else if awayTeamChosen == "New Orleans Pelicans"
+            {
+                visitingImage.image = UIImage(named:"pelicans.png")
+                self.view.addSubview(visitingImage)
+            }
+            else if awayTeamChosen == "San Antonio Spurs"
+            {
+                visitingImage.image = UIImage(named:"spurs.png")
+                self.view.addSubview(visitingImage)
+            }
+            else if awayTeamChosen == "Denver Nuggets"
+            {
+                visitingImage.image = UIImage(named:"nuggets.png")
+                self.view.addSubview(visitingImage)
+            }
+            else if awayTeamChosen == "Minnesota Timberwolves"
+            {
+                visitingImage.image = UIImage(named:"timberwolves.png")
+                self.view.addSubview(visitingImage)
+            }
+            else if awayTeamChosen == "Oklahoma Thunder"
+            {
+                visitingImage.image = UIImage(named:"thunder.png")
+                self.view.addSubview(visitingImage)
+            }
+            else if awayTeamChosen == "Portland Trail Blaizers"
+            {
+                visitingImage.image = UIImage(named:"blazers.png")
+                self.view.addSubview(visitingImage)
+            }
+            else if awayTeamChosen == "Utah Jazz"
+            {
+                visitingImage.image = UIImage(named:"jazz.png")
                 self.view.addSubview(visitingImage)
             }
         }
@@ -92,6 +380,16 @@ class SimulatorVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
         else
         {
             return NBA_Data_Away[row]
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    {
+        if segue.identifier == "simulatorResultSegue"
+        {
+            let SRVC = segue.destination as! SimulatorResultVC
+            SRVC.TeamChosen = self.TeamChosen
+            SRVC.awayTeamChosen = self.awayTeamChosen
         }
     }
 

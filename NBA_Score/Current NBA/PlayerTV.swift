@@ -11,15 +11,19 @@ import UIKit
 class PlayerTV: UITableViewController
 {
     var playerList: [Player]?
+    var playerStatss: [PlayersStats]?
+    
+    @IBOutlet var playerTableView: UITableView!
     
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        print("Stats: ", playerStatss?.count)
+        print("Players:", playerList!.count)
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
-        print(playerList!.count)
         return playerList!.count
     }
     
@@ -32,13 +36,14 @@ class PlayerTV: UITableViewController
         return cell!
     }
     
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
     {
-        return false
+        if segue.identifier == "playerStatsSegue"
+        {
+            let ip = playerTableView.indexPathForSelectedRow
+            let PDVC = segue.destination as! PlayerDetailVC
+//            PDVC.teamDetails = teamDetailss[ip!.row]
+        }
     }
     
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath)
-    {
-        
-    }
 }

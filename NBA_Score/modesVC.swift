@@ -11,34 +11,61 @@ import UIKit
 class modesVC: UIViewController
 {
     var playerss: Players?
+    var stats: Latest?
     var idList = [String]()
     var playerStatss = [PlayersStats]()
     var teamDetailss = [Team]()
     var playerList = [Player]()
+    
+    var activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView()
     
     override func viewDidLoad()
     {
         super.viewDidLoad()
         
         fetchTeams()
-        fetchPlayers()
         
-        sleep(3)
+        activityIndicator.center = self.view.center
+        activityIndicator.hidesWhenStopped = true
+        view.addSubview(activityIndicator)
         
-        fetchPlayerStats(idList: idList)
-        fetchSchedule()
+        activityIndicator.startAnimating()
+        UIApplication.shared.beginIgnoringInteractionEvents()
+        
+        fetchPlayers { (success) -> Void in
+            if success
+            {
+//                self.fetchPlayerStats(idList: self.idList)
+                
+                self.fetchPlayerStats(idList: self.idList) { (success2) -> Void in
+                    if success2
+                    {
+                        DispatchQueue.main.async {
+                            self.activityIndicator.stopAnimating()
+                            UIApplication.shared.endIgnoringInteractionEvents()
+                        }
+                        
+                    }
+                }
+            }
+        }
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let barViewControllers = segue.destination as! UITabBarController
-        
-        let navTeam = barViewControllers.viewControllers![1] as! UINavigationController
-        let destinationTeamViewController = navTeam.topViewController as! TeamTV
-        destinationTeamViewController.teamDetailss = self.teamDetailss
-        
-        let navPlayer = barViewControllers.viewControllers![0] as! UINavigationController
-        let destinationPlayerViewController = navPlayer.topViewController as! PlayerTV
-        destinationPlayerViewController.playerList = self.playerList
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    {
+        if segue.identifier == "currentSegue"
+        {
+            let barViewControllers = segue.destination as! UITabBarController
+            
+            let navTeam = barViewControllers.viewControllers![1] as! UINavigationController
+            let destinationTeamViewController = navTeam.topViewController as! TeamTV
+            destinationTeamViewController.teamDetailss = self.teamDetailss
+            
+            let navPlayer = barViewControllers.viewControllers![0] as! UINavigationController
+            let destinationPlayerViewController = navPlayer.topViewController as! PlayerTV
+            destinationPlayerViewController.playerList = self.playerList
+            destinationPlayerViewController.playerStatss = self.playerStatss
+        }
     }
     
     @IBAction func unwindToModes(segue:UIStoryboardSegue) { }
@@ -76,7 +103,7 @@ class modesVC: UIViewController
        
     }
     
-    func fetchPlayers()
+    func fetchPlayers(completion: @escaping (_ success: Bool) -> Void)
     {
         let url: URL = URL(string: "http://data.nba.net/10s/prod/v1/2018/players.json")!
         let defaultSession = Foundation.URLSession(configuration: URLSessionConfiguration.default)
@@ -103,17 +130,19 @@ class modesVC: UIViewController
                     }
                 }
             }
+            completion(true)
         }
         task.resume()
+        
     }
     
-    func fetchPlayerStats(idList: [String])
+    func fetchPlayerStats(idList: [String], completion: @escaping (_ success2: Bool) -> Void)
     {
-        for id in idList
+        for (num, id) in idList.enumerated()
         {
             let url: URL = URL(string: "http://data.nba.net//data/10s/prod/v1/2018/players/\(id)_profile.json")!
             let defaultSession = Foundation.URLSession(configuration: URLSessionConfiguration.default)
-            
+
             let task = defaultSession.dataTask(with: url)
             { (data, response, error) in
                 if error != nil
@@ -129,35 +158,62 @@ class modesVC: UIViewController
                         self.playerStatss.append(PlayerStatsDetails)
                     }
                 }
-            }
-            task.resume()
-        }
-//        print(playerStatss)
-//        print(playerStatss.count)
-    }
-    
-    func fetchSchedule()
-    {
-        let url: URL = URL(string: "http://data.nba.com/data/10s/v2015/json/mobile_teams/nba/2018/league/00_full_schedule.json")!
-        let defaultSession = Foundation.URLSession(configuration: URLSessionConfiguration.default)
-        
-        let task = defaultSession.dataTask(with: url)
-        { (data, response, error) in
-            if error != nil
-            {
-                print("Failed to download Data")
-            }
-            else
-            {
-                print(data!)
-                let jsonDecoder = JSONDecoder()
-                if let data = data, let ScheduleDetails = try? jsonDecoder.decode(Schedule.self, from: data)
+                print(self.playerStatss.count)
+                
+                if num == idList.count - 1
                 {
-                    print(ScheduleDetails)
+                    completion(true)
                 }
             }
+            task.resume()
+
         }
-        task.resume()
     }
-    
+
+//    func fetchPlayerStats()
+//    {
+//        let url: URL = URL(string: "http://data.nba.net//data/10s/prod/v1/2018/players/203500_profile.json")!
+//        let defaultSession = Foundation.URLSession(configuration: URLSessionConfiguration.default)
+//
+//        let task = defaultSession.dataTask(with: url)
+//        { (data, response, error) in
+//            if error != nil
+//            {
+//                print("Failed to download Data")
+//            }
+//            else
+//            {
+//                print(data!)
+//                let jsonDecoder = JSONDecoder()
+//                if let data = data, let PlayerStatsDetails = try? jsonDecoder.decode(PlayersStats.self, from: data)
+//                {
+//                    print(PlayerStatsDetails)
+//
+//                    let ppg = Double(PlayerStatsDetails.league.standard.stats.latest.ppg)!
+//                    let apg = Double(PlayerStatsDetails.league.standard.stats.latest.apg)!
+//                    let orpg = Double(PlayerStatsDetails.league.standard.stats.latest.offReb)!
+//                    let drpg = Double(PlayerStatsDetails.league.standard.stats.latest.defReb)!
+//                    let topg = Double(PlayerStatsDetails.league.standard.stats.latest.topg)!
+//                    let spg = Double(PlayerStatsDetails.league.standard.stats.latest.spg)!
+//                    let bpg = Double(PlayerStatsDetails.league.standard.stats.latest.bpg)!
+//                    let minutes = 100 / Double(PlayerStatsDetails.league.standard.stats.latest.mpg)!
+//
+//                    let overall = String((ppg * 0.25 + apg * 0.25 + orpg * 0.375 + drpg * 0.125 - topg * 2 + spg * 2 + bpg * 2) * (minutes))
+//                    let defensive = String((ppg * 0.125 + apg * 0.125 + orpg * 0.1875 + drpg * 0.25 - topg * 1 + spg * 4 + bpg * 4) * (minutes / 2))
+//                    let offensive = String((ppg * 0.5 + apg * 0.5 + orpg * 0.75 + drpg * 0.0625 - topg * 4 + spg * 1 + bpg * 1) * (minutes / 2))
+//
+//                    print(overall)
+//                    print(defensive)
+//                    print(offensive)
+//
+//                    self.playerStatss.append(PlayerStatsDetails)
+//                    self.overallRating.append(overall)
+//                    self.defensiveRating.append(defensive)
+//                    self.offensiveRating.append(offensive)
+//                }
+//            }
+//        }
+//        task.resume()
+//    }
+//
 }

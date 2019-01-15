@@ -21,12 +21,7 @@ struct InternalTest: Codable {
 }
 
 struct Standard: Codable {
-    var standard: [Team]
-//    var africa: [Team]
-//    var sacramento: [Team]
-//    var vegas: [Team]
-//    var utah: [Team]
-}
+    var standard: [Team]}
 
 struct Team: Codable {
     var isNBAFranchise: Bool

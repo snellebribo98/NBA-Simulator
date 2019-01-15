@@ -8,29 +8,28 @@
 
 import UIKit
 
-class TeamTV: UITableViewController, UISearchBarDelegate
+class TeamTV: UITableViewController
 {
-    var teamDetailss: [Team]?
-    var currentTeamDetailss: [Team]?
+    var teamDetailss = [Team]()
+    var teamDetail: Team?
     
-    @IBOutlet weak var searchBarTeam: UISearchBar!
+    @IBOutlet var teamsTableView: UITableView!
     
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        Copy()
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
-        print(teamDetailss!.count)
-        return teamDetailss!.count
+        print(teamDetailss.count)
+        return teamDetailss.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TeamIdentifier") as? TeamCell
-        let teamDetail = teamDetailss![indexPath.row]
+        let teamDetail = teamDetailss[indexPath.row]
         if teamDetail.isNBAFranchise == true
         {
             cell?.titleLabel?.text = teamDetail.fullName
@@ -38,27 +37,13 @@ class TeamTV: UITableViewController, UISearchBarDelegate
         return cell!
     }
     
-    private func SearchBar ()
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
     {
-        searchBarTeam.delegate = self
-    }
-    
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String)
-    {
-        guard !searchText.isEmpty else
+        if segue.identifier == "teamDetailSegue"
         {
-            teamDetailss = currentTeamDetailss
-            tableView.reloadData()
-            return
+            let ip = teamsTableView.indexPathForSelectedRow
+            let TDVC = segue.destination as! TeamDetailVC
+            TDVC.teamDetails = teamDetailss[ip!.row]
         }
-//        teamDetailss = currentTeamDetailss?.filter({ (ToDo) -> Bool in
-//            Team.fullName.lowercased().contains(searchText.lowercased())
-//        })
-        tableView.reloadData()
-    }
-    
-    func Copy()
-    {
-        currentTeamDetailss = teamDetailss
     }
 }
