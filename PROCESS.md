@@ -26,8 +26,10 @@ Another thing I wanted to do today is a completion to make sure the playerstats 
 After this I took a quick look at the simulator. I made a picker with two variables to choose (two NBA teams) and the selected teams are prepared to show on the next view (that will show the simulated score eventually).
 
 # day 6
-- date yesterday, today, tomorrow
-- completion leaderboard
-- player roster
-- completion teams API
-- simulator made
+Found some code on the internet that shows you the current date aswell as the date of yesterday and tomorrow. I can use this with my schedule API to determine which games have passed (and give score points to users) and to determine which game is today, so users can choose the team to win.
+
+I made a completion for the teams aswell (so a completion in a completion in a completion) so that the teams will be loaded with their teamID, then the players are loaded with their teamID so I can create the roster for all NBA teams, and then the stats are loaded with the playerID's retrieved from the player API.
+
+Loading the leaderboard API takes a few seconds, so just to be save I made the same completion with interactions disables as with the other 3 API's
+
+Hardcoded my simulator today. Added the score simulator. Implemented a randomizer for the home team score and away team score. The randomizer's minimum is the lowest rating of overall, defensive or offensive and the same counts for the randomizer's upperbound. For the home team there is a (9 in 10)^2 change to have an advantage over the away team, but there is a (1 in 10)^2 change that the away team blows the home team out, or the home team simply sucks.
