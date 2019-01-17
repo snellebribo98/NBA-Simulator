@@ -46,10 +46,17 @@ class PlayerDetailVC: UIViewController
     {
 //        TeamChosen =
 //
-//        PlayerFirstnameLabel.text =
-//        PlayerLastnameLabel.text =
-//        HeightLabel.text =
-//        WeightLabel.text =
+//        playerTeam = playerList?.teamId
+//
+//        if playerTeam = ""
+//        {
+//            TeamChosen = "Boston Celtics"
+//        }
+//
+//        PlayerFirstnameLabel.text = playerList?.firstName
+//        PlayerLastnameLabel.text = playerList?.lastName
+//        HeightLabel.text = playerList?.heightFeet
+//        WeightLabel.text = playerList?.weightPounds
 //        TeamLabel.text =
 //        ConferanceLabel.text =
 //        DivisionLabel.text =
@@ -65,8 +72,8 @@ class PlayerDetailVC: UIViewController
 //        apgLabel.text =
 //        rpgLabel.text =
 //        mpgLabel.text =
-//        
-//
+////
+////
 //        if TeamChosen == "Boston Celtics"
 //        {
 //            self.view.backgroundColor = UIColor.init(red:0.25, green:0.78, blue:0.49, alpha:1.0)
@@ -163,7 +170,7 @@ class PlayerDetailVC: UIViewController
 //            TeamImage.image = UIImage(named:"warriors.png")
 //            self.view.addSubview(TeamImage)
 //        }
-//        else if TeamChosen == "Los Angeles Clippers"
+//        else if TeamChosen == "LA Clippers"
 //        {
 //            self.view.backgroundColor = UIColor.init(red:0.98, green:0.04, blue:0.15, alpha:1.0)
 //            TeamImage.image = UIImage(named:"clippers.png")
@@ -229,13 +236,13 @@ class PlayerDetailVC: UIViewController
 //            TeamImage.image = UIImage(named:"timberwolves.png")
 //            self.view.addSubview(TeamImage)
 //        }
-//        else if TeamChosen == "Oklahoma Thunder"
+//        else if TeamChosen == "Oklahoma City Thunder"
 //        {
 //            self.view.backgroundColor = UIColor.init(red:0.20, green:0.69, blue:0.97, alpha:1.0)
 //            TeamImage.image = UIImage(named:"thunder.png")
 //            self.view.addSubview(TeamImage)
 //        }
-//        else if TeamChosen == "Portland Trail Blaizers"
+//        else if TeamChosen == "Portland Trail Blazers"
 //        {
 //            self.view.backgroundColor = UIColor.init(red:0.81, green:0.02, blue:0.22, alpha:1.0)
 //            TeamImage.image = UIImage(named:"blazers.png")

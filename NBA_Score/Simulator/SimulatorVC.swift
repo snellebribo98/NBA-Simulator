@@ -71,66 +71,9 @@ class SimulatorVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
         print(NBA_Data_Away)
     }
     
-    func simulator()
+    func updateLabel(component: Int, row: Int)
     {
-        let HO = teamDetailss[TeamChosen]?.offensiveRating
-        let HD = teamDetailss[TeamChosen]?.defensiveRating
-        let H = teamDetailss[TeamChosen]?.overalRating
-        let VO = teamDetailss[awayTeamChosen]?.offensiveRating
-        let VD = teamDetailss[awayTeamChosen]?.defensiveRating
-        let V = teamDetailss[awayTeamChosen]?.overalRating
-        
-        let homeSuck = Int.random(in: 1 ... 5)
-        if homeSuck == 5
-        {
-            let HL = min(HO!, HD!, H!) + 10
-            let HU = max(HO!, HD!, H!) + 10
-            homeScore = Int(Double.random(in: HL ... HU))
-        }
-        else
-        {
-            let HL = min(HO!, HD!, H!) + 25
-            let HU = max(HO!, HD!, H!) + 25
-            homeScore = Int(Double.random(in: HL ... HU))
-        }
-        print(homeScore)
-        
-        let awayBlowout = Int.random(in: 1 ... 5)
-        if awayBlowout == 5
-        {
-            let VL = min(VO!, VD!, V!) + 30
-            let VU = max(VO!, VD!, V!) + 30
-            visitingScore = Int(Double.random(in: VL ... VU))
-        }
-        else
-        {
-            let VL = min(VO!, VD!, V!) + 15
-            let VU = max(VO!, VD!, V!) + 15
-            visitingScore = Int(Double.random(in: VL ... VU))
-        }
-        print(visitingScore)
-    }
-    
-    func numberOfComponents(in pickerView: UIPickerView) -> Int
-    {
-        return 2
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int
-    {
-        if component == homeComponent
-        {
-            return NBA_Data_Home.count
-        }
-        else
-        {
-            return NBA_Data_Away.count
-        }
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int)
-    {
-        if component == homeComponent
+        if component == 0 // homecomponent
         {
             TeamChosen = NBA_Data_Home[row]
             
@@ -289,7 +232,7 @@ class SimulatorVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
                 self.view.addSubview(homeImage)
             }
         }
-        else if component == awayComponent
+        else if component == 1 // awaycomponent
         {
             awayTeamChosen = NBA_Data_Away[row]
             
@@ -448,13 +391,68 @@ class SimulatorVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
                 self.view.addSubview(visitingImage)
             }
         }
+    }
+    
+    func simulator()
+    {
+        let HO = teamDetailss[TeamChosen]?.offensiveRating
+        let HD = teamDetailss[TeamChosen]?.defensiveRating
+        let H = teamDetailss[TeamChosen]?.overalRating
+        let VO = teamDetailss[awayTeamChosen]?.offensiveRating
+        let VD = teamDetailss[awayTeamChosen]?.defensiveRating
+        let V = teamDetailss[awayTeamChosen]?.overalRating
         
-//        if component == homeComponent && NBA_Data_Home[row] != "select a team" {
-//            if component == awayComponent && NBA_Data_Away[row] != "select a team" {
-//                simulateButton.isEnabled = true
-//            }
-//        }
-
+        let homeSuck = Int.random(in: 1 ... 5)
+        if homeSuck == 5
+        {
+            let HL = min(HO!, HD!, H!) + 10
+            let HU = max(HO!, HD!, H!) + 10
+            homeScore = Int(Double.random(in: HL ... HU))
+        }
+        else
+        {
+            let HL = min(HO!, HD!, H!) + 25
+            let HU = max(HO!, HD!, H!) + 25
+            homeScore = Int(Double.random(in: HL ... HU))
+        }
+        print(homeScore)
+        
+        let awayBlowout = Int.random(in: 1 ... 5)
+        if awayBlowout == 5
+        {
+            let VL = min(VO!, VD!, V!) + 30
+            let VU = max(VO!, VD!, V!) + 30
+            visitingScore = Int(Double.random(in: VL ... VU))
+        }
+        else
+        {
+            let VL = min(VO!, VD!, V!) + 15
+            let VU = max(VO!, VD!, V!) + 15
+            visitingScore = Int(Double.random(in: VL ... VU))
+        }
+        print(visitingScore)
+    }
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int
+    {
+        return 2
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int
+    {
+        if component == homeComponent
+        {
+            return NBA_Data_Home.count
+        }
+        else
+        {
+            return NBA_Data_Away.count
+        }
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int)
+    {
+        updateLabel(component: component, row: row)
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String?
