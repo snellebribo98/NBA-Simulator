@@ -10,15 +10,7 @@ import UIKit
 
 struct Players: Codable
 {
-    var _internal: InternalTest2
     var league: Standard2
-}
-
-struct InternalTest2: Codable
-{
-    var pubDateTime: String
-    var xslt: String
-    var eventName: String
 }
 
 struct Standard2: Codable
@@ -48,6 +40,8 @@ struct Player: Codable
     var collegeName: String
     var lastAffiliation: String
     var country: String
+    
+    var stats: PlayerStats?
     
     var fullName: [String] {
         return [lastName, firstName]

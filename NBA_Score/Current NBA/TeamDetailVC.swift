@@ -44,9 +44,9 @@ class TeamDetailVC: UIViewController
         conferanceLabel.text = teamDetails?.confName
         divisionLabel.text = teamDetails?.divName
         
-//        OverallLabel.text = overallRating.capacity
-//        DefensiveLabel.text = defensiveRating.capacity
-//        OffensiveLabel.text = offensiveRating.capacity
+        OverallLabel.text = String((teamDetails?.overalRating)!)
+        DefensiveLabel.text = String((teamDetails?.defensiveRating)!)
+        OffensiveLabel.text = String((teamDetails?.offensiveRating)!)
 
         if TeamChosen == "Boston Celtics"
         {

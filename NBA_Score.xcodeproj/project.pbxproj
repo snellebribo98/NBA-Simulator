@@ -52,6 +52,7 @@
 		F324F29A21CEA1EF00806ABC /* rockets.png in Resources */ = {isa = PBXBuildFile; fileRef = F324F29921CEA1EF00806ABC /* rockets.png */; };
 		F324F29C21CEA1FA00806ABC /* suns.png in Resources */ = {isa = PBXBuildFile; fileRef = F324F29B21CEA1FA00806ABC /* suns.png */; };
 		F324F29E21CECCC700806ABC /* LoginStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = F324F29D21CECCC700806ABC /* LoginStruct.swift */; };
+		F32BCBF821EF2761001006EC /* pickTeamVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32BCBF721EF2761001006EC /* pickTeamVC.swift */; };
 		F34546F621E761E00015EEE3 /* TeamTV.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34546F521E761E00015EEE3 /* TeamTV.swift */; };
 		F34546F921E767200015EEE3 /* LeaderboardModesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34546F821E7671F0015EEE3 /* LeaderboardModesVC.swift */; };
 		F34546FB21E779280015EEE3 /* TeamCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34546FA21E779280015EEE3 /* TeamCell.swift */; };
@@ -115,6 +116,7 @@
 		F324F29921CEA1EF00806ABC /* rockets.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = rockets.png; path = "../../../../NBA App/rockets.png"; sourceTree = "<group>"; };
 		F324F29B21CEA1FA00806ABC /* suns.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = suns.png; path = "../../../../NBA App/suns.png"; sourceTree = "<group>"; };
 		F324F29D21CECCC700806ABC /* LoginStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginStruct.swift; path = /Users/brianvandevelde/Desktop/Apps/NBA_Score/NBA_Score/LoginStruct.swift; sourceTree = "<absolute>"; };
+		F32BCBF721EF2761001006EC /* pickTeamVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pickTeamVC.swift; sourceTree = "<group>"; };
 		F34546F521E761E00015EEE3 /* TeamTV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamTV.swift; sourceTree = "<group>"; };
 		F34546F821E7671F0015EEE3 /* LeaderboardModesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardModesVC.swift; sourceTree = "<group>"; };
 		F34546FA21E779280015EEE3 /* TeamCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamCell.swift; sourceTree = "<group>"; };
@@ -256,6 +258,7 @@
 			isa = PBXGroup;
 			children = (
 				F34546F821E7671F0015EEE3 /* LeaderboardModesVC.swift */,
+				F32BCBF721EF2761001006EC /* pickTeamVC.swift */,
 			);
 			path = Leaderboard;
 			sourceTree = "<group>";
@@ -380,6 +383,7 @@
 			files = (
 				F3CAA82E21E4E80D00FEC5A9 /* ScheduleStruct.swift in Sources */,
 				F34546F921E767200015EEE3 /* LeaderboardModesVC.swift in Sources */,
+				F32BCBF821EF2761001006EC /* pickTeamVC.swift in Sources */,
 				F363A46E21EC93D700282A17 /* SimulatorResultVC.swift in Sources */,
 				F34546FB21E779280015EEE3 /* TeamCell.swift in Sources */,
 				F324F21B21CD342B00806ABC /* RegisterVC.swift in Sources */,

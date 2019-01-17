@@ -36,4 +36,45 @@ struct Team: Codable {
     var confName: String
     var divName: String
     var players: [Player]?
+    
+    func playerIndexWith(id: String) -> Int {
+        for (num, player) in players!.enumerated() {
+            if player.personId == id {
+                return num
+            }
+        }
+        return 0
+    }
+    
+    var offensiveRating: Double {
+        var totalOffense = 0.0
+        for player in players! {
+            if player.stats != nil {
+                totalOffense += player.stats!.offensiveRating
+            }
+        }
+        return totalOffense
+    }
+    
+    var defensiveRating: Double {
+        var totalDefensive = 0.0
+        for player in players! {
+            if player.stats != nil {
+                print("HOIIIII")
+                totalDefensive += player.stats!.defensiveRating
+            }
+        }
+        return totalDefensive
+    }
+    
+    var overalRating: Double {
+        var total = 0.0
+        for player in players! {
+            if player.stats != nil {
+                total += player.stats!.overallRatingWeighted
+            }
+            
+        }
+        return total
+    }
 }

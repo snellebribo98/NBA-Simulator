@@ -11,11 +11,9 @@ import UIKit
 class modesVC: UIViewController
 {
     var playerss: Players?
-    var stats: Latest?
-    var idList = [String]()
-    var playerStatss = [PlayersStats]()
+    var stats: PlayerStats?
+    var idList = [String: String]()
     var teamDetailss = [String: Team]()
-    var playerList = [Player]()
     
     var Boston = [String]()
     
@@ -25,6 +23,8 @@ class modesVC: UIViewController
     {
         super.viewDidLoad()
         
+        activityIndicator.style = .whiteLarge
+        activityIndicator.frame = CGRect(x: 0, y: 0, width: 125, height: 125)
         activityIndicator.center = self.view.center
         activityIndicator.hidesWhenStopped = true
         view.addSubview(activityIndicator)
@@ -34,10 +34,10 @@ class modesVC: UIViewController
         
         fetchTeams { (success3) -> Void in
             if success3 {
+                print("Teams: \(self.teamDetailss.count)")
                 self.fetchPlayers { (success) -> Void in
                     if success {
-                        
-                        print(self.playerList)
+//                        print(self.playerList)
                         
                         self.fetchPlayerStats(idList: self.idList) { (success2) -> Void in
                             if success2 {
@@ -47,6 +47,7 @@ class modesVC: UIViewController
                                     
 //                                    print(self.teamDetailss)
                                 }
+//                                print(self.playerStatss)
                             }
                         }
                     }
@@ -67,8 +68,17 @@ class modesVC: UIViewController
             
             let navPlayer = barViewControllers.viewControllers![0] as! UINavigationController
             let destinationPlayerViewController = navPlayer.topViewController as! PlayerTV
-            destinationPlayerViewController.playerList = self.playerList
-            destinationPlayerViewController.playerStatss = self.playerStatss
+            
+            var playerList = [Player]()
+            for (_,team) in teamDetailss {
+                playerList.append(contentsOf: team.players!)
+            }
+            destinationPlayerViewController.playerList = playerList
+        }
+        else if segue.identifier == "simulatorSegue"
+        {
+            let SRVC = segue.destination as! SimulatorVC
+            SRVC.teamDetailss = self.teamDetailss
         }
     }
     
@@ -118,22 +128,29 @@ class modesVC: UIViewController
                     let players = self.playerss?.league.standard
                     
                     for player in players! {
+                        // Check id team has a list for players
+                        if self.teamDetailss[player.teamId]?.players == nil {
+                            // Create an empty list for players
+                            self.teamDetailss[player.teamId]?.players = [Player]()
+                        }
+                        // Append player to list in team
                         self.teamDetailss[player.teamId]?.players?.append(player)
                         
-                        self.idList.append(player.personId)
-                        self.playerList.append(player)
+                        self.idList[player.personId] = player.teamId
                     }
                 }
             }
             completion(true)
+            print(self.idList)
         }
         task.resume()
         
     }
     
-    func fetchPlayerStats(idList: [String], completion: @escaping (_ success2: Bool) -> Void) {
-        for (num, id) in idList.enumerated() {
-            let url: URL = URL(string: "http://data.nba.net//data/10s/prod/v1/2018/players/\(id)_profile.json")!
+    func fetchPlayerStats(idList: [String: String], completion: @escaping (_ success2: Bool) -> Void) {
+        var i: Int = 0
+        for (playerId, teamId) in idList {
+            let url: URL = URL(string: "http://data.nba.net//data/10s/prod/v1/2018/players/\(playerId)_profile.json")!
             let defaultSession = Foundation.URLSession(configuration: URLSessionConfiguration.default)
 
             let task = defaultSession.dataTask(with: url) { (data, response, error) in
@@ -143,12 +160,17 @@ class modesVC: UIViewController
                 else {
 //                    print(data!)
                     let jsonDecoder = JSONDecoder()
-                    if let data = data, let PlayerStatsDetails = try? jsonDecoder.decode(PlayersStats.self, from: data) {
-                        self.playerStatss.append(PlayerStatsDetails)
+                    if let data = data, let playerStatsDetails = try? jsonDecoder.decode(TempPlayersStats.self, from: data) {
+                        let team = self.teamDetailss[teamId]
+                        if team != nil
+                        {
+                            self.teamDetailss[teamId]!.players![team!.playerIndexWith(id: playerId)].stats = playerStatsDetails.league.standard.stats.latest
+                        }
                     }
                 }
+                i += 1
                 
-                if num == idList.count - 1 {
+                if i == idList.count - 1 {
                     completion(true)
                 }
             }
@@ -156,51 +178,4 @@ class modesVC: UIViewController
 
         }
     }
-
-//    func fetchPlayerStats()
-//    {
-//        let url: URL = URL(string: "http://data.nba.net//data/10s/prod/v1/2018/players/203500_profile.json")!
-//        let defaultSession = Foundation.URLSession(configuration: URLSessionConfiguration.default)
-//
-//        let task = defaultSession.dataTask(with: url)
-//        { (data, response, error) in
-//            if error != nil
-//            {
-//                print("Failed to download Data")
-//            }
-//            else
-//            {
-//                print(data!)
-//                let jsonDecoder = JSONDecoder()
-//                if let data = data, let PlayerStatsDetails = try? jsonDecoder.decode(PlayersStats.self, from: data)
-//                {
-//                    print(PlayerStatsDetails)
-//
-//                    let ppg = Double(PlayerStatsDetails.league.standard.stats.latest.ppg)!
-//                    let apg = Double(PlayerStatsDetails.league.standard.stats.latest.apg)!
-//                    let orpg = Double(PlayerStatsDetails.league.standard.stats.latest.offReb)!
-//                    let drpg = Double(PlayerStatsDetails.league.standard.stats.latest.defReb)!
-//                    let topg = Double(PlayerStatsDetails.league.standard.stats.latest.topg)!
-//                    let spg = Double(PlayerStatsDetails.league.standard.stats.latest.spg)!
-//                    let bpg = Double(PlayerStatsDetails.league.standard.stats.latest.bpg)!
-//                    let minutes = 100 / Double(PlayerStatsDetails.league.standard.stats.latest.mpg)!
-//
-//                    let overall = String((ppg * 0.25 + apg * 0.25 + orpg * 0.375 + drpg * 0.125 - topg * 2 + spg * 2 + bpg * 2) * (minutes))
-//                    let defensive = String((ppg * 0.125 + apg * 0.125 + orpg * 0.1875 + drpg * 0.25 - topg * 1 + spg * 4 + bpg * 4) * (minutes / 2))
-//                    let offensive = String((ppg * 0.5 + apg * 0.5 + orpg * 0.75 + drpg * 0.0625 - topg * 4 + spg * 1 + bpg * 1) * (minutes / 2))
-//
-//                    print(overall)
-//                    print(defensive)
-//                    print(offensive)
-//
-//                    self.playerStatss.append(PlayerStatsDetails)
-//                    self.overallRating.append(overall)
-//                    self.defensiveRating.append(defensive)
-//                    self.offensiveRating.append(offensive)
-//                }
-//            }
-//        }
-//        task.resume()
-//    }
-//
 }

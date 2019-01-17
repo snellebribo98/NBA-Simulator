@@ -26,6 +26,11 @@ class LeaderboardModesVC: UIViewController
         print("Yesterday", yesterday())
         print("Tomorrow", tomorrow())
         
+        print("Hopefully: ", dayy())
+        
+        
+        activityIndicator.style = .whiteLarge
+        activityIndicator.frame = CGRect(x: 0, y: 0, width: 125, height: 125)
         activityIndicator.center = self.view.center
         activityIndicator.hidesWhenStopped = true
         view.addSubview(activityIndicator)
@@ -91,6 +96,7 @@ class LeaderboardModesVC: UIViewController
     func tomorrow() -> Date
     {
         
+        
         var dateComponents = DateComponents()
         dateComponents.setValue(1, for: .day);
         
@@ -98,5 +104,17 @@ class LeaderboardModesVC: UIViewController
         let tomorrow = Calendar.current.date(byAdding: dateComponents, to: now)
         
         return tomorrow!
+    }
+    
+    func dayy()
+    {
+        var dateComponents = DateComponents()
+        dateComponents.setValue(1, for: .day)
+        
+        let now = Date()
+        let tomorrow = Calendar.current.date(byAdding: dateComponents, to: now)
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MM-dd-yyyy"
     }
 }

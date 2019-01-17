@@ -23,11 +23,28 @@ class SimulatorVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
     @IBOutlet weak var homeOveralLabel: UILabel!
     @IBOutlet weak var homePicker: UIPickerView!
     
-    private let NBA_Data_Home = ["Boston Celtics", "Brooklyn Nets", "New York Knicks", "Philadelphia 76ers", "Toronto Raptors", "Chicago Bulls", "Cleveland Cavaliers", "Detroit Pistons", "Indiana Pacers", "Milwaukee Bucks", "Atlanta Hawks", "Charlotte Hornets", "Miami Heat", "Orlando Magic", "Washington Wizards", "Golden State Warriors", "Los Angeles Clippers", "Los Angeles Lakers", "Phoenix Suns", "Sacramento Kings", "Dallas Mavericks", "Houston Rockets", "Memphis Grizzilies", "New Orleans Pelicans", "San Antonio Spurs", "Denver Nuggets", "Minnesota Timberwolves", "Oklahoma Thunder", "Portland Trail Blaizers", "Utah Jazz"]
-    private let NBA_Data_Away = ["Boston Celtics", "Brooklyn Nets", "New York Knicks", "Philadelphia 76ers", "Toronto Raptors", "Chicago Bulls", "Cleveland Cavaliers", "Detroit Pistons", "Indiana Pacers", "Milwaukee Bucks", "Atlanta Hawks", "Charlotte Hornets", "Miami Heat", "Orlando Magic", "Washington Wizards", "Golden State Warriors", "Los Angeles Clippers", "Los Angeles Lakers", "Phoenix Suns", "Sacramento Kings", "Dallas Mavericks", "Houston Rockets", "Memphis Grizzilies", "New Orleans Pelicans", "San Antonio Spurs", "Denver Nuggets", "Minnesota Timberwolves", "Oklahoma Thunder", "Portland Trail Blaizers", "Utah Jazz"]
+//    private var NBA_Data_Home = ["Boston Celtics", "Brooklyn Nets", "New York Knicks", "Philadelphia 76ers", "Toronto Raptors", "Chicago Bulls", "Cleveland Cavaliers", "Detroit Pistons", "Indiana Pacers", "Milwaukee Bucks", "Atlanta Hawks", "Charlotte Hornets", "Miami Heat", "Orlando Magic", "Washington Wizards", "Golden State Warriors", "Los Angeles Clippers", "Los Angeles Lakers", "Phoenix Suns", "Sacramento Kings", "Dallas Mavericks", "Houston Rockets", "Memphis Grizzilies", "New Orleans Pelicans", "San Antonio Spurs", "Denver Nuggets", "Minnesota Timberwolves", "Oklahoma Thunder", "Portland Trail Blaizers", "Utah Jazz"]
+//
+//    private var NBA_Data_Away = ["Boston Celtics", "Brooklyn Nets", "New York Knicks", "Philadelphia 76ers", "Toronto Raptors", "Chicago Bulls", "Cleveland Cavaliers", "Detroit Pistons", "Indiana Pacers", "Milwaukee Bucks", "Atlanta Hawks", "Charlotte Hornets", "Miami Heat", "Orlando Magic", "Washington Wizards", "Golden State Warriors", "Los Angeles Clippers", "Los Angeles Lakers", "Phoenix Suns", "Sacramento Kings", "Dallas Mavericks", "Houston Rockets", "Memphis Grizzilies", "New Orleans Pelicans", "San Antonio Spurs", "Denver Nuggets", "Minnesota Timberwolves", "Oklahoma Thunder", "Portland Trail Blaizers", "Utah Jazz"]
+
+    private var NBA_Data_Home = [String]()
+    private var NBA_Data_Away = [String]()
     
     private var homeComponent = 0
     private var awayComponent = 1
+    
+    var teamDetailss = [String: Team]()
+    
+    func getNums()
+    {
+        NBA_Data_Home.removeAll()
+        NBA_Data_Away.removeAll()
+        for teamdetail in teamDetailss
+        {
+            NBA_Data_Away.append(teamdetail.key)
+            NBA_Data_Home.append(teamdetail.key)
+        }
+    }
     
     var homeScore: Int = 0
     var visitingScore: Int = 0
@@ -46,54 +63,61 @@ class SimulatorVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
         super.viewDidLoad()
         homePicker.dataSource = self
         homePicker.delegate = self
-        
+        getNums()
         simulator()
     }
     
     func simulator()
     {
-        let HO = 83
-        let HD = 77
-        let H = 81
-        let VO = 85
-        let VD = 83
-        let V = 84
+//        let HO = teamDetailss[TeamChosen]?.offensiveRating
+//        let HD = teamDetailss[TeamChosen]?.defensiveRating
+//        let H = teamDetailss[TeamChosen]?.overalRating
+//        let VO = teamDetailss[awayTeamChosen]?.offensiveRating
+//        let VD = teamDetailss[awayTeamChosen]?.defensiveRating
+//        let V = teamDetailss[awayTeamChosen]?.overalRating
+        let HO: Double? = 0
+        let HD: Double? = 0
+        let H: Double? = 0
+        let VO: Double? = 0
+        let VD: Double? = 0
+        let V: Double? = 0
         
-        visitingOffenseLabel.text = String(HO)
-        visitingDefenseLabel.text = String(HD)
-        visitingTotalLabel.text = String(H)
-        
-        homeOffenseLabel.text = String(VO)
-        homeDefenseLabel.text = String(VD)
-        homeOveralLabel.text = String(V)
+//
+//        visitingOffenseLabel.text = String((VO)!)
+//        visitingDefenseLabel.text = String((VD)!)
+//        visitingTotalLabel.text = String((V)!)
+//
+//        homeOffenseLabel.text = String((HO)!)
+//        homeDefenseLabel.text = String((HD)!)
+//        homeOveralLabel.text = String((H)!)
         
         let homeSuck = Int.random(in: 1 ... 5)
         if homeSuck == 5
         {
-            let HL = min(HO, HD, H) + 10
-            let HU = max(HO, HD, H) + 10
-            homeScore = Int.random(in: HL ... HU)
+            let HL = min(HO!, HD!, H!) + 10
+            let HU = max(HO!, HD!, H!) + 10
+            homeScore = Int(Double.random(in: HL ... HU))
         }
         else
         {
-            let HL = min(HO, HD, H) + 25
-            let HU = max(HO, HD, H) + 25
-            homeScore = Int.random(in: HL ... HU)
+            let HL = min(HO!, HD!, H!) + 25
+            let HU = max(HO!, HD!, H!) + 25
+            homeScore = Int(Double.random(in: HL ... HU))
         }
         print(homeScore)
         
         let awayBlowout = Int.random(in: 1 ... 5)
         if awayBlowout == 5
         {
-            let VL = min(VO, VD, V) + 30
-            let VU = max(VO, VD, V) + 30
-            visitingScore = Int.random(in: VL ... VU)
+            let VL = min(VO!, VD!, V!) + 30
+            let VU = max(VO!, VD!, V!) + 30
+            visitingScore = Int(Double.random(in: VL ... VU))
         }
         else
         {
-            let VL = min(VO, VD, V) + 15
-            let VU = max(VO, VD, V) + 15
-            visitingScore = Int.random(in: VL ... VU)
+            let VL = min(VO!, VD!, V!) + 15
+            let VU = max(VO!, VD!, V!) + 15
+            visitingScore = Int(Double.random(in: VL ... VU))
         }
         print(visitingScore)
     }
@@ -107,6 +131,7 @@ class SimulatorVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
     {
         if component == homeComponent
         {
+            print(NBA_Data_Home)
             return NBA_Data_Home.count
         }
         else
@@ -121,152 +146,156 @@ class SimulatorVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
         {
             TeamChosen = NBA_Data_Home[row]
             
-            if TeamChosen == "Boston Celtics"
+            homeOffenseLabel.text = String((teamDetailss[TeamChosen]?.offensiveRating)!)
+            homeDefenseLabel.text = String((teamDetailss[TeamChosen]?.defensiveRating)!)
+            homeOveralLabel.text = String((teamDetailss[TeamChosen]?.overalRating)!)
+            
+            if teamDetailss[TeamChosen]?.fullName == "Boston Celtics"
             {
                 homeImage.image = UIImage(named:"celtics.png")
                 self.view.addSubview(homeImage)
             }
-            else if TeamChosen == "Brooklyn Nets"
+            else if teamDetailss[TeamChosen]?.fullName == "Brooklyn Nets"
             {
                 homeImage.image = UIImage(named:"nets.png")
                 self.view.addSubview(homeImage)
             }
-            else if TeamChosen == "New York Knicks"
+            else if teamDetailss[TeamChosen]?.fullName == "New York Knicks"
             {
                 homeImage.image = UIImage(named:"knicks.png")
                 self.view.addSubview(homeImage)
             }
-            else if TeamChosen == "Philadelphia 76ers"
+            else if teamDetailss[TeamChosen]?.fullName == "Philadelphia 76ers"
             {
                 homeImage.image = UIImage(named:"philly.png")
                 self.view.addSubview(homeImage)
             }
-            else if TeamChosen == "Toronto Raptors"
+            else if teamDetailss[TeamChosen]?.fullName == "Toronto Raptors"
             {
                 homeImage.image = UIImage(named:"toronto.png")
                 self.view.addSubview(homeImage)
             }
-            else if TeamChosen == "Chicago Bulls"
+            else if teamDetailss[TeamChosen]?.fullName == "Chicago Bulls"
             {
                 homeImage.image = UIImage(named:"bulls.png")
                 self.view.addSubview(homeImage)
             }
-            else if TeamChosen == "Cleveland Cavaliers"
+            else if teamDetailss[TeamChosen]?.fullName == "Cleveland Cavaliers"
             {
                 homeImage.image = UIImage(named:"cavs.png")
                 self.view.addSubview(homeImage)
             }
-            else if TeamChosen == "Detroit Pistons"
+            else if teamDetailss[TeamChosen]?.fullName == "Detroit Pistons"
             {
                 homeImage.image = UIImage(named:"pistons.png")
                 self.view.addSubview(homeImage)
             }
-            else if TeamChosen == "Indiana Pacers"
+            else if teamDetailss[TeamChosen]?.fullName == "Indiana Pacers"
             {
                 homeImage.image = UIImage(named:"pacers.png")
                 self.view.addSubview(homeImage)
             }
-            else if TeamChosen == "Milwaukee Bucks"
+            else if teamDetailss[TeamChosen]?.fullName == "Milwaukee Bucks"
             {
                 homeImage.image = UIImage(named:"bucks.png")
                 self.view.addSubview(homeImage)
             }
-            else if TeamChosen == "Atlanta Hawks"
+            else if teamDetailss[TeamChosen]?.fullName == "Atlanta Hawks"
             {
                 homeImage.image = UIImage(named:"hawks.png")
                 self.view.addSubview(homeImage)
             }
-            else if TeamChosen == "Charlotte Hornets"
+            else if teamDetailss[TeamChosen]?.fullName == "Charlotte Hornets"
             {
                 homeImage.image = UIImage(named:"hornets.png")
                 self.view.addSubview(homeImage)
             }
-            else if TeamChosen == "Miami Heat"
+            else if teamDetailss[TeamChosen]?.fullName == "Miami Heat"
             {
                 homeImage.image = UIImage(named:"heat.png")
                 self.view.addSubview(homeImage)
             }
-            else if TeamChosen == "Orlando Magic"
+            else if teamDetailss[TeamChosen]?.fullName == "Orlando Magic"
             {
                 homeImage.image = UIImage(named:"magic.png")
                 self.view.addSubview(homeImage)
             }
-            else if TeamChosen == "Washington Wizards"
+            else if teamDetailss[TeamChosen]?.fullName == "Washington Wizards"
             {
                 homeImage.image = UIImage(named:"wizards.png")
                 self.view.addSubview(homeImage)
             }
-            else if TeamChosen == "Golden State Warriors"
+            else if teamDetailss[TeamChosen]?.fullName == "Golden State Warriors"
             {
                 homeImage.image = UIImage(named:"warriors.png")
                 self.view.addSubview(homeImage)
             }
-            else if TeamChosen == "Los Angeles Clippers"
+            else if teamDetailss[TeamChosen]?.fullName == "Los Angeles Clippers"
             {
                 homeImage.image = UIImage(named:"clippers.png")
                 self.view.addSubview(homeImage)
             }
-            else if TeamChosen == "Los Angeles Lakers"
+            else if teamDetailss[TeamChosen]?.fullName == "Los Angeles Lakers"
             {
                 homeImage.image = UIImage(named:"lakers.png")
                 self.view.addSubview(homeImage)
             }
-            else if TeamChosen == "Phoenix Suns"
+            else if teamDetailss[TeamChosen]?.fullName == "Phoenix Suns"
             {
                 homeImage.image = UIImage(named:"suns.png")
                 self.view.addSubview(homeImage)
             }
-            else if TeamChosen == "Sacramento Kings"
+            else if teamDetailss[TeamChosen]?.fullName == "Sacramento Kings"
             {
                 homeImage.image = UIImage(named:"kings.png")
                 self.view.addSubview(homeImage)
             }
-            else if TeamChosen == "Dallas Mavericks"
+            else if teamDetailss[TeamChosen]?.fullName == "Dallas Mavericks"
             {
                 homeImage.image = UIImage(named:"dallas.png")
                 self.view.addSubview(homeImage)
             }
-            else if TeamChosen == "Houston Rockets"
+            else if teamDetailss[TeamChosen]?.fullName == "Houston Rockets"
             {
                 homeImage.image = UIImage(named:"rockets.png")
                 self.view.addSubview(homeImage)
             }
-            else if TeamChosen == "Memphis Grizzilies"
+            else if teamDetailss[TeamChosen]?.fullName == "Memphis Grizzilies"
             {
                 homeImage.image = UIImage(named:"memphis.png")
                 self.view.addSubview(homeImage)
             }
-            else if TeamChosen == "New Orleans Pelicans"
+            else if teamDetailss[TeamChosen]?.fullName == "New Orleans Pelicans"
             {
                 homeImage.image = UIImage(named:"pelicans.png")
                 self.view.addSubview(homeImage)
             }
-            else if TeamChosen == "San Antonio Spurs"
+            else if teamDetailss[TeamChosen]?.fullName == "San Antonio Spurs"
             {
                 homeImage.image = UIImage(named:"spurs.png")
                 self.view.addSubview(homeImage)
             }
-            else if TeamChosen == "Denver Nuggets"
+            else if teamDetailss[TeamChosen]?.fullName == "Denver Nuggets"
             {
                 homeImage.image = UIImage(named:"nuggets.png")
                 self.view.addSubview(homeImage)
             }
-            else if TeamChosen == "Minnesota Timberwolves"
+            else if teamDetailss[TeamChosen]?.fullName == "Minnesota Timberwolves"
             {
                 homeImage.image = UIImage(named:"timberwolves.png")
                 self.view.addSubview(homeImage)
             }
-            else if TeamChosen == "Oklahoma Thunder"
+            else if teamDetailss[TeamChosen]?.fullName == "Oklahoma Thunder"
             {
                 homeImage.image = UIImage(named:"thunder.png")
                 self.view.addSubview(homeImage)
             }
-            else if TeamChosen == "Portland Trail Blaizers"
+            else if teamDetailss[TeamChosen]?.fullName == "Portland Trail Blaizers"
             {
                 homeImage.image = UIImage(named:"blazers.png")
                 self.view.addSubview(homeImage)
             }
-            else if TeamChosen == "Utah Jazz"
+            else if teamDetailss[TeamChosen]?.fullName == "Utah Jazz"
             {
                 homeImage.image = UIImage(named:"jazz.png")
                 self.view.addSubview(homeImage)
@@ -276,152 +305,156 @@ class SimulatorVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
         {
             awayTeamChosen = NBA_Data_Away[row]
             
-            if awayTeamChosen == "Boston Celtics"
+            visitingOffenseLabel.text = String((teamDetailss[awayTeamChosen]?.offensiveRating)!)
+            visitingDefenseLabel.text = String((teamDetailss[awayTeamChosen]?.defensiveRating)!)
+            visitingTotalLabel.text = String((teamDetailss[awayTeamChosen]?.overalRating)!)
+            
+            if teamDetailss[awayTeamChosen]?.fullName == "Boston Celtics"
             {
                 visitingImage.image = UIImage(named:"celtics.png")
                 self.view.addSubview(visitingImage)
             }
-            else if awayTeamChosen == "Brooklyn Nets"
+            else if teamDetailss[awayTeamChosen]?.fullName == "Brooklyn Nets"
             {
                 visitingImage.image = UIImage(named:"nets.png")
                 self.view.addSubview(visitingImage)
             }
-            else if awayTeamChosen == "New York Knicks"
+            else if teamDetailss[awayTeamChosen]?.fullName == "New York Knicks"
             {
                 visitingImage.image = UIImage(named:"knicks.png")
                 self.view.addSubview(visitingImage)
             }
-            else if awayTeamChosen == "Philadelphia 76ers"
+            else if teamDetailss[awayTeamChosen]?.fullName == "Philadelphia 76ers"
             {
                 visitingImage.image = UIImage(named:"philly.png")
                 self.view.addSubview(visitingImage)
             }
-            else if awayTeamChosen == "Toronto Raptors"
+            else if teamDetailss[awayTeamChosen]?.fullName == "Toronto Raptors"
             {
                 visitingImage.image = UIImage(named:"toronto.png")
                 self.view.addSubview(visitingImage)
             }
-            else if awayTeamChosen == "Chicago Bulls"
+            else if teamDetailss[awayTeamChosen]?.fullName == "Chicago Bulls"
             {
                 visitingImage.image = UIImage(named:"bulls.png")
                 self.view.addSubview(visitingImage)
             }
-            else if awayTeamChosen == "Cleveland Cavaliers"
+            else if teamDetailss[awayTeamChosen]?.fullName == "Cleveland Cavaliers"
             {
                 visitingImage.image = UIImage(named:"cavs.png")
                 self.view.addSubview(visitingImage)
             }
-            else if awayTeamChosen == "Detroit Pistons"
+            else if teamDetailss[awayTeamChosen]?.fullName == "Detroit Pistons"
             {
                 visitingImage.image = UIImage(named:"pistons.png")
                 self.view.addSubview(visitingImage)
             }
-            else if awayTeamChosen == "Indiana Pacers"
+            else if teamDetailss[awayTeamChosen]?.fullName == "Indiana Pacers"
             {
                 visitingImage.image = UIImage(named:"pacers.png")
                 self.view.addSubview(visitingImage)
             }
-            else if awayTeamChosen == "Milwaukee Bucks"
+            else if teamDetailss[awayTeamChosen]?.fullName == "Milwaukee Bucks"
             {
                 visitingImage.image = UIImage(named:"bucks.png")
                 self.view.addSubview(visitingImage)
             }
-            else if awayTeamChosen == "Atlanta Hawks"
+            else if teamDetailss[awayTeamChosen]?.fullName == "Atlanta Hawks"
             {
                 visitingImage.image = UIImage(named:"hawks.png")
                 self.view.addSubview(visitingImage)
             }
-            else if awayTeamChosen == "Charlotte Hornets"
+            else if teamDetailss[awayTeamChosen]?.fullName == "Charlotte Hornets"
             {
                 visitingImage.image = UIImage(named:"hornets.png")
                 self.view.addSubview(visitingImage)
             }
-            else if awayTeamChosen == "Miami Heat"
+            else if teamDetailss[awayTeamChosen]?.fullName == "Miami Heat"
             {
                 visitingImage.image = UIImage(named:"heat.png")
                 self.view.addSubview(visitingImage)
             }
-            else if awayTeamChosen == "Orlando Magic"
+            else if teamDetailss[awayTeamChosen]?.fullName == "Orlando Magic"
             {
                 visitingImage.image = UIImage(named:"magic.png")
                 self.view.addSubview(visitingImage)
             }
-            else if awayTeamChosen == "Washington Wizards"
+            else if teamDetailss[awayTeamChosen]?.fullName == "Washington Wizards"
             {
                 visitingImage.image = UIImage(named:"wizards.png")
                 self.view.addSubview(visitingImage)
             }
-            else if awayTeamChosen == "Golden State Warriors"
+            else if teamDetailss[awayTeamChosen]?.fullName == "Golden State Warriors"
             {
                 visitingImage.image = UIImage(named:"warriors.png")
                 self.view.addSubview(visitingImage)
             }
-            else if awayTeamChosen == "Los Angeles Clippers"
+            else if teamDetailss[awayTeamChosen]?.fullName == "Los Angeles Clippers"
             {
                 visitingImage.image = UIImage(named:"clippers.png")
                 self.view.addSubview(visitingImage)
             }
-            else if awayTeamChosen == "Los Angeles Lakers"
+            else if teamDetailss[awayTeamChosen]?.fullName == "Los Angeles Lakers"
             {
                 visitingImage.image = UIImage(named:"lakers.png")
                 self.view.addSubview(visitingImage)
             }
-            else if awayTeamChosen == "Phoenix Suns"
+            else if teamDetailss[awayTeamChosen]?.fullName == "Phoenix Suns"
             {
                 visitingImage.image = UIImage(named:"suns.png")
                 self.view.addSubview(visitingImage)
             }
-            else if awayTeamChosen == "Sacramento Kings"
+            else if teamDetailss[awayTeamChosen]?.fullName == "Sacramento Kings"
             {
                 visitingImage.image = UIImage(named:"kings.png")
                 self.view.addSubview(visitingImage)
             }
-            else if awayTeamChosen == "Dallas Mavericks"
+            else if teamDetailss[awayTeamChosen]?.fullName == "Dallas Mavericks"
             {
                 visitingImage.image = UIImage(named:"dallas.png")
                 self.view.addSubview(visitingImage)
             }
-            else if awayTeamChosen == "Houston Rockets"
+            else if teamDetailss[awayTeamChosen]?.fullName == "Houston Rockets"
             {
                 visitingImage.image = UIImage(named:"rockets.png")
                 self.view.addSubview(visitingImage)
             }
-            else if awayTeamChosen == "Memphis Grizzilies"
+            else if teamDetailss[awayTeamChosen]?.fullName == "Memphis Grizzilies"
             {
                 visitingImage.image = UIImage(named:"memphis.png")
                 self.view.addSubview(visitingImage)
             }
-            else if awayTeamChosen == "New Orleans Pelicans"
+            else if teamDetailss[awayTeamChosen]?.fullName == "New Orleans Pelicans"
             {
                 visitingImage.image = UIImage(named:"pelicans.png")
                 self.view.addSubview(visitingImage)
             }
-            else if awayTeamChosen == "San Antonio Spurs"
+            else if teamDetailss[awayTeamChosen]?.fullName == "San Antonio Spurs"
             {
                 visitingImage.image = UIImage(named:"spurs.png")
                 self.view.addSubview(visitingImage)
             }
-            else if awayTeamChosen == "Denver Nuggets"
+            else if teamDetailss[awayTeamChosen]?.fullName == "Denver Nuggets"
             {
                 visitingImage.image = UIImage(named:"nuggets.png")
                 self.view.addSubview(visitingImage)
             }
-            else if awayTeamChosen == "Minnesota Timberwolves"
+            else if teamDetailss[awayTeamChosen]?.fullName == "Minnesota Timberwolves"
             {
                 visitingImage.image = UIImage(named:"timberwolves.png")
                 self.view.addSubview(visitingImage)
             }
-            else if awayTeamChosen == "Oklahoma Thunder"
+            else if teamDetailss[awayTeamChosen]?.fullName == "Oklahoma Thunder"
             {
                 visitingImage.image = UIImage(named:"thunder.png")
                 self.view.addSubview(visitingImage)
             }
-            else if awayTeamChosen == "Portland Trail Blaizers"
+            else if teamDetailss[awayTeamChosen]?.fullName == "Portland Trail Blaizers"
             {
                 visitingImage.image = UIImage(named:"blazers.png")
                 self.view.addSubview(visitingImage)
             }
-            else if awayTeamChosen == "Utah Jazz"
+            else if teamDetailss[awayTeamChosen]?.fullName == "Utah Jazz"
             {
                 visitingImage.image = UIImage(named:"jazz.png")
                 self.view.addSubview(visitingImage)
@@ -434,11 +467,13 @@ class SimulatorVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
     {
         if component == homeComponent
         {
-            return NBA_Data_Home[row]
+            let name = teamDetailss[NBA_Data_Home[row]]?.fullName
+            return name
         }
         else
         {
-            return NBA_Data_Away[row]
+            let name = teamDetailss[NBA_Data_Away[row]]?.fullName
+            return name
         }
     }
     
@@ -447,8 +482,8 @@ class SimulatorVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
         if segue.identifier == "simulatorResultSegue"
         {
             let SRVC = segue.destination as! SimulatorResultVC
-            SRVC.TeamChosen = self.TeamChosen
-            SRVC.awayTeamChosen = self.awayTeamChosen
+            SRVC.TeamChosen = (self.teamDetailss[TeamChosen]?.fullName)!
+            SRVC.awayTeamChosen = (self.teamDetailss[awayTeamChosen]?.fullName)!
             SRVC.homeScore = self.homeScore
             SRVC.visitingScore = self.visitingScore
         }

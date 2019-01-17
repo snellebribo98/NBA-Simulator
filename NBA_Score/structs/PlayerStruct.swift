@@ -8,17 +8,9 @@
 
 import UIKit
 
-struct PlayersStats: Codable
+struct TempPlayersStats: Codable
 {
-    var _internal: InternalTest3
     var league: Standard3
-}
-
-struct InternalTest3: Codable
-{
-    var pubDateTime: String
-    var xslt: String
-    var eventName: String
 }
 
 struct Standard3: Codable
@@ -34,10 +26,10 @@ struct Data: Codable
 
 struct Stats: Codable
 {
-    var latest: Latest
+    var latest: PlayerStats
 }
 
-struct Latest: Codable
+struct PlayerStats: Codable
 {
     var ppg: String
     var apg: String
@@ -52,4 +44,37 @@ struct Latest: Codable
     var ftm: String
     var fta: String
     var gamesPlayed: String
+    
+    var overallRating: Double {
+        var rating: Double?
+        if ((Double(ftm)!/Double(fta)!) * 100) - 75 == Double.nan || ((Double(fgm)!/Double(fga)!) * 100) - 45 == Double.nan
+        {
+            rating = (Double(ppg)! * 1.5) + (Double(apg)! * 2) + (Double(topg)! * -3) + (Double(spg)! * 5) + (Double(bpg)! * 5) + (Double(offReb)! * 2) + (Double(defReb)! * 2)
+        }
+        else
+        {
+            rating = (Double(ppg)! * 1.5) + (Double(apg)! * 2) + (Double(topg)! * -3) + (Double(spg)! * 5) + (Double(bpg)! * 5) + (Double(offReb)! * 2) + (Double(defReb)! * 2) + (((Double(fgm)!/Double(fga)!) * 100) - 45) + (((Double(ftm)!/Double(fta)!) * 100) - 75)
+        }
+        return rating!
+    }
+    
+    var overallRatingWeighted: Double {
+        return overallRating * ((100 / 240 * Double(mpg)!) / 100)
+    }
+    
+    var defensiveRating: Double {
+        return (Double(ppg)! * 1) + (Double(apg)! * 1) + (Double(topg)! * -1.5) + (Double(spg)! * 10) + (Double(bpg)! * 10) + (Double(offReb)! * 1) + (Double(defReb)! * 5)
+    }
+    
+    var defensiveRatingWeighted: Double {
+        return defensiveRating * ((100 / 240 * Double(mpg)!) / 100)
+    }
+
+    var offensiveRating: Double {
+        return (Double(ppg)! * 2.5) + (Double(apg)! * 3) + (Double(topg)! * -4) + (Double(spg)! * 2.5) + (Double(bpg)! * 2.5) + (Double(offReb)! * 10) + (Double(defReb)! * 1)
+    }
+    
+    var offensiveRatingWeighted: Double {
+        return offensiveRating * ((100 / 240 * Double(mpg)!) / 100)
+    }
 }

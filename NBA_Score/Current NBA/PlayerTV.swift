@@ -11,14 +11,13 @@ import UIKit
 class PlayerTV: UITableViewController
 {
     var playerList: [Player]?
-    var playerStatss: [PlayersStats]?
+    var playerStatss: [TempPlayersStats]?
     
     @IBOutlet var playerTableView: UITableView!
     
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        print("Stats: ", playerStatss?.count)
         print("Players:", playerList!.count)
     }
     
@@ -42,7 +41,7 @@ class PlayerTV: UITableViewController
         {
             let ip = playerTableView.indexPathForSelectedRow
             let PDVC = segue.destination as! PlayerDetailVC
-//            PDVC.teamDetails = teamDetailss[ip!.row]
+//            PDVC.playerList = Array(playerList.values)[ip!.row]
         }
     }
     
