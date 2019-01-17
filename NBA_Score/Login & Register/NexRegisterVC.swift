@@ -278,7 +278,7 @@ class NextRegisterVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     
     func submitAccount(email: String?, password: String?, firstName: String?, lastName: String?, username: String?, CountryName: String?, NBA_Team: String?)
     {
-        let url = URL(string: "https://ide50-brianvdvelde.cs50.io:8080/users")!
+        let url = URL(string: "http://127.0.0.1:5000/users")!
         var request = URLRequest(url: url)
         request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
         request.httpMethod = "POST"

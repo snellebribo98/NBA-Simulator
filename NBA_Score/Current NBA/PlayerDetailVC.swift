@@ -32,13 +32,14 @@ class PlayerDetailVC: UIViewController
     
     @IBOutlet weak var TeamImage: UIImageView!
     
-    var playerList: [Player]?
+    var playerList: Player?
     var TeamChosen: String?
     
     override func viewDidLoad()
     {
         super.viewDidLoad()
         updateUI()
+        print(playerList)
     }
     
     func updateUI()

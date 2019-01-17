@@ -11,7 +11,6 @@ import UIKit
 class PlayerTV: UITableViewController
 {
     var playerList: [Player]?
-    var playerStatss: [TempPlayersStats]?
     
     @IBOutlet var playerTableView: UITableView!
     
@@ -41,7 +40,7 @@ class PlayerTV: UITableViewController
         {
             let ip = playerTableView.indexPathForSelectedRow
             let PDVC = segue.destination as! PlayerDetailVC
-//            PDVC.playerList = Array(playerList.values)[ip!.row]
+            PDVC.playerList = playerList![ip!.row]
         }
     }
     

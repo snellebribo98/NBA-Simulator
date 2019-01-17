@@ -47,9 +47,15 @@ struct PlayerStats: Codable
     
     var overallRating: Double {
         var rating: Double?
-        if ((Double(ftm)!/Double(fta)!) * 100) - 75 == Double.nan || ((Double(fgm)!/Double(fga)!) * 100) - 45 == Double.nan
+        if ((Double(ftm)!/Double(fta)!) * 100) - 75 == Double.nan
         {
-            rating = (Double(ppg)! * 1.5) + (Double(apg)! * 2) + (Double(topg)! * -3) + (Double(spg)! * 5) + (Double(bpg)! * 5) + (Double(offReb)! * 2) + (Double(defReb)! * 2)
+            print("Hier")
+            rating = (Double(ppg)! * 1.5) + (Double(apg)! * 2) + (Double(topg)! * -3) + (Double(spg)! * 5) + (Double(bpg)! * 5) + (Double(offReb)! * 2) + (Double(defReb)! * 2) + (((Double(fgm)!/Double(fga)!) * 100) - 45)
+        }
+        else if ((Double(fgm)!/Double(fga)!) * 100) - 45 == Double.nan
+        {
+            print("Hier2")
+            rating = (Double(ppg)! * 1.5) + (Double(apg)! * 2) + (Double(topg)! * -3) + (Double(spg)! * 5) + (Double(bpg)! * 5) + (Double(offReb)! * 2) + (Double(defReb)! * 2) + (((Double(ftm)!/Double(fta)!) * 100) - 75)
         }
         else
         {

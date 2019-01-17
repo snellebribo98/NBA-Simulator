@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="TdC-0m-dh6">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="TdC-0m-dh6">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -134,6 +134,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j32-We-WsR">
                                 <rect key="frame" x="75" y="250" width="225" height="30"/>
                                 <color key="backgroundColor" red="0.99483889250000002" green="0.18831939319999999" blue="0.1210422682" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Simulator"/>
                                 <connections>
@@ -143,8 +144,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Yc-Wo-1fI">
                                 <rect key="frame" x="75" y="305" width="225" height="30"/>
                                 <color key="backgroundColor" red="0.99483889250000002" green="0.18831939319999999" blue="0.1210422682" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="NBA Friend Poll"/>
+                                <state key="normal" title="NBA Leaderboard"/>
                                 <connections>
                                     <segue destination="VZ4-IY-HZg" kind="show" id="SGD-zD-oYt"/>
                                 </connections>
@@ -158,46 +160,64 @@
                                     <segue destination="NgH-db-w7c" kind="unwind" unwindAction="unwindToLoginWithSegue:" id="ymt-3A-mrC"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="smits.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="hLW-mc-hGy">
-                                <rect key="frame" x="6" y="470" width="363" height="192"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="363" id="dtC-2c-FXn"/>
-                                    <constraint firstAttribute="height" constant="192" id="uzB-pP-R0a"/>
-                                </constraints>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lua-QG-8eK">
                                 <rect key="frame" x="75" y="195" width="225" height="30"/>
                                 <color key="backgroundColor" red="0.99483889250000002" green="0.18831939319999999" blue="0.1210422682" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Current NBA"/>
+                                <state key="normal" title="NBA Encyclopedia"/>
                                 <connections>
                                     <segue destination="CXq-35-4Mi" kind="show" identifier="currentSegue" id="dVu-y8-yia"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oAX-97-bVv">
-                                <rect key="frame" x="16" y="52" width="343" height="115"/>
-                                <string key="text">Welcome to the most EPIC up to date NBA App. In this menu you can select from numerous options. First you can simulate outcomes between real life NBA teams or your own teams. Second you can look up the current NBA players, teams and their performance. Third you can create your own team. And last but not least you can create a competition with your friend were you pick the team to win in real life NBA games and win prices!</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to the most EPIC up to date NBA App. " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oAX-97-bVv">
+                                <rect key="frame" x="100" y="52" width="175" height="72"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="celtics.png" translatesAutoresizingMaskIntoConstraints="NO" id="VYy-YC-cT6">
+                                <rect key="frame" x="12" y="36" width="75" height="75"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="75" id="0gt-SQ-Zmo"/>
+                                    <constraint firstAttribute="width" constant="75" id="psP-Te-MIZ"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lakers.png" translatesAutoresizingMaskIntoConstraints="NO" id="Zfr-jt-Lcp">
+                                <rect key="frame" x="288" y="36" width="75" height="75"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="75" id="g6S-zj-GYI"/>
+                                    <constraint firstAttribute="height" constant="75" id="i68-hy-vkh"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="smits.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="hLW-mc-hGy">
+                                <rect key="frame" x="0.0" y="520" width="375" height="225"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="375" id="pbh-DS-71T"/>
+                                    <constraint firstAttribute="height" constant="225" id="qJl-ia-rZ7"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="Zfr-jt-Lcp" firstAttribute="top" secondItem="rga-pr-Byl" secondAttribute="top" constant="16" id="206-B2-g8U"/>
                             <constraint firstItem="oAX-97-bVv" firstAttribute="top" secondItem="rga-pr-Byl" secondAttribute="top" constant="32" id="31b-rO-vMV"/>
                             <constraint firstItem="rga-pr-Byl" firstAttribute="trailing" secondItem="I4A-wF-Je9" secondAttribute="trailing" constant="16" id="5Ae-l9-0Wj"/>
                             <constraint firstItem="j32-We-WsR" firstAttribute="top" secondItem="rga-pr-Byl" secondAttribute="top" constant="230" id="D2q-Sv-7WV"/>
-                            <constraint firstItem="rga-pr-Byl" firstAttribute="trailing" secondItem="hLW-mc-hGy" secondAttribute="trailing" constant="6" id="G5J-Oe-3ls"/>
-                            <constraint firstItem="oAX-97-bVv" firstAttribute="leading" secondItem="rga-pr-Byl" secondAttribute="leading" constant="16" id="HTx-Un-1br"/>
+                            <constraint firstItem="rga-pr-Byl" firstAttribute="trailing" secondItem="hLW-mc-hGy" secondAttribute="trailing" id="GOp-6t-vNV"/>
+                            <constraint firstItem="oAX-97-bVv" firstAttribute="leading" secondItem="rga-pr-Byl" secondAttribute="leading" constant="100" id="HTx-Un-1br"/>
                             <constraint firstItem="j32-We-WsR" firstAttribute="leading" secondItem="rga-pr-Byl" secondAttribute="leading" constant="75" id="IRo-pU-uFv"/>
-                            <constraint firstItem="rga-pr-Byl" firstAttribute="trailing" secondItem="oAX-97-bVv" secondAttribute="trailing" constant="16" id="J6h-32-YHR"/>
+                            <constraint firstItem="rga-pr-Byl" firstAttribute="trailing" secondItem="oAX-97-bVv" secondAttribute="trailing" constant="100" id="J6h-32-YHR"/>
+                            <constraint firstItem="hLW-mc-hGy" firstAttribute="top" secondItem="rga-pr-Byl" secondAttribute="top" constant="500" id="Mif-SV-0co"/>
+                            <constraint firstItem="rga-pr-Byl" firstAttribute="trailing" secondItem="Zfr-jt-Lcp" secondAttribute="trailing" constant="12" id="OSM-Tt-osj"/>
                             <constraint firstItem="rga-pr-Byl" firstAttribute="trailing" secondItem="j32-We-WsR" secondAttribute="trailing" constant="75" id="PZi-an-k2I"/>
                             <constraint firstItem="rga-pr-Byl" firstAttribute="trailing" secondItem="9Yc-Wo-1fI" secondAttribute="trailing" constant="75" id="RXw-bJ-aJp"/>
                             <constraint firstItem="9Yc-Wo-1fI" firstAttribute="leading" secondItem="rga-pr-Byl" secondAttribute="leading" constant="75" id="Ra2-pE-Agn"/>
+                            <constraint firstItem="hLW-mc-hGy" firstAttribute="leading" secondItem="rga-pr-Byl" secondAttribute="leading" id="RcK-8C-QUx"/>
+                            <constraint firstItem="VYy-YC-cT6" firstAttribute="top" secondItem="rga-pr-Byl" secondAttribute="top" constant="16" id="RrP-s6-3Vd"/>
                             <constraint firstItem="lua-QG-8eK" firstAttribute="top" secondItem="rga-pr-Byl" secondAttribute="top" constant="175" id="WZC-3Q-Tfq"/>
                             <constraint firstItem="9Yc-Wo-1fI" firstAttribute="top" secondItem="rga-pr-Byl" secondAttribute="top" constant="285" id="YlJ-jm-Rxt"/>
-                            <constraint firstItem="hLW-mc-hGy" firstAttribute="leading" secondItem="rga-pr-Byl" secondAttribute="leading" constant="6" id="c5Y-M0-T0V"/>
-                            <constraint firstItem="hLW-mc-hGy" firstAttribute="top" secondItem="rga-pr-Byl" secondAttribute="top" constant="450" id="gFR-lJ-VFw"/>
+                            <constraint firstItem="VYy-YC-cT6" firstAttribute="leading" secondItem="rga-pr-Byl" secondAttribute="leading" constant="12" id="aEF-27-pPs"/>
                             <constraint firstItem="rga-pr-Byl" firstAttribute="trailing" secondItem="lua-QG-8eK" secondAttribute="trailing" constant="75" id="gxJ-85-Cef"/>
                             <constraint firstItem="lua-QG-8eK" firstAttribute="leading" secondItem="rga-pr-Byl" secondAttribute="leading" constant="75" id="l0V-WK-lXy"/>
                             <constraint firstItem="rga-pr-Byl" firstAttribute="bottom" secondItem="I4A-wF-Je9" secondAttribute="bottom" constant="32" id="m5c-2J-Bfk"/>
@@ -439,6 +459,7 @@
                         <outlet property="homeOffenseLabel" destination="ASo-7C-Lzg" id="G89-ss-RJz"/>
                         <outlet property="homeOveralLabel" destination="Bz0-h6-oJg" id="Ezs-l4-0wP"/>
                         <outlet property="homePicker" destination="yMV-ar-SNw" id="hzw-wA-EZc"/>
+                        <outlet property="simulateButton" destination="Pyg-xw-FAf" id="WQb-Vo-l0z"/>
                         <outlet property="visitingDefenseLabel" destination="oWS-Rk-Ve4" id="VQn-op-pdm"/>
                         <outlet property="visitingImage" destination="4UZ-Q5-JhV" id="ySl-cz-7Jc"/>
                         <outlet property="visitingOffenseLabel" destination="SVI-6V-AeE" id="0IQ-cL-LiD"/>
@@ -491,7 +512,7 @@
                                 <rect key="frame" x="75" y="145" width="225" height="30"/>
                                 <color key="backgroundColor" red="0.99483889250000002" green="0.18831939319999999" blue="0.1210422682" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Select games"/>
+                                <state key="normal" title="Select games for tomorrow"/>
                                 <connections>
                                     <segue destination="zqp-BB-sRw" kind="show" id="zMb-GR-fIz"/>
                                 </connections>
@@ -1819,12 +1840,14 @@
     </scenes>
     <resources>
         <image name="celtics.ico" width="30" height="30"/>
+        <image name="celtics.png" width="1200" height="1333"/>
         <image name="lakers.ico" width="30" height="30"/>
+        <image name="lakers.png" width="266" height="165"/>
         <image name="nba teams.jpg" width="1920" height="1080"/>
         <image name="nba-logo.png" width="369" height="834"/>
         <image name="smits.jpg" width="800" height="450"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="glF-T3-qxs"/>
+        <segue reference="0KO-ud-IvE"/>
     </inferredMetricsTieBreakers>
 </document>

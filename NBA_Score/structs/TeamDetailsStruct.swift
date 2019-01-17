@@ -60,7 +60,6 @@ struct Team: Codable {
         var totalDefensive = 0.0
         for player in players! {
             if player.stats != nil {
-                print("HOIIIII")
                 totalDefensive += player.stats!.defensiveRating
             }
         }

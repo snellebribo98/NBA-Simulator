@@ -22,11 +22,9 @@ class SimulatorVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
     @IBOutlet weak var homeDefenseLabel: UILabel!
     @IBOutlet weak var homeOveralLabel: UILabel!
     @IBOutlet weak var homePicker: UIPickerView!
-    
-//    private var NBA_Data_Home = ["Boston Celtics", "Brooklyn Nets", "New York Knicks", "Philadelphia 76ers", "Toronto Raptors", "Chicago Bulls", "Cleveland Cavaliers", "Detroit Pistons", "Indiana Pacers", "Milwaukee Bucks", "Atlanta Hawks", "Charlotte Hornets", "Miami Heat", "Orlando Magic", "Washington Wizards", "Golden State Warriors", "Los Angeles Clippers", "Los Angeles Lakers", "Phoenix Suns", "Sacramento Kings", "Dallas Mavericks", "Houston Rockets", "Memphis Grizzilies", "New Orleans Pelicans", "San Antonio Spurs", "Denver Nuggets", "Minnesota Timberwolves", "Oklahoma Thunder", "Portland Trail Blaizers", "Utah Jazz"]
-//
-//    private var NBA_Data_Away = ["Boston Celtics", "Brooklyn Nets", "New York Knicks", "Philadelphia 76ers", "Toronto Raptors", "Chicago Bulls", "Cleveland Cavaliers", "Detroit Pistons", "Indiana Pacers", "Milwaukee Bucks", "Atlanta Hawks", "Charlotte Hornets", "Miami Heat", "Orlando Magic", "Washington Wizards", "Golden State Warriors", "Los Angeles Clippers", "Los Angeles Lakers", "Phoenix Suns", "Sacramento Kings", "Dallas Mavericks", "Houston Rockets", "Memphis Grizzilies", "New Orleans Pelicans", "San Antonio Spurs", "Denver Nuggets", "Minnesota Timberwolves", "Oklahoma Thunder", "Portland Trail Blaizers", "Utah Jazz"]
 
+    @IBOutlet weak var simulateButton: UIButton!
+    
     private var NBA_Data_Home = [String]()
     private var NBA_Data_Away = [String]()
     
@@ -35,61 +33,52 @@ class SimulatorVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
     
     var teamDetailss = [String: Team]()
     
+    var homeScore: Int = 0
+    var visitingScore: Int = 0
+    
+    var TeamChosen: String = ""
+    var awayTeamChosen: String = ""
+    
+    var myTimer: Timer!
+    
+    @IBAction func simulateGame(_ sender: Any)
+    {
+            self.simulator()
+    }
+    
+    override func viewDidLoad()
+    {
+        super.viewDidLoad()
+        
+//        simulateButton.isEnabled = false
+        
+        homePicker.dataSource = self
+        homePicker.delegate = self
+        
+        getNums()
+        TeamChosen = NBA_Data_Home[0]
+        awayTeamChosen = NBA_Data_Away[0]
+        simulator()
+    }
+    
     func getNums()
     {
-        NBA_Data_Home.removeAll()
-        NBA_Data_Away.removeAll()
         for teamdetail in teamDetailss
         {
             NBA_Data_Away.append(teamdetail.key)
             NBA_Data_Home.append(teamdetail.key)
         }
-    }
-    
-    var homeScore: Int = 0
-    var visitingScore: Int = 0
-    
-    var TeamChosen: String = "Boston Celtics"
-    var awayTeamChosen: String = "Boston Celtics"
-    
-    @IBAction func simulateGame(_ sender: Any)
-    {
-        simulator()
-    }
-    
-    
-    override func viewDidLoad()
-    {
-        super.viewDidLoad()
-        homePicker.dataSource = self
-        homePicker.delegate = self
-        getNums()
-        simulator()
+        print(NBA_Data_Away)
     }
     
     func simulator()
     {
-//        let HO = teamDetailss[TeamChosen]?.offensiveRating
-//        let HD = teamDetailss[TeamChosen]?.defensiveRating
-//        let H = teamDetailss[TeamChosen]?.overalRating
-//        let VO = teamDetailss[awayTeamChosen]?.offensiveRating
-//        let VD = teamDetailss[awayTeamChosen]?.defensiveRating
-//        let V = teamDetailss[awayTeamChosen]?.overalRating
-        let HO: Double? = 0
-        let HD: Double? = 0
-        let H: Double? = 0
-        let VO: Double? = 0
-        let VD: Double? = 0
-        let V: Double? = 0
-        
-//
-//        visitingOffenseLabel.text = String((VO)!)
-//        visitingDefenseLabel.text = String((VD)!)
-//        visitingTotalLabel.text = String((V)!)
-//
-//        homeOffenseLabel.text = String((HO)!)
-//        homeDefenseLabel.text = String((HD)!)
-//        homeOveralLabel.text = String((H)!)
+        let HO = teamDetailss[TeamChosen]?.offensiveRating
+        let HD = teamDetailss[TeamChosen]?.defensiveRating
+        let H = teamDetailss[TeamChosen]?.overalRating
+        let VO = teamDetailss[awayTeamChosen]?.offensiveRating
+        let VD = teamDetailss[awayTeamChosen]?.defensiveRating
+        let V = teamDetailss[awayTeamChosen]?.overalRating
         
         let homeSuck = Int.random(in: 1 ... 5)
         if homeSuck == 5
@@ -131,7 +120,6 @@ class SimulatorVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
     {
         if component == homeComponent
         {
-            print(NBA_Data_Home)
             return NBA_Data_Home.count
         }
         else
@@ -230,7 +218,7 @@ class SimulatorVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
                 homeImage.image = UIImage(named:"warriors.png")
                 self.view.addSubview(homeImage)
             }
-            else if teamDetailss[TeamChosen]?.fullName == "Los Angeles Clippers"
+            else if teamDetailss[TeamChosen]?.fullName == "LA Clippers"
             {
                 homeImage.image = UIImage(named:"clippers.png")
                 self.view.addSubview(homeImage)
@@ -285,12 +273,12 @@ class SimulatorVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
                 homeImage.image = UIImage(named:"timberwolves.png")
                 self.view.addSubview(homeImage)
             }
-            else if teamDetailss[TeamChosen]?.fullName == "Oklahoma Thunder"
+            else if teamDetailss[TeamChosen]?.fullName == "Oklahoma City Thunder"
             {
                 homeImage.image = UIImage(named:"thunder.png")
                 self.view.addSubview(homeImage)
             }
-            else if teamDetailss[TeamChosen]?.fullName == "Portland Trail Blaizers"
+            else if teamDetailss[TeamChosen]?.fullName == "Portland Trail Blazers"
             {
                 homeImage.image = UIImage(named:"blazers.png")
                 self.view.addSubview(homeImage)
@@ -389,7 +377,7 @@ class SimulatorVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
                 visitingImage.image = UIImage(named:"warriors.png")
                 self.view.addSubview(visitingImage)
             }
-            else if teamDetailss[awayTeamChosen]?.fullName == "Los Angeles Clippers"
+            else if teamDetailss[awayTeamChosen]?.fullName == "LA Clippers"
             {
                 visitingImage.image = UIImage(named:"clippers.png")
                 self.view.addSubview(visitingImage)
@@ -444,12 +432,12 @@ class SimulatorVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
                 visitingImage.image = UIImage(named:"timberwolves.png")
                 self.view.addSubview(visitingImage)
             }
-            else if teamDetailss[awayTeamChosen]?.fullName == "Oklahoma Thunder"
+            else if teamDetailss[awayTeamChosen]?.fullName == "Oklahoma City Thunder"
             {
                 visitingImage.image = UIImage(named:"thunder.png")
                 self.view.addSubview(visitingImage)
             }
-            else if teamDetailss[awayTeamChosen]?.fullName == "Portland Trail Blaizers"
+            else if teamDetailss[awayTeamChosen]?.fullName == "Portland Trail Blazers"
             {
                 visitingImage.image = UIImage(named:"blazers.png")
                 self.view.addSubview(visitingImage)
@@ -460,6 +448,12 @@ class SimulatorVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
                 self.view.addSubview(visitingImage)
             }
         }
+        
+//        if component == homeComponent && NBA_Data_Home[row] != "select a team" {
+//            if component == awayComponent && NBA_Data_Away[row] != "select a team" {
+//                simulateButton.isEnabled = true
+//            }
+//        }
 
     }
     
@@ -472,8 +466,12 @@ class SimulatorVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
         }
         else
         {
-            let name = teamDetailss[NBA_Data_Away[row]]?.fullName
-            return name
+            if NBA_Data_Away[row] == "Select a Team" {
+                return NBA_Data_Away[0]
+            } else {
+                let name = teamDetailss[NBA_Data_Away[row]]?.fullName
+                return name
+            }
         }
     }
     

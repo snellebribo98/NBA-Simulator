@@ -51,8 +51,8 @@
 		F324F29821CEA1E300806ABC /* memphis.png in Resources */ = {isa = PBXBuildFile; fileRef = F324F29721CEA1E300806ABC /* memphis.png */; };
 		F324F29A21CEA1EF00806ABC /* rockets.png in Resources */ = {isa = PBXBuildFile; fileRef = F324F29921CEA1EF00806ABC /* rockets.png */; };
 		F324F29C21CEA1FA00806ABC /* suns.png in Resources */ = {isa = PBXBuildFile; fileRef = F324F29B21CEA1FA00806ABC /* suns.png */; };
-		F324F29E21CECCC700806ABC /* LoginStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = F324F29D21CECCC700806ABC /* LoginStruct.swift */; };
 		F32BCBF821EF2761001006EC /* pickTeamVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32BCBF721EF2761001006EC /* pickTeamVC.swift */; };
+		F32BCBFA21F07905001006EC /* loginStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32BCBF921F07905001006EC /* loginStruct.swift */; };
 		F34546F621E761E00015EEE3 /* TeamTV.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34546F521E761E00015EEE3 /* TeamTV.swift */; };
 		F34546F921E767200015EEE3 /* LeaderboardModesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34546F821E7671F0015EEE3 /* LeaderboardModesVC.swift */; };
 		F34546FB21E779280015EEE3 /* TeamCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34546FA21E779280015EEE3 /* TeamCell.swift */; };
@@ -115,8 +115,8 @@
 		F324F29721CEA1E300806ABC /* memphis.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = memphis.png; path = "../../../../NBA App/memphis.png"; sourceTree = "<group>"; };
 		F324F29921CEA1EF00806ABC /* rockets.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = rockets.png; path = "../../../../NBA App/rockets.png"; sourceTree = "<group>"; };
 		F324F29B21CEA1FA00806ABC /* suns.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = suns.png; path = "../../../../NBA App/suns.png"; sourceTree = "<group>"; };
-		F324F29D21CECCC700806ABC /* LoginStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginStruct.swift; path = /Users/brianvandevelde/Desktop/Apps/NBA_Score/NBA_Score/LoginStruct.swift; sourceTree = "<absolute>"; };
 		F32BCBF721EF2761001006EC /* pickTeamVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pickTeamVC.swift; sourceTree = "<group>"; };
+		F32BCBF921F07905001006EC /* loginStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loginStruct.swift; sourceTree = "<group>"; };
 		F34546F521E761E00015EEE3 /* TeamTV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamTV.swift; sourceTree = "<group>"; };
 		F34546F821E7671F0015EEE3 /* LeaderboardModesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardModesVC.swift; sourceTree = "<group>"; };
 		F34546FA21E779280015EEE3 /* TeamCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamCell.swift; sourceTree = "<group>"; };
@@ -149,7 +149,6 @@
 				F324F20621CD28D800806ABC /* LoginVC.swift */,
 				F324F21A21CD342B00806ABC /* RegisterVC.swift */,
 				F324F21E21CE440100806ABC /* NexRegisterVC.swift */,
-				F324F29D21CECCC700806ABC /* LoginStruct.swift */,
 			);
 			path = "Login & Register";
 			sourceTree = "<group>";
@@ -270,6 +269,7 @@
 				F3CAA82921E4D67D00FEC5A9 /* NBAPlayersStruct.swift */,
 				F3CAA82521E4D44400FEC5A9 /* PlayerStruct.swift */,
 				F3CAA82D21E4E80D00FEC5A9 /* ScheduleStruct.swift */,
+				F32BCBF921F07905001006EC /* loginStruct.swift */,
 			);
 			path = structs;
 			sourceTree = "<group>";
@@ -389,13 +389,13 @@
 				F324F21B21CD342B00806ABC /* RegisterVC.swift in Sources */,
 				F3CAA82621E4D44400FEC5A9 /* PlayerStruct.swift in Sources */,
 				F34546FF21E78CBA0015EEE3 /* PlayerTV.swift in Sources */,
+				F32BCBFA21F07905001006EC /* loginStruct.swift in Sources */,
 				F310428121D6A55600CA20CD /* modesVC.swift in Sources */,
 				F34546F621E761E00015EEE3 /* TeamTV.swift in Sources */,
 				F3CAA82A21E4D67D00FEC5A9 /* NBAPlayersStruct.swift in Sources */,
 				F324F20721CD28D800806ABC /* LoginVC.swift in Sources */,
 				F310428721D7ED6A00CA20CD /* SimulatorVC.swift in Sources */,
 				F324F20521CD28D800806ABC /* AppDelegate.swift in Sources */,
-				F324F29E21CECCC700806ABC /* LoginStruct.swift in Sources */,
 				F345470121E78CDA0015EEE3 /* PlayerCell.swift in Sources */,
 				F310427D21D6577500CA20CD /* TeamDetailVC.swift in Sources */,
 				F324F21F21CE440100806ABC /* NexRegisterVC.swift in Sources */,

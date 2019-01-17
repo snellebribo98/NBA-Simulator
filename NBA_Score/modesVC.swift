@@ -15,8 +15,6 @@ class modesVC: UIViewController
     var idList = [String: String]()
     var teamDetailss = [String: Team]()
     
-    var Boston = [String]()
-    
     var activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView()
     
     override func viewDidLoad()
@@ -141,7 +139,7 @@ class modesVC: UIViewController
                 }
             }
             completion(true)
-            print(self.idList)
+//            print(self.idList)
         }
         task.resume()
         
