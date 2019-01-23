@@ -17,18 +17,45 @@ class modesVC: UIViewController
     
     var activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView()
     
+    @IBAction func RefreshButtonTapped(_ sender: Any)
+    {
+        idList.removeAll()
+        teamDetailss.removeAll()
+        
+        startLoading()
+        
+        if idList.isEmpty && teamDetailss.isEmpty
+        {
+            fetchTeams { (success3) -> Void in
+                if success3 {
+                    print("Teams: \(self.teamDetailss.count)")
+                    
+                    self.fetchPlayers { (success) -> Void in
+                        if success {
+                            // print(self.playerList)
+                            
+                            self.fetchPlayerStats(idList: self.idList) { (success2) -> Void in
+                                if success2 {
+                                    DispatchQueue.main.async {
+                                        self.stopLoading()
+                                        
+                                        // print(self.teamDetailss)
+                                    }
+                                    // print(self.playerStatss)
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+        
     override func viewDidLoad()
     {
         super.viewDidLoad()
         
-        activityIndicator.style = .whiteLarge
-        activityIndicator.frame = CGRect(x: 0, y: 0, width: 125, height: 125)
-        activityIndicator.center = self.view.center
-        activityIndicator.hidesWhenStopped = true
-        view.addSubview(activityIndicator)
-        
-        activityIndicator.startAnimating()
-        UIApplication.shared.beginIgnoringInteractionEvents()
+        startLoading()
         
         fetchTeams { (success3) -> Void in
             if success3 {
@@ -40,9 +67,7 @@ class modesVC: UIViewController
                         self.fetchPlayerStats(idList: self.idList) { (success2) -> Void in
                             if success2 {
                                 DispatchQueue.main.async {
-                                    self.activityIndicator.stopAnimating()
-                                    UIApplication.shared.endIgnoringInteractionEvents()
-                                    
+                                    self.stopLoading()
 //                                    print(self.teamDetailss)
                                 }
 //                                print(self.playerStatss)
@@ -54,15 +79,34 @@ class modesVC: UIViewController
         }
     }
     
+    func startLoading()
+    {
+        activityIndicator.style = .whiteLarge
+        activityIndicator.frame = CGRect(x: 0, y: 0, width: 125, height: 125)
+        activityIndicator.center = self.view.center
+        activityIndicator.hidesWhenStopped = true
+        view.addSubview(activityIndicator)
+        
+        activityIndicator.startAnimating()
+        UIApplication.shared.beginIgnoringInteractionEvents()
+    }
+    
+    func stopLoading()
+    {
+        self.activityIndicator.stopAnimating()
+        UIApplication.shared.endIgnoringInteractionEvents()
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?)
     {
         if segue.identifier == "currentSegue"
         {
             let barViewControllers = segue.destination as! UITabBarController
             
+            let teamArray = Array(teamDetailss.values.map{ $0 })
             let navTeam = barViewControllers.viewControllers![1] as! UINavigationController
             let destinationTeamViewController = navTeam.topViewController as! TeamTV
-            destinationTeamViewController.teamDetailss = self.teamDetailss
+            destinationTeamViewController.teamDetailss = teamArray
             
             let navPlayer = barViewControllers.viewControllers![0] as! UINavigationController
             let destinationPlayerViewController = navPlayer.topViewController as! PlayerTV

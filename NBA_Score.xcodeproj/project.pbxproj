@@ -64,6 +64,8 @@
 		F3CAA82A21E4D67D00FEC5A9 /* NBAPlayersStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3CAA82921E4D67D00FEC5A9 /* NBAPlayersStruct.swift */; };
 		F3CAA82E21E4E80D00FEC5A9 /* ScheduleStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3CAA82D21E4E80D00FEC5A9 /* ScheduleStruct.swift */; };
 		F3CAA83021E4F2FF00FEC5A9 /* TeamDetailsStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3CAA82F21E4F2FF00FEC5A9 /* TeamDetailsStruct.swift */; };
+		F3D2C7A621F5EF4700512FBC /* RosterTV.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D2C7A521F5EF4700512FBC /* RosterTV.swift */; };
+		F3D2C7A821F5F57600512FBC /* RosterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D2C7A721F5F57600512FBC /* RosterCell.swift */; };
 		F3F54FC121E62BA50098A55E /* celtics.ico in Resources */ = {isa = PBXBuildFile; fileRef = F3F54FC021E62BA40098A55E /* celtics.ico */; };
 		F3F54FC321E62C4D0098A55E /* lakers.ico in Resources */ = {isa = PBXBuildFile; fileRef = F3F54FC221E62C4D0098A55E /* lakers.ico */; };
 /* End PBXBuildFile section */
@@ -128,6 +130,8 @@
 		F3CAA82921E4D67D00FEC5A9 /* NBAPlayersStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NBAPlayersStruct.swift; sourceTree = "<group>"; };
 		F3CAA82D21E4E80D00FEC5A9 /* ScheduleStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleStruct.swift; sourceTree = "<group>"; };
 		F3CAA82F21E4F2FF00FEC5A9 /* TeamDetailsStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamDetailsStruct.swift; sourceTree = "<group>"; };
+		F3D2C7A521F5EF4700512FBC /* RosterTV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RosterTV.swift; sourceTree = "<group>"; };
+		F3D2C7A721F5F57600512FBC /* RosterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RosterCell.swift; sourceTree = "<group>"; };
 		F3F54FC021E62BA40098A55E /* celtics.ico */ = {isa = PBXFileReference; lastKnownFileType = image.ico; name = celtics.ico; path = ../../../../../Downloads/celtics.ico; sourceTree = "<group>"; };
 		F3F54FC221E62C4D0098A55E /* lakers.ico */ = {isa = PBXFileReference; lastKnownFileType = image.ico; name = lakers.ico; path = ../../../../../Downloads/lakers.ico; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -171,6 +175,8 @@
 				F345470021E78CDA0015EEE3 /* PlayerCell.swift */,
 				F310427C21D6577500CA20CD /* TeamDetailVC.swift */,
 				F386D15221E8AA8D009C8437 /* PlayerDetailVC.swift */,
+				F3D2C7A521F5EF4700512FBC /* RosterTV.swift */,
+				F3D2C7A721F5F57600512FBC /* RosterCell.swift */,
 			);
 			path = "Current NBA";
 			sourceTree = "<group>";
@@ -243,10 +249,10 @@
 				F324F26B21CE9F2B00806ABC /* cavs.png */,
 				F324F25C21CE9CA800806ABC /* nba teams.jpg */,
 				F324F26021CE9CA900806ABC /* nba-logo.png */,
-				F324F26121CE9CA900806ABC /* smits.jpg */,
 				F324F25D21CE9CA900806ABC /* celtics.png */,
 				F324F25F21CE9CA900806ABC /* knicks.png */,
 				F324F25E21CE9CA900806ABC /* nets.png */,
+				F324F26121CE9CA900806ABC /* smits.jpg */,
 				F324F25B21CE9CA800806ABC /* philly.png */,
 				F324F26221CE9CA900806ABC /* toronto.png */,
 			);
@@ -389,6 +395,7 @@
 				F324F21B21CD342B00806ABC /* RegisterVC.swift in Sources */,
 				F3CAA82621E4D44400FEC5A9 /* PlayerStruct.swift in Sources */,
 				F34546FF21E78CBA0015EEE3 /* PlayerTV.swift in Sources */,
+				F3D2C7A621F5EF4700512FBC /* RosterTV.swift in Sources */,
 				F32BCBFA21F07905001006EC /* loginStruct.swift in Sources */,
 				F310428121D6A55600CA20CD /* modesVC.swift in Sources */,
 				F34546F621E761E00015EEE3 /* TeamTV.swift in Sources */,
@@ -400,6 +407,7 @@
 				F310427D21D6577500CA20CD /* TeamDetailVC.swift in Sources */,
 				F324F21F21CE440100806ABC /* NexRegisterVC.swift in Sources */,
 				F386D15321E8AA8D009C8437 /* PlayerDetailVC.swift in Sources */,
+				F3D2C7A821F5F57600512FBC /* RosterCell.swift in Sources */,
 				F3CAA83021E4F2FF00FEC5A9 /* TeamDetailsStruct.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

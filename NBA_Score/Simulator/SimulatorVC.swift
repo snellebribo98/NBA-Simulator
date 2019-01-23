@@ -56,8 +56,8 @@ class SimulatorVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
         homePicker.delegate = self
         
         getNums()
-        TeamChosen = NBA_Data_Home[0]
-        awayTeamChosen = NBA_Data_Away[0]
+        updateLabel(component: 0, row: 0)
+        updateLabel(component: 1, row: 0)
         simulator()
     }
     
@@ -76,6 +76,10 @@ class SimulatorVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
         if component == 0 // homecomponent
         {
             TeamChosen = NBA_Data_Home[row]
+            
+            print("HOME")
+            print("H1", NBA_Data_Home[0])
+            print("H2", TeamChosen)
             
             homeOffenseLabel.text = String((teamDetailss[TeamChosen]?.offensiveRating)!)
             homeDefenseLabel.text = String((teamDetailss[TeamChosen]?.defensiveRating)!)
@@ -191,7 +195,7 @@ class SimulatorVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
                 homeImage.image = UIImage(named:"rockets.png")
                 self.view.addSubview(homeImage)
             }
-            else if teamDetailss[TeamChosen]?.fullName == "Memphis Grizzilies"
+            else if teamDetailss[TeamChosen]?.fullName == "Memphis Grizzlies"
             {
                 homeImage.image = UIImage(named:"memphis.png")
                 self.view.addSubview(homeImage)
@@ -350,7 +354,7 @@ class SimulatorVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
                 visitingImage.image = UIImage(named:"rockets.png")
                 self.view.addSubview(visitingImage)
             }
-            else if teamDetailss[awayTeamChosen]?.fullName == "Memphis Grizzilies"
+            else if teamDetailss[awayTeamChosen]?.fullName == "Memphis Grizzlies"
             {
                 visitingImage.image = UIImage(named:"memphis.png")
                 self.view.addSubview(visitingImage)
@@ -407,13 +411,13 @@ class SimulatorVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
         {
             let HL = min(HO!, HD!, H!) + 10
             let HU = max(HO!, HD!, H!) + 10
-            homeScore = Int(Double.random(in: HL ... HU))
+            homeScore = Int.random(in: HL ... HU)
         }
         else
         {
             let HL = min(HO!, HD!, H!) + 25
             let HU = max(HO!, HD!, H!) + 25
-            homeScore = Int(Double.random(in: HL ... HU))
+            homeScore = Int.random(in: HL ... HU)
         }
         print(homeScore)
         
@@ -422,13 +426,13 @@ class SimulatorVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
         {
             let VL = min(VO!, VD!, V!) + 30
             let VU = max(VO!, VD!, V!) + 30
-            visitingScore = Int(Double.random(in: VL ... VU))
+            visitingScore = Int.random(in: VL ... VU)
         }
         else
         {
             let VL = min(VO!, VD!, V!) + 15
             let VU = max(VO!, VD!, V!) + 15
-            visitingScore = Int(Double.random(in: VL ... VU))
+            visitingScore = Int.random(in: VL ... VU)
         }
         print(visitingScore)
     }
@@ -453,6 +457,7 @@ class SimulatorVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int)
     {
         updateLabel(component: component, row: row)
+        simulator()
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String?

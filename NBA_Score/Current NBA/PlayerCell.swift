@@ -12,4 +12,5 @@ class PlayerCell: UITableViewCell
 {
     @IBOutlet weak var playerLastLabel: UILabel!
     @IBOutlet weak var playerFirstLabel: UILabel!
+    @IBOutlet weak var commaLabel: UILabel!
 }

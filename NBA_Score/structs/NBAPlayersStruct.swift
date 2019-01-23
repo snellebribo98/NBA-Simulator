@@ -20,7 +20,7 @@ struct Standard2: Codable
 
 struct Player: Codable
 {
-    var firstName: String
+    var firstName: String 
     var lastName: String
     var personId: String
     var teamId: String

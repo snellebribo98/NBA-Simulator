@@ -8,16 +8,25 @@
 
 import UIKit
 
-class PlayerTV: UITableViewController
+class PlayerTV: UITableViewController, UISearchBarDelegate
 {
     var playerList: [Player]?
+    var filteredData: [Player]! = []
     
     @IBOutlet var playerTableView: UITableView!
+    @IBOutlet var searchbarPlayer: UISearchBar!
     
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        playerList?.sort(by: {$0.lastName < $1.lastName})
         print("Players:", playerList!.count)
+        
+        playerTableView.dataSource = self
+        playerTableView.delegate = self
+        searchbarPlayer.delegate = self
+        
+        Copy()
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
@@ -31,7 +40,38 @@ class PlayerTV: UITableViewController
         let playerDetail = playerList![indexPath.row]
         cell?.playerLastLabel?.text = playerDetail.lastName
         cell?.playerFirstLabel?.text = playerDetail.firstName
+        
+        if playerDetail.lastName == ""
+        {
+            cell?.commaLabel.isHidden = true
+            cell?.playerLastLabel.isHidden = true
+        }
+        else
+        {
+            cell?.commaLabel.isHidden = false
+            cell?.playerLastLabel.isHidden = false
+        }
+        
         return cell!
+    }
+
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String)
+    {
+        guard !searchText.isEmpty else
+        {
+            playerList = filteredData
+            playerTableView.reloadData()
+            return
+        }
+        playerList = filteredData.filter({ (playerList) -> Bool in
+            playerList.lastName.lowercased().contains(searchText.lowercased())
+        })
+        playerTableView.reloadData()
+    }
+    
+    func Copy()
+    {
+        filteredData = playerList
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?)

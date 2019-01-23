@@ -8,16 +8,24 @@
 
 import UIKit
 
-class TeamTV: UITableViewController
+class TeamTV: UITableViewController, UISearchBarDelegate
 {
-    var teamDetailss = [String: Team]()
     var teamDetail: Team?
+    var teamDetailss = [Team]()
+    var filteredData: [Team]! = []
     
+    @IBOutlet weak var searchbarTeam: UISearchBar!
     @IBOutlet var teamsTableView: UITableView!
     
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        teamDetailss.sort(by: {$0.fullName < $1.fullName})
+        
+        teamsTableView.dataSource = self
+        teamsTableView.delegate = self
+        searchbarTeam.delegate = self
+        Copy()
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
@@ -29,12 +37,32 @@ class TeamTV: UITableViewController
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TeamIdentifier") as? TeamCell
-        let teamDetail = Array(teamDetailss.values)[indexPath.row]
+        let teamDetail = teamDetailss[indexPath.row]
+        
         if teamDetail.isNBAFranchise == true
         {
             cell?.titleLabel?.text = teamDetail.fullName
         }
         return cell!
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String)
+    {
+        guard !searchText.isEmpty else
+        {
+            teamDetailss = filteredData
+            teamsTableView.reloadData()
+            return
+        }
+        teamDetailss = filteredData.filter({ (playerList) -> Bool in
+//            teamDetailss.fullName.lowercased().contains(searchText.lowercased())
+        })
+        teamsTableView.reloadData()
+    }
+    
+    func Copy()
+    {
+        filteredData = teamDetailss
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?)
@@ -43,7 +71,7 @@ class TeamTV: UITableViewController
         {
             let ip = teamsTableView.indexPathForSelectedRow
             let TDVC = segue.destination as! TeamDetailVC
-            TDVC.teamDetails = Array(teamDetailss.values)[ip!.row]
+            TDVC.teamDetails = teamDetailss[ip!.row]
         }
     }
 }

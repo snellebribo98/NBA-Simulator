@@ -33,6 +33,7 @@ struct PlayerStats: Codable
 {
     var ppg: String
     var apg: String
+    var rpg: String
     var mpg: String
     var topg: String
     var spg: String
@@ -45,42 +46,165 @@ struct PlayerStats: Codable
     var fta: String
     var gamesPlayed: String
     
-    var overallRating: Double {
-        var rating: Double?
-        if ((Double(ftm)!/Double(fta)!) * 100) - 75 == Double.nan
-        {
-            print("Hier")
-            rating = (Double(ppg)! * 1.5) + (Double(apg)! * 2) + (Double(topg)! * -3) + (Double(spg)! * 5) + (Double(bpg)! * 5) + (Double(offReb)! * 2) + (Double(defReb)! * 2) + (((Double(fgm)!/Double(fga)!) * 100) - 45)
+    var ftRating: Double {
+        if ((Double(ftm)!/Double(fta)!) * 100) - 76.4 == Double.nan {
+            return 0
         }
-        else if ((Double(fgm)!/Double(fga)!) * 100) - 45 == Double.nan
-        {
-            print("Hier2")
-            rating = (Double(ppg)! * 1.5) + (Double(apg)! * 2) + (Double(topg)! * -3) + (Double(spg)! * 5) + (Double(bpg)! * 5) + (Double(offReb)! * 2) + (Double(defReb)! * 2) + (((Double(ftm)!/Double(fta)!) * 100) - 75)
+        else if Double(fta) == 0.0 {
+            return 0
         }
-        else
-        {
-            rating = (Double(ppg)! * 1.5) + (Double(apg)! * 2) + (Double(topg)! * -3) + (Double(spg)! * 5) + (Double(bpg)! * 5) + (Double(offReb)! * 2) + (Double(defReb)! * 2) + (((Double(fgm)!/Double(fga)!) * 100) - 45) + (((Double(ftm)!/Double(fta)!) * 100) - 75)
+        else {
+            let x = ((Double(ftm)!/Double(fta)!) * 100) - 76.4
+            if x >= 0 {
+                return x
+            }
+            else {
+                return 0
+            }
         }
-        return rating!
     }
     
-    var overallRatingWeighted: Double {
-        return overallRating * ((100 / 240 * Double(mpg)!) / 100)
+    var fgRating: Double {
+        if ((Double(fgm)!/Double(fga)!) * 100) - 46 == Double.nan {
+            return 0
+        }
+        else if Double(fga) == 0.0 {
+            return 0
+        }
+        else {
+            let x = ((Double(fgm)!/Double(fga)!) * 100) - 46
+            if x >= 0 {
+                return x
+            }
+            else {
+                return 0
+            }
+        }
     }
     
-    var defensiveRating: Double {
-        return (Double(ppg)! * 1) + (Double(apg)! * 1) + (Double(topg)! * -1.5) + (Double(spg)! * 10) + (Double(bpg)! * 10) + (Double(offReb)! * 1) + (Double(defReb)! * 5)
+    var offRebpg: Double {
+        if (Double(offReb)! / Double(gamesPlayed)!) == Double.nan {
+            return 0
+        }
+        else if Double(gamesPlayed) == 0.0 {
+            return 0
+        }
+        else {
+            let x = (Double(offReb)! / Double(gamesPlayed)!)
+            if x >= 0 {
+                return x
+            }
+            else {
+                return 0
+            }
+        }
     }
     
-    var defensiveRatingWeighted: Double {
-        return defensiveRating * ((100 / 240 * Double(mpg)!) / 100)
+    var defRebpg: Double {
+        if (Double(defReb)! / Double(gamesPlayed)!) == Double.nan {
+            return 0
+        }
+        else if Double(gamesPlayed) == 0.0 {
+            return 0
+        }
+        else {
+            let x = (Double(defReb)! / Double(gamesPlayed)!)
+            if x >= 0 {
+                return x
+            }
+            else {
+                return 0
+            }
+        }
+    }
+    
+    var mpgRating: Double {
+        if ((100 / 240 * Double(mpg)!) / 100) == Double.nan {
+            return 0
+        }
+        else {
+            let x = ((100 / 240 * Double(mpg)!) / 100)
+            if x >= 0 {
+                return x
+            }
+            else {
+                return 0
+            }
+        }
+    }
+    
+    var overallRating: Int {
+        if (Double(ppg)! * 1.5) + (Double(apg)! * 1.5) + (Double(topg)! * -1) + (Double(spg)! * 2) + (Double(bpg)! * 2) + (offRebpg * 1.5) + (defRebpg * 1.5) + fgRating + ftRating < 0 {
+            return 0
+        }
+        else if Double(mpg) == -1.0 {
+            return 0
+        }
+        else {
+            let x = (Double(ppg)! * 1.5) + (Double(apg)! * 1.5) + (Double(topg)! * -1) + (Double(spg)! * 2) + (Double(bpg)! * 2) + (offRebpg * 1.5) + (defRebpg * 1.5) + fgRating + ftRating
+            let y = Int((x * 1).rounded() / 1)
+            return y
+        }
+    }
+    
+    var overallRatingWeighted: Int {
+        if Double(mpg) == 0.0 {
+            return 0
+        }
+        else {
+            let x = Double(overallRating) * mpgRating
+            let y = Int((x * 1).rounded() / 1)
+            return y
+        }
+    }
+    
+    var defensiveRating: Int {
+        if (Double(ppg)! * 1) + (Double(apg)! * 1) + (Double(topg)! * -2) + (Double(spg)! * 5) + (Double(bpg)! * 5) + (offRebpg * 1) + (defRebpg * 2) < 0 {
+            return 0
+        }
+        else if Double(mpg) == -1.0 {
+            return 0
+        }
+        else {
+            let x = (Double(ppg)! * 1) + (Double(apg)! * 1) + (Double(topg)! * -2) + (Double(spg)! * 5) + (Double(bpg)! * 5) + (offRebpg * 1) + (defRebpg * 2)
+            let y = Int((x * 1).rounded() / 1)
+            return y
+        }
+    }
+    
+    var defensiveRatingWeighted: Int {
+        if Double(mpg) == 0.0 {
+            return 0
+        }
+        else {
+            let x = Double(defensiveRating) * mpgRating
+            let y = Int((x * 1).rounded() / 1)
+            return y
+        }
     }
 
-    var offensiveRating: Double {
-        return (Double(ppg)! * 2.5) + (Double(apg)! * 3) + (Double(topg)! * -4) + (Double(spg)! * 2.5) + (Double(bpg)! * 2.5) + (Double(offReb)! * 10) + (Double(defReb)! * 1)
+    var offensiveRating: Int {
+        if (Double(ppg)! * 2) + (Double(apg)! * 2) + (Double(topg)! * -3) + (Double(spg)! * 1.5) + (Double(bpg)! * 1.5) + (offRebpg * 10) + (defRebpg * 1) < 0 {
+            return 0
+        }
+        else if Double(mpg) == -1.0 {
+            return 0
+        }
+        else {
+            let x = (Double(ppg)! * 2) + (Double(apg)! * 2) + (Double(topg)! * -3) + (Double(spg)! * 1.5) + (Double(bpg)! * 1.5) + (offRebpg * 10) + (defRebpg * 1)
+            let y = Int((x * 1).rounded() / 1)
+            return y
+        }
     }
     
-    var offensiveRatingWeighted: Double {
-        return offensiveRating * ((100 / 240 * Double(mpg)!) / 100)
+    var offensiveRatingWeighted: Int {
+        if Double(mpg) == 0.0 {
+            return 0
+        }
+        else {
+            let x = Double(offensiveRating) * mpgRating
+            let y = Int((x * 1).rounded() / 1)
+            return y
+        }
     }
 }

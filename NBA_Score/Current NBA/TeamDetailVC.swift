@@ -32,6 +32,8 @@ class TeamDetailVC: UIViewController
     {
         super.viewDidLoad()
         updateUI()
+        
+        print(teamDetails)
     }
     
     func updateUI()
@@ -180,7 +182,7 @@ class TeamDetailVC: UIViewController
             TeamImage.image = UIImage(named:"rockets.png")
             self.view.addSubview(TeamImage)
         }
-        else if TeamChosen == "Memphis Grizzilies"
+        else if TeamChosen == "Memphis Grizzlies"
         {
             self.view.backgroundColor = UIColor.init(red:0.19, green:0.40, blue:0.82, alpha:1.0)
             TeamImage.image = UIImage(named:"memphis.png")
@@ -227,6 +229,16 @@ class TeamDetailVC: UIViewController
             self.view.backgroundColor = UIColor.init(red:0.05, green:0.15, blue:0.61, alpha:1.0)
             TeamImage.image = UIImage(named:"jazz.png")
             self.view.addSubview(TeamImage)
+        }
+    }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    {
+        if segue.identifier == "rosterSegue"
+        {
+            let RVC = segue.destination as! RosterTV
+            RVC.playerList = (teamDetails?.players)!
         }
     }
 }

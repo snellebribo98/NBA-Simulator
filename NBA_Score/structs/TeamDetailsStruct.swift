@@ -46,28 +46,28 @@ struct Team: Codable {
         return 0
     }
     
-    var offensiveRating: Double {
-        var totalOffense = 0.0
+    var offensiveRating: Int {
+        var totalOffense = 0
         for player in players! {
             if player.stats != nil {
-                totalOffense += player.stats!.offensiveRating
+                totalOffense += player.stats!.offensiveRatingWeighted
             }
         }
         return totalOffense
     }
     
-    var defensiveRating: Double {
-        var totalDefensive = 0.0
+    var defensiveRating: Int {
+        var totalDefensive = 0
         for player in players! {
             if player.stats != nil {
-                totalDefensive += player.stats!.defensiveRating
+                totalDefensive += player.stats!.defensiveRatingWeighted
             }
         }
         return totalDefensive
     }
     
-    var overalRating: Double {
-        var total = 0.0
+    var overalRating: Int {
+        var total = 0
         for player in players! {
             if player.stats != nil {
                 total += player.stats!.overallRatingWeighted
