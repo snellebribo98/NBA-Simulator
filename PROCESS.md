@@ -38,5 +38,21 @@ Hardcoded my simulator today. Added the score simulator. Implemented a randomize
 I restructered my data today. First I made an empty list in my team struct to load the players there, then I made an empty list in the player struct to load the playerstats there. Furthermore I made my simulator almost complete, first it was hardcoded and now it isn't.
 
 # day 8
+Was sick.
+
+# day 9
+...
+
+# day 10
+...
+
+# day 11
+Improved the player ratings, to make it more realistic. Also found some flaws in the API's, like a player who went to college Germany (there isn't any), so hardcoded it to be "Didn't attend college". Made a searchbar for the player tableview. Did go well, but had an error with the team tableview, will continue on it after the hackathon
+
+# day 12
+Hackathon
+
+# day 14
+Today I made a delay between getting from the simulatorVC to the simulatorResultVC. First it was very simple and easy just to simulate a game between two teams. So I made a alert that takes 2 seconds that shows something like "crunching numbers" and after that performs the segue to the next vc. First the simulate button performed the show segue but now the simulate button will be an action that calls the function alert and then the alert will call perform the segue from vc to vc. I finished the searchbar for the teams today, turned out I made a typo. Also made a searchbar for the roster tableview, exactly the same as the player searchbar. A couple of days ago the player searchbar only searched the lastnames of players, which in my mind is inconvenient if you only know the player by first name, so now the searchbar searches for both the first- and last name. Unfortunately I couldn't figure out how to search for both at the same time (now if you look for lebron james for example you get no result because you look for the whole name), but in my mind that is not necessary because if you already know his first- or last name it is not needed to search for the whole name. Also I made a loading label in de modesVC so the user knows what is going on (a description of it).
 
 
