@@ -8,16 +8,26 @@
 
 import UIKit
 
-class RosterTV: UITableViewController
+class RosterTV: UITableViewController, UISearchBarDelegate
 {
     var playerList = [Player]()
+    var filteredData: [Player]! = []
+
     
     @IBOutlet var rosterTableView: UITableView!
+    @IBOutlet weak var rosterSearchbar: UISearchBar!
     
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        playerList.sort(by: {$0.lastName < $1.lastName})
         print(playerList)
+        
+        rosterTableView.dataSource = self
+        rosterTableView.delegate = self
+        rosterSearchbar.delegate = self
+        
+        Copy()
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
@@ -44,6 +54,26 @@ class RosterTV: UITableViewController
         }
         
         return cell!
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String)
+    {
+        guard !searchText.isEmpty else
+        {
+            playerList = filteredData
+            rosterTableView.reloadData()
+            return
+        }
+        playerList = filteredData.filter({ (playerList) -> Bool in
+            playerList.lastName.lowercased().contains(searchText.lowercased()) || playerList.firstName.lowercased().contains(searchText.lowercased())
+        })
+        
+        rosterTableView.reloadData()
+    }
+    
+    func Copy()
+    {
+        filteredData = playerList
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?)

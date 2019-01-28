@@ -134,14 +134,14 @@ struct PlayerStats: Codable
     }
     
     var overallRating: Int {
-        if (Double(ppg)! * 1.5) + (Double(apg)! * 1.5) + (Double(topg)! * -1) + (Double(spg)! * 2) + (Double(bpg)! * 2) + (offRebpg * 1.5) + (defRebpg * 1.5) + fgRating + ftRating < 0 {
+        if (Double(ppg)! * 2) + (Double(apg)! * 2) + (Double(topg)! * -1) + (Double(spg)! * 3) + (Double(bpg)! * 3) + (offRebpg * 2) + (defRebpg * 2) + fgRating + ftRating < 0 {
             return 0
         }
         else if Double(mpg) == -1.0 {
             return 0
         }
         else {
-            let x = (Double(ppg)! * 1.5) + (Double(apg)! * 1.5) + (Double(topg)! * -1) + (Double(spg)! * 2) + (Double(bpg)! * 2) + (offRebpg * 1.5) + (defRebpg * 1.5) + fgRating + ftRating
+            let x = (Double(ppg)! * 2) + (Double(apg)! * 2) + (Double(topg)! * -1) + (Double(spg)! * 3) + (Double(bpg)! * 3) + (offRebpg * 2) + (defRebpg * 2) + fgRating + ftRating
             let y = Int((x * 1).rounded() / 1)
             return y
         }
@@ -159,14 +159,14 @@ struct PlayerStats: Codable
     }
     
     var defensiveRating: Int {
-        if (Double(ppg)! * 1) + (Double(apg)! * 1) + (Double(topg)! * -2) + (Double(spg)! * 5) + (Double(bpg)! * 5) + (offRebpg * 1) + (defRebpg * 2) < 0 {
+        if (Double(ppg)! * 1.5) + (Double(apg)! * 1.5) + (Double(topg)! * -2) + (Double(spg)! * 6) + (Double(bpg)! * 6) + (offRebpg * 1) + (defRebpg * 3) < 0 {
             return 0
         }
         else if Double(mpg) == -1.0 {
             return 0
         }
         else {
-            let x = (Double(ppg)! * 1) + (Double(apg)! * 1) + (Double(topg)! * -2) + (Double(spg)! * 5) + (Double(bpg)! * 5) + (offRebpg * 1) + (defRebpg * 2)
+            let x = (Double(ppg)! * 1.5) + (Double(apg)! * 1.5) + (Double(topg)! * -2) + (Double(spg)! * 6) + (Double(bpg)! * 6) + (offRebpg * 1) + (defRebpg * 3)
             let y = Int((x * 1).rounded() / 1)
             return y
         }
@@ -184,14 +184,14 @@ struct PlayerStats: Codable
     }
 
     var offensiveRating: Int {
-        if (Double(ppg)! * 2) + (Double(apg)! * 2) + (Double(topg)! * -3) + (Double(spg)! * 1.5) + (Double(bpg)! * 1.5) + (offRebpg * 10) + (defRebpg * 1) < 0 {
+        if (Double(ppg)! * 2.5) + (Double(apg)! * 2.5) + (Double(topg)! * -3) + (Double(spg)! * 2) + (Double(bpg)! * 2) + (offRebpg * 10) + (defRebpg * 1) < 0 {
             return 0
         }
         else if Double(mpg) == -1.0 {
             return 0
         }
         else {
-            let x = (Double(ppg)! * 2) + (Double(apg)! * 2) + (Double(topg)! * -3) + (Double(spg)! * 1.5) + (Double(bpg)! * 1.5) + (offRebpg * 10) + (defRebpg * 1)
+            let x = (Double(ppg)! * 2.5) + (Double(apg)! * 2.5) + (Double(topg)! * -3) + (Double(spg)! * 2) + (Double(bpg)! * 2) + (offRebpg * 10) + (defRebpg * 1)
             let y = Int((x * 1).rounded() / 1)
             return y
         }

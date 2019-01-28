@@ -131,38 +131,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j32-We-WsR">
-                                <rect key="frame" x="75" y="274" width="225" height="30"/>
-                                <color key="backgroundColor" red="0.99483889250000002" green="0.18831939319999999" blue="0.1210422682" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Simulator"/>
-                                <connections>
-                                    <segue destination="ynJ-hx-Tb5" kind="show" identifier="simulatorSegue" id="Fg9-mI-t4N"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Yc-Wo-1fI">
-                                <rect key="frame" x="75" y="329" width="225" height="30"/>
-                                <color key="backgroundColor" red="0.99483889250000002" green="0.18831939319999999" blue="0.1210422682" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="NBA Leaderboard"/>
-                                <connections>
-                                    <segue destination="VZ4-IY-HZg" kind="show" id="SGD-zD-oYt"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lua-QG-8eK">
-                                <rect key="frame" x="75" y="219" width="225" height="30"/>
-                                <color key="backgroundColor" red="0.99483889250000002" green="0.18831939319999999" blue="0.1210422682" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="NBA Encyclopedia"/>
-                                <connections>
-                                    <segue destination="CXq-35-4Mi" kind="show" identifier="currentSegue" id="dVu-y8-yia"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to the most EPIC up to date NBA App. " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oAX-97-bVv">
-                                <rect key="frame" x="100" y="76" width="175" height="71.666666666666686"/>
+                                <rect key="frame" x="100" y="60.000000000000007" width="175" height="71.666666666666686"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -188,11 +158,11 @@
                                     <constraint firstAttribute="height" constant="225" id="qJl-ia-rZ7"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I4A-wF-Je9">
-                                <rect key="frame" x="259" y="748" width="100" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I4A-wF-Je9" customClass="roundedButtons" customModule="NBA_Score" customModuleProvider="target">
+                                <rect key="frame" x="234" y="748" width="125" height="30"/>
                                 <color key="backgroundColor" red="0.99483889250000002" green="0.18831939319999999" blue="0.1210422682" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="100" id="VUg-jE-L4t"/>
+                                    <constraint firstAttribute="width" constant="125" id="VUg-jE-L4t"/>
                                     <constraint firstAttribute="height" constant="30" id="ioV-HA-IU3"/>
                                 </constraints>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -201,12 +171,13 @@
                                     <segue destination="NgH-db-w7c" kind="unwind" unwindAction="unwindToLoginWithSegue:" id="ymt-3A-mrC"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PkQ-Ta-G8P">
-                                <rect key="frame" x="16" y="748" width="100" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PkQ-Ta-G8P" customClass="roundedButtons" customModule="NBA_Score" customModuleProvider="target">
+                                <rect key="frame" x="16" y="748" width="125" height="30"/>
                                 <color key="backgroundColor" red="0.99483889250000002" green="0.18831939319999999" blue="0.1210422682" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="125" id="475-9i-27j"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="7bM-tN-NSy"/>
                                     <constraint firstAttribute="height" constant="30" id="OBu-Te-eOK"/>
-                                    <constraint firstAttribute="width" constant="100" id="wSH-wA-B9o"/>
                                 </constraints>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Refresh data"/>
@@ -214,35 +185,90 @@
                                     <action selector="RefreshButtonTapped:" destination="TdC-0m-dh6" eventType="touchUpInside" id="PZe-G0-7da"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lua-QG-8eK" customClass="roundedButtons" customModule="NBA_Score" customModuleProvider="target">
+                                <rect key="frame" x="75" y="319" width="225" height="30"/>
+                                <color key="backgroundColor" red="0.99483889250000002" green="0.18831939319999999" blue="0.1210422682" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="KAl-gY-8Lt"/>
+                                    <constraint firstAttribute="width" constant="225" id="NWz-Ig-L1p"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="NBA Encyclopedia"/>
+                                <connections>
+                                    <segue destination="CXq-35-4Mi" kind="modal" identifier="currentSegue" modalTransitionStyle="flipHorizontal" id="dVu-y8-yia"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j32-We-WsR" customClass="roundedButtons" customModule="NBA_Score" customModuleProvider="target">
+                                <rect key="frame" x="75" y="394" width="225" height="30"/>
+                                <color key="backgroundColor" red="0.99483889250000002" green="0.18831939319999999" blue="0.1210422682" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Ua0-WX-fO2"/>
+                                    <constraint firstAttribute="width" constant="225" id="eNx-nC-mAJ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Simulator"/>
+                                <connections>
+                                    <segue destination="ynJ-hx-Tb5" kind="modal" identifier="simulatorSegue" modalTransitionStyle="flipHorizontal" id="Fg9-mI-t4N"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nba-logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="uus-zz-DKG">
+                                <rect key="frame" x="150" y="151" width="75" height="125"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="75" id="5lK-1L-ZO5"/>
+                                    <constraint firstAttribute="height" constant="125" id="MOg-mE-PPK"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3sh-QO-Rg9">
+                                <rect key="frame" x="100" y="364" width="175" height="50"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="MGX-H7-tET"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="rga-pr-Byl" firstAttribute="bottom" secondItem="I4A-wF-Je9" secondAttribute="bottom" id="1sq-F9-r2H"/>
                             <constraint firstItem="Zfr-jt-Lcp" firstAttribute="top" secondItem="rga-pr-Byl" secondAttribute="top" constant="16" id="206-B2-g8U"/>
-                            <constraint firstItem="oAX-97-bVv" firstAttribute="top" secondItem="rga-pr-Byl" secondAttribute="top" constant="32" id="31b-rO-vMV"/>
+                            <constraint firstItem="oAX-97-bVv" firstAttribute="top" secondItem="rga-pr-Byl" secondAttribute="top" constant="16" id="31b-rO-vMV"/>
                             <constraint firstItem="rga-pr-Byl" firstAttribute="trailing" secondItem="I4A-wF-Je9" secondAttribute="trailing" constant="16" id="5Ae-l9-0Wj"/>
-                            <constraint firstItem="j32-We-WsR" firstAttribute="top" secondItem="rga-pr-Byl" secondAttribute="top" constant="230" id="D2q-Sv-7WV"/>
+                            <constraint firstItem="uus-zz-DKG" firstAttribute="top" secondItem="oAX-97-bVv" secondAttribute="bottom" constant="19.329999999999998" id="5xK-f6-Ymc"/>
+                            <constraint firstItem="rga-pr-Byl" firstAttribute="trailing" secondItem="uus-zz-DKG" secondAttribute="trailing" constant="150" id="90q-tV-hDo"/>
+                            <constraint firstItem="j32-We-WsR" firstAttribute="top" secondItem="rga-pr-Byl" secondAttribute="top" constant="350" id="D2q-Sv-7WV"/>
+                            <constraint firstItem="uus-zz-DKG" firstAttribute="leading" secondItem="rga-pr-Byl" secondAttribute="leading" constant="150" id="EUc-Iz-4VF"/>
                             <constraint firstAttribute="trailing" secondItem="hLW-mc-hGy" secondAttribute="trailing" id="GOp-6t-vNV"/>
                             <constraint firstItem="oAX-97-bVv" firstAttribute="leading" secondItem="rga-pr-Byl" secondAttribute="leading" constant="100" id="HTx-Un-1br"/>
                             <constraint firstItem="j32-We-WsR" firstAttribute="leading" secondItem="rga-pr-Byl" secondAttribute="leading" constant="75" id="IRo-pU-uFv"/>
+                            <constraint firstItem="rga-pr-Byl" firstAttribute="trailing" secondItem="3sh-QO-Rg9" secondAttribute="trailing" constant="100" id="Ifa-Qe-NBj"/>
                             <constraint firstItem="rga-pr-Byl" firstAttribute="trailing" secondItem="oAX-97-bVv" secondAttribute="trailing" constant="100" id="J6h-32-YHR"/>
                             <constraint firstItem="PkQ-Ta-G8P" firstAttribute="bottom" secondItem="rga-pr-Byl" secondAttribute="bottom" id="Lpm-pJ-7Y1"/>
                             <constraint firstItem="rga-pr-Byl" firstAttribute="trailing" secondItem="Zfr-jt-Lcp" secondAttribute="trailing" constant="12" id="OSM-Tt-osj"/>
                             <constraint firstItem="rga-pr-Byl" firstAttribute="trailing" secondItem="j32-We-WsR" secondAttribute="trailing" constant="75" id="PZi-an-k2I"/>
                             <constraint firstItem="PkQ-Ta-G8P" firstAttribute="leading" secondItem="rga-pr-Byl" secondAttribute="leading" constant="16" id="RU8-S0-6No"/>
-                            <constraint firstItem="rga-pr-Byl" firstAttribute="trailing" secondItem="9Yc-Wo-1fI" secondAttribute="trailing" constant="75" id="RXw-bJ-aJp"/>
-                            <constraint firstItem="9Yc-Wo-1fI" firstAttribute="leading" secondItem="rga-pr-Byl" secondAttribute="leading" constant="75" id="Ra2-pE-Agn"/>
                             <constraint firstItem="hLW-mc-hGy" firstAttribute="leading" secondItem="t3g-Ui-tyd" secondAttribute="leading" id="RcK-8C-QUx"/>
                             <constraint firstItem="VYy-YC-cT6" firstAttribute="top" secondItem="rga-pr-Byl" secondAttribute="top" constant="16" id="RrP-s6-3Vd"/>
-                            <constraint firstItem="lua-QG-8eK" firstAttribute="top" secondItem="rga-pr-Byl" secondAttribute="top" constant="175" id="WZC-3Q-Tfq"/>
+                            <constraint firstItem="3sh-QO-Rg9" firstAttribute="top" secondItem="rga-pr-Byl" secondAttribute="top" constant="320" id="V1S-EJ-ktC"/>
+                            <constraint firstItem="lua-QG-8eK" firstAttribute="top" secondItem="rga-pr-Byl" secondAttribute="top" constant="275" id="WZC-3Q-Tfq"/>
                             <constraint firstItem="I4A-wF-Je9" firstAttribute="top" secondItem="hLW-mc-hGy" secondAttribute="bottom" constant="-71" id="YhJ-hq-R2i"/>
-                            <constraint firstItem="9Yc-Wo-1fI" firstAttribute="top" secondItem="rga-pr-Byl" secondAttribute="top" constant="285" id="YlJ-jm-Rxt"/>
                             <constraint firstItem="VYy-YC-cT6" firstAttribute="leading" secondItem="rga-pr-Byl" secondAttribute="leading" constant="12" id="aEF-27-pPs"/>
                             <constraint firstItem="rga-pr-Byl" firstAttribute="trailing" secondItem="lua-QG-8eK" secondAttribute="trailing" constant="75" id="gxJ-85-Cef"/>
+                            <constraint firstItem="3sh-QO-Rg9" firstAttribute="leading" secondItem="rga-pr-Byl" secondAttribute="leading" constant="100" id="h1Z-jN-tBG"/>
                             <constraint firstItem="lua-QG-8eK" firstAttribute="leading" secondItem="rga-pr-Byl" secondAttribute="leading" constant="75" id="l0V-WK-lXy"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="rga-pr-Byl"/>
                     </view>
+                    <connections>
+                        <outlet property="LoginButton" destination="I4A-wF-Je9" id="uYk-FC-OMy"/>
+                        <outlet property="NBAencyclopediaButton" destination="lua-QG-8eK" id="kaZ-oc-2Hn"/>
+                        <outlet property="RefreshDataButton" destination="PkQ-Ta-G8P" id="rZc-wg-5mJ"/>
+                        <outlet property="SimulatorButton" destination="j32-We-WsR" id="oef-V8-yaJ"/>
+                        <outlet property="loadingLabel" destination="3sh-QO-Rg9" id="xWO-4l-t8B"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dcT-Vc-PH4" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="NgH-db-w7c" userLabel="Exit" sceneMemberID="exit"/>
@@ -278,16 +304,19 @@
                                     <constraint firstAttribute="height" constant="59" id="sza-3a-lbE"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pyg-xw-FAf">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pyg-xw-FAf" customClass="roundedButtons" customModule="NBA_Score" customModuleProvider="target">
                                 <rect key="frame" x="32" y="695" width="311" height="30"/>
                                 <color key="backgroundColor" red="0.99483889250000002" green="0.18831939319999999" blue="0.1210422682" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="311" id="5UO-Th-OU5"/>
+                                    <constraint firstAttribute="height" constant="30" id="P9H-5C-emW"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Simulate Game">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="simulateGame:" destination="ynJ-hx-Tb5" eventType="touchUpInside" id="rQA-lI-XEy"/>
-                                    <segue destination="59h-fe-Tec" kind="show" identifier="simulatorResultSegue" id="1BC-Pw-VLO"/>
+                                    <action selector="simulateButton:" destination="ynJ-hx-Tb5" eventType="touchUpInside" id="NDV-H3-mtk"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Offense: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0KF-ep-Ljr">
@@ -396,9 +425,13 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s7H-GN-CZO">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s7H-GN-CZO" customClass="roundedButtons" customModule="NBA_Score" customModuleProvider="target">
                                 <rect key="frame" x="32" y="750" width="311" height="30"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="311" id="7mX-No-rLC"/>
+                                    <constraint firstAttribute="height" constant="30" id="qH8-dC-A58"/>
+                                </constraints>
                                 <state key="normal" title="Back">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -478,150 +511,18 @@
                         <outlet property="homeOffenseLabel" destination="ASo-7C-Lzg" id="G89-ss-RJz"/>
                         <outlet property="homeOveralLabel" destination="Bz0-h6-oJg" id="Ezs-l4-0wP"/>
                         <outlet property="homePicker" destination="yMV-ar-SNw" id="hzw-wA-EZc"/>
-                        <outlet property="simulateButton" destination="Pyg-xw-FAf" id="WQb-Vo-l0z"/>
+                        <outlet property="simulateButton" destination="Pyg-xw-FAf" id="iDR-qb-hEq"/>
                         <outlet property="visitingDefenseLabel" destination="oWS-Rk-Ve4" id="VQn-op-pdm"/>
                         <outlet property="visitingImage" destination="4UZ-Q5-JhV" id="ySl-cz-7Jc"/>
                         <outlet property="visitingOffenseLabel" destination="SVI-6V-AeE" id="0IQ-cL-LiD"/>
                         <outlet property="visitingTotalLabel" destination="n7B-qU-xfX" id="i7p-fL-v7M"/>
+                        <segue destination="59h-fe-Tec" kind="show" identifier="simulatorResultSegue" id="75H-44-0kn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hJg-rI-1Rb" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="LTR-IU-Gqo" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2040.8" y="133.5832083958021"/>
-        </scene>
-        <!--Leaderboard ModesVC-->
-        <scene sceneID="xkv-xL-VaF">
-            <objects>
-                <viewController id="VZ4-IY-HZg" customClass="LeaderboardModesVC" customModule="NBA_Score" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="5h5-sW-hDq">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iEH-vO-LYb">
-                                <rect key="frame" x="42" y="605" width="311" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.99483889250000002" green="0.18831939319999999" blue="0.1210422682" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="Back">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <segue destination="fFQ-aT-4qt" kind="unwind" unwindAction="unwindToModesWithSegue:" id="vEy-Vu-kP7"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iSL-mb-EsX">
-                                <rect key="frame" x="75" y="224" width="225" height="30"/>
-                                <color key="backgroundColor" red="0.99483889250000002" green="0.18831939319999999" blue="0.1210422682" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Leaderboard"/>
-                                <connections>
-                                    <segue destination="Opc-Pr-H51" kind="show" id="6FH-Vh-E30"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w7I-6g-BaF">
-                                <rect key="frame" x="75" y="279" width="225" height="30"/>
-                                <color key="backgroundColor" red="0.99483889250000002" green="0.18831939319999999" blue="0.1210422682" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Create leaderboard"/>
-                                <connections>
-                                    <segue destination="nbj-Bi-aKt" kind="show" id="afn-wa-kyT"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UX5-oP-1W1">
-                                <rect key="frame" x="75" y="169" width="225" height="30"/>
-                                <color key="backgroundColor" red="0.99483889250000002" green="0.18831939319999999" blue="0.1210422682" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Select games for tomorrow"/>
-                                <connections>
-                                    <segue destination="zqp-BB-sRw" kind="show" id="zMb-GR-fIz"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="36c-wJ-Ank" firstAttribute="trailing" secondItem="w7I-6g-BaF" secondAttribute="trailing" constant="75" id="1qy-GL-zYf"/>
-                            <constraint firstItem="36c-wJ-Ank" firstAttribute="trailing" secondItem="UX5-oP-1W1" secondAttribute="trailing" constant="75" id="66m-Yn-oQ6"/>
-                            <constraint firstItem="UX5-oP-1W1" firstAttribute="leading" secondItem="36c-wJ-Ank" secondAttribute="leading" constant="75" id="6Xy-CT-npr"/>
-                            <constraint firstItem="36c-wJ-Ank" firstAttribute="trailing" secondItem="iSL-mb-EsX" secondAttribute="trailing" constant="75" id="Ah0-bF-vUH"/>
-                            <constraint firstItem="iSL-mb-EsX" firstAttribute="leading" secondItem="36c-wJ-Ank" secondAttribute="leading" constant="75" id="DHC-RT-2lg"/>
-                            <constraint firstItem="w7I-6g-BaF" firstAttribute="top" secondItem="iSL-mb-EsX" secondAttribute="bottom" constant="25" id="ECB-uf-PJw"/>
-                            <constraint firstItem="iSL-mb-EsX" firstAttribute="top" secondItem="UX5-oP-1W1" secondAttribute="bottom" constant="25" id="H7E-Bl-91A"/>
-                            <constraint firstItem="w7I-6g-BaF" firstAttribute="leading" secondItem="36c-wJ-Ank" secondAttribute="leading" constant="75" id="KUA-nV-3xz"/>
-                            <constraint firstItem="UX5-oP-1W1" firstAttribute="top" secondItem="36c-wJ-Ank" secondAttribute="top" constant="125" id="RMY-Tr-xUe"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="36c-wJ-Ank"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="KsF-cP-nru" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="fFQ-aT-4qt" userLabel="Exit" sceneMemberID="exit"/>
-            </objects>
-            <point key="canvasLocation" x="2041" y="1695"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="oc2-pp-wTQ">
-            <objects>
-                <viewController id="Opc-Pr-H51" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="n3L-w2-ovo">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4M4-6O-eYh">
-                                <rect key="frame" x="32" y="706" width="311" height="30"/>
-                                <color key="backgroundColor" red="0.99483889250000002" green="0.18831939319999999" blue="0.1210422682" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="Back">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <segue destination="uUk-ax-kP9" kind="unwind" unwindAction="unwindToLeaderboardModesWithSegue:" id="5Fb-ey-q0H"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="4M4-6O-eYh" firstAttribute="leading" secondItem="Grb-WH-ccJ" secondAttribute="leading" constant="32" id="Xha-gi-Bfx"/>
-                            <constraint firstItem="Grb-WH-ccJ" firstAttribute="bottom" secondItem="4M4-6O-eYh" secondAttribute="bottom" constant="42" id="nxG-Xy-ux3"/>
-                            <constraint firstItem="Grb-WH-ccJ" firstAttribute="trailing" secondItem="4M4-6O-eYh" secondAttribute="trailing" constant="32" id="yMw-zp-eln"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="Grb-WH-ccJ"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="fMc-ve-MzK" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="uUk-ax-kP9" userLabel="Exit" sceneMemberID="exit"/>
-            </objects>
-            <point key="canvasLocation" x="2982" y="1694"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="e4a-v2-Cis">
-            <objects>
-                <viewController id="nbj-Bi-aKt" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="D6Z-bh-O6a">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L5Z-aY-9Vi">
-                                <rect key="frame" x="32" y="706" width="311" height="30"/>
-                                <color key="backgroundColor" red="0.99483889250000002" green="0.18831939319999999" blue="0.1210422682" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="Back">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <segue destination="IPj-kY-V1D" kind="unwind" unwindAction="unwindToLeaderboardModesWithSegue:" id="F1G-FM-MyT"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="a6Y-VG-TlR" firstAttribute="trailing" secondItem="L5Z-aY-9Vi" secondAttribute="trailing" constant="32" id="5kU-UQ-75d"/>
-                            <constraint firstItem="a6Y-VG-TlR" firstAttribute="bottom" secondItem="L5Z-aY-9Vi" secondAttribute="bottom" constant="42" id="lSd-1n-RKk"/>
-                            <constraint firstItem="L5Z-aY-9Vi" firstAttribute="leading" secondItem="a6Y-VG-TlR" secondAttribute="leading" constant="32" id="rG5-EQ-f2b"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="a6Y-VG-TlR"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="AWG-qn-8lA" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="IPj-kY-V1D" userLabel="Exit" sceneMemberID="exit"/>
-            </objects>
-            <point key="canvasLocation" x="2982" y="2466"/>
+            <point key="canvasLocation" x="2041" y="133"/>
         </scene>
         <!--Simulator ResultVC-->
         <scene sceneID="4qV-2a-N0i">
@@ -631,9 +532,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O4E-A8-A9N">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O4E-A8-A9N" customClass="roundedButtons" customModule="NBA_Score" customModuleProvider="target">
                                 <rect key="frame" x="32" y="706" width="118" height="30"/>
                                 <color key="backgroundColor" red="0.99483889250000002" green="0.18831939319999999" blue="0.1210422682" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="9bd-Z5-rfl"/>
+                                    <constraint firstAttribute="width" constant="118" id="xK6-Dc-sRL"/>
+                                </constraints>
                                 <state key="normal" title="Back">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -641,9 +546,13 @@
                                     <segue destination="tF0-mp-KaO" kind="unwind" unwindAction="unwindToModesWithSegue:" id="sbt-Ky-zF4"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GDx-Aq-nBU">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GDx-Aq-nBU" customClass="roundedButtons" customModule="NBA_Score" customModuleProvider="target">
                                 <rect key="frame" x="225" y="706" width="118" height="30"/>
                                 <color key="backgroundColor" red="0.99483889250000002" green="0.18831939319999999" blue="0.1210422682" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Er4-4K-xTc"/>
+                                    <constraint firstAttribute="width" constant="118" id="rVI-AU-h9G"/>
+                                </constraints>
                                 <state key="normal" title="Again">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -769,90 +678,6 @@
             </objects>
             <point key="canvasLocation" x="2981.5999999999999" y="133.5832083958021"/>
         </scene>
-        <!--Pick TeamVC-->
-        <scene sceneID="Y9W-ax-Xra">
-            <objects>
-                <viewController id="zqp-BB-sRw" customClass="pickTeamVC" customModule="NBA_Score" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="36C-zf-Tpm">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7fX-JN-O3e">
-                                <rect key="frame" x="32" y="706" width="311" height="30"/>
-                                <color key="backgroundColor" red="0.99483889250000002" green="0.18831939319999999" blue="0.1210422682" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="Back">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <segue destination="lY4-oY-rpP" kind="unwind" unwindAction="unwindToLeaderboardModesWithSegue:" id="jBv-RJ-OYw"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pick the team you think is going to win tomorrow" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bBC-Qw-gq8">
-                                <rect key="frame" x="32" y="92" width="311" height="40.666666666666657"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0jQ-Vl-LBc">
-                                <rect key="frame" x="48" y="219" width="279" height="50"/>
-                                <color key="backgroundColor" red="0.99483889250000002" green="0.18831939319999999" blue="0.1210422682" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="8y3-q8-HG0"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                <state key="normal" title="team1">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MAq-f5-F2Z">
-                                <rect key="frame" x="48" y="419" width="279" height="50"/>
-                                <color key="backgroundColor" red="0.99483889250000002" green="0.18831939319999999" blue="0.1210422682" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="TUL-sa-5zw"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                <state key="normal" title="team2">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="VS" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Hz-uT-QLa">
-                                <rect key="frame" x="32" y="319" width="311" height="20.333333333333314"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="0jQ-Vl-LBc" firstAttribute="leading" secondItem="G5y-TA-iMk" secondAttribute="leading" constant="48" id="0DY-w9-x1F"/>
-                            <constraint firstItem="MAq-f5-F2Z" firstAttribute="leading" secondItem="G5y-TA-iMk" secondAttribute="leading" constant="48" id="4je-5I-gJq"/>
-                            <constraint firstItem="MAq-f5-F2Z" firstAttribute="top" secondItem="0jQ-Vl-LBc" secondAttribute="bottom" constant="150" id="8Cb-Ls-PEw"/>
-                            <constraint firstItem="7fX-JN-O3e" firstAttribute="leading" secondItem="G5y-TA-iMk" secondAttribute="leading" constant="32" id="9fY-LJ-EMM"/>
-                            <constraint firstItem="7fX-JN-O3e" firstAttribute="leading" secondItem="G5y-TA-iMk" secondAttribute="leading" constant="32" id="LGk-KR-iir"/>
-                            <constraint firstItem="bBC-Qw-gq8" firstAttribute="top" secondItem="G5y-TA-iMk" secondAttribute="top" constant="48" id="ORB-E0-nbS"/>
-                            <constraint firstItem="3Hz-uT-QLa" firstAttribute="leading" secondItem="G5y-TA-iMk" secondAttribute="leading" constant="32" id="Rd9-A0-bfb"/>
-                            <constraint firstItem="G5y-TA-iMk" firstAttribute="bottom" secondItem="7fX-JN-O3e" secondAttribute="bottom" constant="42" id="WnD-d6-2Ll"/>
-                            <constraint firstItem="G5y-TA-iMk" firstAttribute="trailing" secondItem="0jQ-Vl-LBc" secondAttribute="trailing" constant="48" id="Z51-aK-5Rn"/>
-                            <constraint firstItem="G5y-TA-iMk" firstAttribute="trailing" secondItem="MAq-f5-F2Z" secondAttribute="trailing" constant="48" id="aXu-QJ-f5V"/>
-                            <constraint firstItem="G5y-TA-iMk" firstAttribute="trailing" secondItem="3Hz-uT-QLa" secondAttribute="trailing" constant="32" id="g5m-y1-s1c"/>
-                            <constraint firstItem="0jQ-Vl-LBc" firstAttribute="top" secondItem="G5y-TA-iMk" secondAttribute="top" constant="175" id="hQn-rc-FHx"/>
-                            <constraint firstItem="G5y-TA-iMk" firstAttribute="trailing" secondItem="bBC-Qw-gq8" secondAttribute="trailing" constant="32" id="oBd-3j-WcD"/>
-                            <constraint firstItem="G5y-TA-iMk" firstAttribute="trailing" secondItem="7fX-JN-O3e" secondAttribute="trailing" constant="32" id="p33-lA-h2l"/>
-                            <constraint firstItem="bBC-Qw-gq8" firstAttribute="leading" secondItem="G5y-TA-iMk" secondAttribute="leading" constant="32" id="pze-b8-nZb"/>
-                            <constraint firstItem="3Hz-uT-QLa" firstAttribute="top" secondItem="0jQ-Vl-LBc" secondAttribute="bottom" constant="50" id="sXq-I8-0Ma"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="G5y-TA-iMk"/>
-                    </view>
-                    <connections>
-                        <outlet property="awayTeamButton" destination="MAq-f5-F2Z" id="yyO-LE-EPx"/>
-                        <outlet property="homeTeamButton" destination="0jQ-Vl-LBc" id="JmN-HO-G8m"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="QGG-jT-Foz" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="lY4-oY-rpP" userLabel="Exit" sceneMemberID="exit"/>
-            </objects>
-            <point key="canvasLocation" x="2981.5999999999999" y="902.69865067466276"/>
-        </scene>
         <!--Players-->
         <scene sceneID="bR8-L1-WX6">
             <objects>
@@ -861,7 +686,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <searchBar key="tableHeaderView" contentMode="redraw" id="WPy-8D-qF8">
+                        <searchBar key="tableHeaderView" contentMode="redraw" placeholder="Players first- or last name" showsCancelButton="YES" id="WPy-8D-qF8">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <textInputTraits key="textInputTraits"/>
@@ -1266,7 +1091,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <searchBar key="tableHeaderView" contentMode="redraw" id="Pbn-y2-YhS">
+                        <searchBar key="tableHeaderView" contentMode="redraw" placeholder="Search team name" showsCancelButton="YES" id="Pbn-y2-YhS">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <textInputTraits key="textInputTraits"/>
@@ -1446,9 +1271,13 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bW2-Ld-O2i">
-                                <rect key="frame" x="125" y="677" width="125" height="36"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bW2-Ld-O2i" customClass="roundedButtons" customModule="NBA_Score" customModuleProvider="target">
+                                <rect key="frame" x="125" y="683" width="125" height="30"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Q0X-AM-ssY"/>
+                                    <constraint firstAttribute="width" constant="125" id="kpB-Qe-S4j"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                 <state key="normal" title="Roster">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1535,9 +1364,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" placeholder="Players first- or last name" showsCancelButton="YES" id="FoU-qL-o9B">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </searchBar>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="RosterIdentifier" id="4D3-UM-Ea4" customClass="RosterCell" customModule="NBA_Score" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="72" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="4D3-UM-Ea4" id="YNt-tJ-RzM">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.666666666666664"/>
@@ -1589,6 +1423,7 @@
                         </connections>
                     </tableView>
                     <connections>
+                        <outlet property="rosterSearchbar" destination="FoU-qL-o9B" id="W9o-4q-hsN"/>
                         <outlet property="rosterTableView" destination="Q9R-XM-noZ" id="iJr-Vl-xM4"/>
                     </connections>
                 </tableViewController>
@@ -1956,6 +1791,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="0KO-ud-IvE"/>
-        <segue reference="reo-Lb-evV"/>
+        <segue reference="Grp-Dx-YbX"/>
     </inferredMetricsTieBreakers>
 </document>

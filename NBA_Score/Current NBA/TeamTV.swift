@@ -54,8 +54,8 @@ class TeamTV: UITableViewController, UISearchBarDelegate
             teamsTableView.reloadData()
             return
         }
-        teamDetailss = filteredData.filter({ (playerList) -> Bool in
-//            teamDetailss.fullName.lowercased().contains(searchText.lowercased())
+        teamDetailss = filteredData.filter({ (teamDetailss) -> Bool in
+            teamDetailss.fullName.lowercased().contains(searchText.lowercased())
         })
         teamsTableView.reloadData()
     }

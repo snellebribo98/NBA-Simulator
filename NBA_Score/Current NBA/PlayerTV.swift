@@ -64,8 +64,14 @@ class PlayerTV: UITableViewController, UISearchBarDelegate
             return
         }
         playerList = filteredData.filter({ (playerList) -> Bool in
-            playerList.lastName.lowercased().contains(searchText.lowercased())
+            playerList.lastName.lowercased().contains(searchText.lowercased()) || playerList.firstName.lowercased().contains(searchText.lowercased())
         })
+
+        playerTableView.reloadData()
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchbarPlayer.text = ""
         playerTableView.reloadData()
     }
     

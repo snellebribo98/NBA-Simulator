@@ -32,6 +32,16 @@ class SimulatorResultVC: UIViewController
         homeTeamLabel.text = TeamChosen
         visitingTeamLabel.text = awayTeamChosen
         
+        teams()
+    }
+    
+    func Again()
+    {
+        
+    }
+    
+    func teams()
+    {
         if TeamChosen == "Boston Celtics"
         {
             homeImage.image = UIImage(named:"celtics.png")
@@ -112,7 +122,7 @@ class SimulatorResultVC: UIViewController
             homeImage.image = UIImage(named:"warriors.png")
             self.view.addSubview(homeImage)
         }
-        else if TeamChosen == "Los Angeles Clippers"
+        else if TeamChosen == "LA Clippers"
         {
             homeImage.image = UIImage(named:"clippers.png")
             self.view.addSubview(homeImage)
@@ -142,7 +152,7 @@ class SimulatorResultVC: UIViewController
             homeImage.image = UIImage(named:"rockets.png")
             self.view.addSubview(homeImage)
         }
-        else if TeamChosen == "Memphis Grizzilies"
+        else if TeamChosen == "Memphis Grizzlies"
         {
             homeImage.image = UIImage(named:"memphis.png")
             self.view.addSubview(homeImage)
@@ -167,12 +177,12 @@ class SimulatorResultVC: UIViewController
             homeImage.image = UIImage(named:"timberwolves.png")
             self.view.addSubview(homeImage)
         }
-        else if TeamChosen == "Oklahoma Thunder"
+        else if TeamChosen == "Oklahoma City Thunder"
         {
             homeImage.image = UIImage(named:"thunder.png")
             self.view.addSubview(homeImage)
         }
-        else if TeamChosen == "Portland Trail Blaizers"
+        else if TeamChosen == "Portland Trail Blazers"
         {
             homeImage.image = UIImage(named:"blazers.png")
             self.view.addSubview(homeImage)
@@ -182,158 +192,156 @@ class SimulatorResultVC: UIViewController
             homeImage.image = UIImage(named:"jazz.png")
             self.view.addSubview(homeImage)
         }
-   
+        
         if awayTeamChosen == "Boston Celtics"
         {
-        visitingImage.image = UIImage(named:"celtics.png")
-        self.view.addSubview(visitingImage)
+            visitingImage.image = UIImage(named:"celtics.png")
+            self.view.addSubview(visitingImage)
         }
         else if awayTeamChosen == "Brooklyn Nets"
         {
-        visitingImage.image = UIImage(named:"nets.png")
-        self.view.addSubview(visitingImage)
+            visitingImage.image = UIImage(named:"nets.png")
+            self.view.addSubview(visitingImage)
         }
         else if awayTeamChosen == "New York Knicks"
         {
-        visitingImage.image = UIImage(named:"knicks.png")
-        self.view.addSubview(visitingImage)
+            visitingImage.image = UIImage(named:"knicks.png")
+            self.view.addSubview(visitingImage)
         }
         else if awayTeamChosen == "Philadelphia 76ers"
         {
-        visitingImage.image = UIImage(named:"philly.png")
-        self.view.addSubview(visitingImage)
+            visitingImage.image = UIImage(named:"philly.png")
+            self.view.addSubview(visitingImage)
         }
         else if awayTeamChosen == "Toronto Raptors"
         {
-        visitingImage.image = UIImage(named:"toronto.png")
-        self.view.addSubview(visitingImage)
+            visitingImage.image = UIImage(named:"toronto.png")
+            self.view.addSubview(visitingImage)
         }
         else if awayTeamChosen == "Chicago Bulls"
         {
-        visitingImage.image = UIImage(named:"bulls.png")
-        self.view.addSubview(visitingImage)
+            visitingImage.image = UIImage(named:"bulls.png")
+            self.view.addSubview(visitingImage)
         }
         else if awayTeamChosen == "Cleveland Cavaliers"
         {
-        visitingImage.image = UIImage(named:"cavs.png")
-        self.view.addSubview(visitingImage)
+            visitingImage.image = UIImage(named:"cavs.png")
+            self.view.addSubview(visitingImage)
         }
         else if awayTeamChosen == "Detroit Pistons"
         {
-        visitingImage.image = UIImage(named:"pistons.png")
-        self.view.addSubview(visitingImage)
+            visitingImage.image = UIImage(named:"pistons.png")
+            self.view.addSubview(visitingImage)
         }
         else if awayTeamChosen == "Indiana Pacers"
         {
-        visitingImage.image = UIImage(named:"pacers.png")
-        self.view.addSubview(visitingImage)
+            visitingImage.image = UIImage(named:"pacers.png")
+            self.view.addSubview(visitingImage)
         }
         else if awayTeamChosen == "Milwaukee Bucks"
         {
-        visitingImage.image = UIImage(named:"bucks.png")
-        self.view.addSubview(visitingImage)
+            visitingImage.image = UIImage(named:"bucks.png")
+            self.view.addSubview(visitingImage)
         }
         else if awayTeamChosen == "Atlanta Hawks"
         {
-        visitingImage.image = UIImage(named:"hawks.png")
-        self.view.addSubview(visitingImage)
+            visitingImage.image = UIImage(named:"hawks.png")
+            self.view.addSubview(visitingImage)
         }
         else if awayTeamChosen == "Charlotte Hornets"
         {
-        visitingImage.image = UIImage(named:"hornets.png")
-        self.view.addSubview(visitingImage)
+            visitingImage.image = UIImage(named:"hornets.png")
+            self.view.addSubview(visitingImage)
         }
         else if awayTeamChosen == "Miami Heat"
         {
-        visitingImage.image = UIImage(named:"heat.png")
-        self.view.addSubview(visitingImage)
+            visitingImage.image = UIImage(named:"heat.png")
+            self.view.addSubview(visitingImage)
         }
         else if awayTeamChosen == "Orlando Magic"
         {
-        visitingImage.image = UIImage(named:"magic.png")
-        self.view.addSubview(visitingImage)
+            visitingImage.image = UIImage(named:"magic.png")
+            self.view.addSubview(visitingImage)
         }
         else if awayTeamChosen == "Washington Wizards"
         {
-        visitingImage.image = UIImage(named:"wizards.png")
-        self.view.addSubview(visitingImage)
+            visitingImage.image = UIImage(named:"wizards.png")
+            self.view.addSubview(visitingImage)
         }
         else if awayTeamChosen == "Golden State Warriors"
         {
-        visitingImage.image = UIImage(named:"warriors.png")
-        self.view.addSubview(visitingImage)
+            visitingImage.image = UIImage(named:"warriors.png")
+            self.view.addSubview(visitingImage)
         }
-        else if awayTeamChosen == "Los Angeles Clippers"
+        else if awayTeamChosen == "LA Clippers"
         {
-        visitingImage.image = UIImage(named:"clippers.png")
-        self.view.addSubview(visitingImage)
+            visitingImage.image = UIImage(named:"clippers.png")
+            self.view.addSubview(visitingImage)
         }
         else if awayTeamChosen == "Los Angeles Lakers"
         {
-        visitingImage.image = UIImage(named:"lakers.png")
-        self.view.addSubview(visitingImage)
+            visitingImage.image = UIImage(named:"lakers.png")
+            self.view.addSubview(visitingImage)
         }
         else if awayTeamChosen == "Phoenix Suns"
         {
-        visitingImage.image = UIImage(named:"suns.png")
-        self.view.addSubview(visitingImage)
+            visitingImage.image = UIImage(named:"suns.png")
+            self.view.addSubview(visitingImage)
         }
         else if awayTeamChosen == "Sacramento Kings"
         {
-        visitingImage.image = UIImage(named:"kings.png")
-        self.view.addSubview(visitingImage)
+            visitingImage.image = UIImage(named:"kings.png")
+            self.view.addSubview(visitingImage)
         }
         else if awayTeamChosen == "Dallas Mavericks"
         {
-        visitingImage.image = UIImage(named:"dallas.png")
-        self.view.addSubview(visitingImage)
+            visitingImage.image = UIImage(named:"dallas.png")
+            self.view.addSubview(visitingImage)
         }
         else if awayTeamChosen == "Houston Rockets"
         {
-        visitingImage.image = UIImage(named:"rockets.png")
-        self.view.addSubview(visitingImage)
+            visitingImage.image = UIImage(named:"rockets.png")
+            self.view.addSubview(visitingImage)
         }
-        else if awayTeamChosen == "Memphis Grizzilies"
+        else if awayTeamChosen == "Memphis Grizzlies"
         {
-        visitingImage.image = UIImage(named:"memphis.png")
-        self.view.addSubview(visitingImage)
+            visitingImage.image = UIImage(named:"memphis.png")
+            self.view.addSubview(visitingImage)
         }
         else if awayTeamChosen == "New Orleans Pelicans"
         {
-        visitingImage.image = UIImage(named:"pelicans.png")
-        self.view.addSubview(visitingImage)
+            visitingImage.image = UIImage(named:"pelicans.png")
+            self.view.addSubview(visitingImage)
         }
         else if awayTeamChosen == "San Antonio Spurs"
         {
-        visitingImage.image = UIImage(named:"spurs.png")
-        self.view.addSubview(visitingImage)
+            visitingImage.image = UIImage(named:"spurs.png")
+            self.view.addSubview(visitingImage)
         }
         else if awayTeamChosen == "Denver Nuggets"
         {
-        visitingImage.image = UIImage(named:"nuggets.png")
-        self.view.addSubview(visitingImage)
+            visitingImage.image = UIImage(named:"nuggets.png")
+            self.view.addSubview(visitingImage)
         }
         else if awayTeamChosen == "Minnesota Timberwolves"
         {
-        visitingImage.image = UIImage(named:"timberwolves.png")
-        self.view.addSubview(visitingImage)
+            visitingImage.image = UIImage(named:"timberwolves.png")
+            self.view.addSubview(visitingImage)
         }
-        else if awayTeamChosen == "Oklahoma Thunder"
+        else if awayTeamChosen == "Oklahoma City Thunder"
         {
-        visitingImage.image = UIImage(named:"thunder.png")
-        self.view.addSubview(visitingImage)
+            visitingImage.image = UIImage(named:"thunder.png")
+            self.view.addSubview(visitingImage)
         }
-        else if awayTeamChosen == "Portland Trail Blaizers"
+        else if awayTeamChosen == "Portland Trail Blazers"
         {
-        visitingImage.image = UIImage(named:"blazers.png")
-        self.view.addSubview(visitingImage)
+            visitingImage.image = UIImage(named:"blazers.png")
+            self.view.addSubview(visitingImage)
         }
         else if awayTeamChosen == "Utah Jazz"
         {
-        visitingImage.image = UIImage(named:"jazz.png")
-        self.view.addSubview(visitingImage)
+            visitingImage.image = UIImage(named:"jazz.png")
+            self.view.addSubview(visitingImage)
         }
     }
-    
-    
 }

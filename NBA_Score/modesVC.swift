@@ -14,6 +14,13 @@ class modesVC: UIViewController
     var stats: PlayerStats?
     var idList = [String: String]()
     var teamDetailss = [String: Team]()
+
+    @IBOutlet weak var loadingLabel: UILabel!
+    
+    @IBOutlet weak var NBAencyclopediaButton: UIButton!
+    @IBOutlet weak var SimulatorButton: UIButton!
+    @IBOutlet weak var RefreshDataButton: UIButton!
+    @IBOutlet weak var LoginButton: UIButton!
     
     var activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView()
     
@@ -22,6 +29,8 @@ class modesVC: UIViewController
         idList.removeAll()
         teamDetailss.removeAll()
         
+        loadingLabel.text = "Loading Data"
+
         startLoading()
         
         if idList.isEmpty && teamDetailss.isEmpty
@@ -38,7 +47,8 @@ class modesVC: UIViewController
                                 if success2 {
                                     DispatchQueue.main.async {
                                         self.stopLoading()
-                                        
+                                        self.loadingLabel.isHidden = true
+
                                         // print(self.teamDetailss)
                                     }
                                     // print(self.playerStatss)
@@ -54,6 +64,7 @@ class modesVC: UIViewController
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        loadingLabel.text = "Loading Data"
         
         startLoading()
         
@@ -68,6 +79,7 @@ class modesVC: UIViewController
                             if success2 {
                                 DispatchQueue.main.async {
                                     self.stopLoading()
+                                    self.loadingLabel.isHidden = true
 //                                    print(self.teamDetailss)
                                 }
 //                                print(self.playerStatss)
@@ -219,5 +231,16 @@ class modesVC: UIViewController
             task.resume()
 
         }
+    }
+    
+    func Loading() {
+        let alert = UIAlertController(title: "Loading Data!", message: "", preferredStyle: .alert)
+        self.present(alert, animated: true, completion: nil)
+        
+        let subview = (alert.view.subviews.first?.subviews.first?.subviews.first!)! as UIView
+        subview.layer.cornerRadius = 1
+        subview.backgroundColor = UIColor(red: (0/255.0), green: (255/255.0), blue: (0/255.0), alpha: 1.0)
+        
+        Timer.scheduledTimer(withTimeInterval: 3, repeats: false, block: { _ in alert.dismiss(animated: true, completion: nil)} )
     }
 }

@@ -22,7 +22,7 @@ class SimulatorVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
     @IBOutlet weak var homeDefenseLabel: UILabel!
     @IBOutlet weak var homeOveralLabel: UILabel!
     @IBOutlet weak var homePicker: UIPickerView!
-
+    
     @IBOutlet weak var simulateButton: UIButton!
     
     private var NBA_Data_Home = [String]()
@@ -41,16 +41,16 @@ class SimulatorVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
     
     var myTimer: Timer!
     
-    @IBAction func simulateGame(_ sender: Any)
+    @IBAction func simulateButton(_ sender: Any)
     {
-            self.simulator()
+        showWait()
+        
+        self.simulator()
     }
     
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        
-//        simulateButton.isEnabled = false
         
         homePicker.dataSource = self
         homePicker.delegate = self
@@ -409,14 +409,14 @@ class SimulatorVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
         let homeSuck = Int.random(in: 1 ... 5)
         if homeSuck == 5
         {
-            let HL = min(HO!, HD!, H!) + 10
-            let HU = max(HO!, HD!, H!) + 10
+            let HL = min(HO!, HD!, H!) + 40
+            let HU = max(HO!, HD!, H!) + 50
             homeScore = Int.random(in: HL ... HU)
         }
         else
         {
-            let HL = min(HO!, HD!, H!) + 25
-            let HU = max(HO!, HD!, H!) + 25
+            let HL = min(HO!, HD!, H!) + 49
+            let HU = max(HO!, HD!, H!) + 79
             homeScore = Int.random(in: HL ... HU)
         }
         print(homeScore)
@@ -424,14 +424,14 @@ class SimulatorVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
         let awayBlowout = Int.random(in: 1 ... 5)
         if awayBlowout == 5
         {
-            let VL = min(VO!, VD!, V!) + 30
-            let VU = max(VO!, VD!, V!) + 30
+            let VL = min(VO!, VD!, V!) + 70
+            let VU = max(VO!, VD!, V!) + 80
             visitingScore = Int.random(in: VL ... VU)
         }
         else
         {
-            let VL = min(VO!, VD!, V!) + 15
-            let VU = max(VO!, VD!, V!) + 15
+            let VL = min(VO!, VD!, V!) + 49
+            let VU = max(VO!, VD!, V!) + 79
             visitingScore = Int.random(in: VL ... VU)
         }
         print(visitingScore)
@@ -478,6 +478,22 @@ class SimulatorVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
         }
     }
     
+    func showWait()
+    {
+        print("hoi")
+        let alert = UIAlertController(title: "Crunching the numbers!", message: "Please wait", preferredStyle: .alert)
+        self.present(alert, animated: true, completion: nil)
+        
+        let subview = (alert.view.subviews.first?.subviews.first?.subviews.first!)! as UIView
+        subview.layer.cornerRadius = 1
+        subview.backgroundColor = UIColor(red:0.61, green:0.60, blue:0.60, alpha:1.0)
+        
+        Timer.scheduledTimer(withTimeInterval: 2, repeats: false, block: { _ in alert.dismiss(animated: true, completion: { () -> Void in
+            self.performSegue(withIdentifier: "simulatorResultSegue", sender: Any?.self)
+        })})
+        print("hey")
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?)
     {
         if segue.identifier == "simulatorResultSegue"
@@ -489,5 +505,5 @@ class SimulatorVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
             SRVC.visitingScore = self.visitingScore
         }
     }
-
+    
 }
