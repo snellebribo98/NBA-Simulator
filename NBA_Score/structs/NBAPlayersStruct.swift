@@ -5,21 +5,20 @@
 //  Created by Brian van de Velde on 08-01-19.
 //  Copyright © 2019 Brian van de Velde. All rights reserved.
 //
+//  Player struct
+
 
 import UIKit
 
-struct Players: Codable
-{
+struct Players: Codable {
     var league: Standard2
 }
 
-struct Standard2: Codable
-{
+struct Standard2: Codable {
     var standard: [Player]
 }
 
-struct Player: Codable
-{
+struct Player: Codable {
     var firstName: String 
     var lastName: String
     var personId: String
@@ -42,21 +41,15 @@ struct Player: Codable
     var country: String
     
     var stats: PlayerStats?
-    
-    var fullName: [String] {
-        return [lastName, firstName]
-    }
 }
 
-struct Teams: Codable
-{
+struct Teams: Codable {
     var teamId: String
     var seasonStart: String
     var seasonEnd: String
 }
 
-struct Draft: Codable
-{
+struct Draft: Codable {
     var teamId: String
     var pickNum: String
     var roundNum: String

@@ -5,11 +5,12 @@
 //  Created by Brian van de Velde on 08-01-19.
 //  Copyright © 2019 Brian van de Velde. All rights reserved.
 //
+//  Team struct, indexes the player, and calculates team ratings.
+
 
 import UIKit
 
-struct teamDetails2: Codable
-{
+struct teamDetails2: Codable {
     var _internal: InternalTest
     var league: Standard
 }
@@ -37,6 +38,7 @@ struct Team: Codable {
     var divName: String
     var players: [Player]?
     
+    /// indexes the player
     func playerIndexWith(id: String) -> Int {
         for (num, player) in players!.enumerated() {
             if player.personId == id {
@@ -46,6 +48,7 @@ struct Team: Codable {
         return 0
     }
     
+    /// calculates the offensive rating of a team
     var offensiveRating: Int {
         var totalOffense = 0
         for player in players! {
@@ -56,6 +59,7 @@ struct Team: Codable {
         return totalOffense
     }
     
+    /// calculates the defensive rating of a team
     var defensiveRating: Int {
         var totalDefensive = 0
         for player in players! {
@@ -66,6 +70,7 @@ struct Team: Codable {
         return totalDefensive
     }
     
+    /// calculates the overal rating of a team
     var overalRating: Int {
         var total = 0
         for player in players! {

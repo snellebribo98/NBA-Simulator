@@ -5,32 +5,29 @@
 //  Created by Brian van de Velde on 08-01-19.
 //  Copyright © 2019 Brian van de Velde. All rights reserved.
 //
+//  Player stats struct, that calculates the individual ratings of each player. If some of the variables used to create such a rating isn't a value, use the rest of the variables that are a number. Also calculates the rating based on the minutes the player played, the sum of this rating along with the rest of the players in the team will result in the team ratings.
+
 
 import UIKit
 
-struct TempPlayersStats: Codable
-{
+struct TempPlayersStats: Codable {
     var league: Standard3
 }
 
-struct Standard3: Codable
-{
+struct Standard3: Codable {
     var standard: Data
 }
 
-struct Data: Codable
-{
+struct Data: Codable {
     var teamId: String
     var stats: Stats
 }
 
-struct Stats: Codable
-{
+struct Stats: Codable {
     var latest: PlayerStats
 }
 
-struct PlayerStats: Codable
-{
+struct PlayerStats: Codable {
     var ppg: String
     var apg: String
     var rpg: String

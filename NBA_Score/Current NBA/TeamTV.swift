@@ -5,51 +5,53 @@
 //  Created by Brian van de Velde on 10-01-19.
 //  Copyright © 2019 Brian van de Velde. All rights reserved.
 //
+//  This class shows all the teams, alfabetically ordered. When a team is pressed the user is directed to the team detail view controller
+
 
 import UIKit
 
-class TeamTV: UITableViewController, UISearchBarDelegate
-{
+class TeamTV: UITableViewController, UISearchBarDelegate {
+    /// variables
     var teamDetail: Team?
     var teamDetailss = [Team]()
     var filteredData: [Team]! = []
     
+    /// outlets
     @IBOutlet weak var searchbarTeam: UISearchBar!
     @IBOutlet var teamsTableView: UITableView!
     
-    override func viewDidLoad()
-    {
+    /// initializes view controller and sorts teamdetails alfabetically
+    /// fills empty list with teamdetails data to safe if searchbar is used
+    override func viewDidLoad() {
         super.viewDidLoad()
         teamDetailss.sort(by: {$0.fullName < $1.fullName})
         
         teamsTableView.dataSource = self
         teamsTableView.delegate = self
         searchbarTeam.delegate = self
-        Copy()
+        filteredData = teamDetailss
     }
     
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
-    {
+    /// specifies length of tableview
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         print(teamDetailss.count)
         return teamDetailss.count
     }
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
-    {
+    /// shows team names in the cells
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TeamIdentifier") as? TeamCell
         let teamDetail = teamDetailss[indexPath.row]
         
-        if teamDetail.isNBAFranchise == true
-        {
+        if teamDetail.isNBAFranchise == true {
             cell?.titleLabel?.text = teamDetail.fullName
         }
         return cell!
     }
     
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String)
-    {
-        guard !searchText.isEmpty else
-        {
+    /// enables searching with the searchbar
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        guard !searchText.isEmpty else {
             teamDetailss = filteredData
             teamsTableView.reloadData()
             return
@@ -60,13 +62,17 @@ class TeamTV: UITableViewController, UISearchBarDelegate
         teamsTableView.reloadData()
     }
     
-    func Copy()
-    {
-        filteredData = teamDetailss
+    /// enables cancel button and reloads the data if clicked
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchbarTeam.text = ""
+        searchbarTeam.endEditing(true)
+        teamDetailss = filteredData
+        teamsTableView.reloadData()
+        return
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
-    {
+    /// sends information of the team cell tapped to the next view controller
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "teamDetailSegue"
         {
             let ip = teamsTableView.indexPathForSelectedRow
