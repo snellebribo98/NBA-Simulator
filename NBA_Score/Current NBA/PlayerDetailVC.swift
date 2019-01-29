@@ -16,10 +16,7 @@ class PlayerDetailVC: UIViewController
     @IBOutlet weak var HeightLabel: UILabel!
     @IBOutlet weak var WeightLabel: UILabel!
     @IBOutlet weak var TeamLabel: UILabel!
-    @IBOutlet weak var ConferanceLabel: UILabel!
-    @IBOutlet weak var DivisionLabel: UILabel!
     @IBOutlet weak var CountryLabel: UILabel!
-    @IBOutlet weak var DraftLabel: UILabel!
     @IBOutlet weak var CollegeLabel: UILabel!
     @IBOutlet weak var dateOfBirthLabel: UILabel!
     @IBOutlet weak var OverallLabel: UILabel!
@@ -32,6 +29,10 @@ class PlayerDetailVC: UIViewController
     @IBOutlet weak var mpgLabel: UILabel!
     
     @IBOutlet weak var TeamImage: UIImageView!
+    
+    @IBOutlet weak var firstNameTextLabel: UILabel!
+    @IBOutlet weak var lastNameTextLabel: UILabel!
+    
     
     var playerList: Player?
     var TeamChosen: String?
@@ -61,7 +62,9 @@ class PlayerDetailVC: UIViewController
         
         if playerList?.firstName == "Nene"
         {
-            PlayerLastnameLabel.text = " "
+            firstNameTextLabel.text = "Nickname:  "
+            lastNameTextLabel.text = "Fullname:   "
+            PlayerLastnameLabel.text = "Maybyner Rodney Hilário"
         }
         else
         {
@@ -81,9 +84,15 @@ class PlayerDetailVC: UIViewController
         
         dateOfBirthLabel.text = playerList?.dateOfBirthUTC 
         TeamLabel.text = TeamChosen
-        CountryLabel.text = playerList?.country
         
-        if playerList?.collegeName == "Germany" || playerList?.collegeName == "" || playerList?.collegeName == "Sao Carlos, Brazil"
+        if playerList?.country == "Democratic Republic of the Congo" {
+            CountryLabel.text = "DR Congo"
+        }
+        else {
+            CountryLabel.text = playerList?.country
+        }
+        
+        if playerList?.collegeName == "Germany" || playerList?.collegeName == "" || playerList?.collegeName == "Sao Carlos, Brazil" || playerList?.collegeName == "Wurzburg, Germany" || playerList?.collegeName == "Greece" || playerList?.collegeName == "Lisieux, France" || playerList?.collegeName == "Bologna, Italy" || playerList?.collegeName == "Lubumbashi, DR Congo" || playerList?.collegeName == "Villanueva de la Serena, Spain" || playerList?.collegeName == "Yavne, Israel" || playerList?.collegeName == "Ljubljana, Slovenia" || playerList?.collegeName == "France" || playerList?.collegeName == "Sant'Angelo Lodigiano, Italy" || playerList?.collegeName == "Barcelona, Spain" || playerList?.collegeName == "Lodz, Poland" || playerList?.collegeName == "Spain" || playerList?.collegeName == "Croatia" || playerList?.collegeName == "Brazzaville, Rep. of Congo" || playerList?.collegeName == "Eskisehir, Turkey" || playerList?.collegeName == "Kinna, Sweden" || playerList?.collegeName == "Rouen, France" || playerList?.collegeName == "St. Petersburg, Russia" || playerList?.collegeName == "Anadolu efes" || playerList?.collegeName == "Tbilisi, Georgia" || playerList?.collegeName == "Paris, France" || playerList?.collegeName == "El Masnou, Spain" || playerList?.collegeName == "Vevey, Switzerland" || playerList?.collegeName == "Utena, Lithuania"
         {
             CollegeLabel.text = "Didn't attend College"
         }

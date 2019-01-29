@@ -430,8 +430,8 @@ class SimulatorVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
         }
         else
         {
-            let VL = min(VO!, VD!, V!) + 49
-            let VU = max(VO!, VD!, V!) + 79
+            let VL = min(VO!, VD!, V!) + 39
+            let VU = max(VO!, VD!, V!) + 69
             visitingScore = Int.random(in: VL ... VU)
         }
         print(visitingScore)

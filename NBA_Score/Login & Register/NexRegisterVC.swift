@@ -7,23 +7,23 @@
 //
 
 import UIKit
+import Firebase
 
 class NextRegisterVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource
 {
-    var firstName: String?
-    var lastName: String?
-    var username: String?
-    var CountryName: String?
-    var email: String?
-    var password: String?
+    var Username: String?
+    var Password: String?
+    var ConfirmPassword: String?
+    var Email: String?
     var TeamChosen: String = ""
     
     private let NBA_Data = ["Boston Celtics", "Brooklyn Nets", "New York Knicks", "Philadelphia 76ers", "Toronto Raptors", "Chicago Bulls", "Cleveland Cavaliers", "Detroit Pistons", "Indiana Pacers", "Milwaukee Bucks", "Atlanta Hawks", "Charlotte Hornets", "Miami Heat", "Orlando Magic", "Washington Wizards", "Golden State Warriors", "Los Angeles Clippers", "Los Angeles Lakers", "Phoenix Suns", "Sacramento Kings", "Dallas Mavericks", "Houston Rockets", "Memphis Grizzilies", "New Orleans Pelicans", "San Antonio Spurs", "Denver Nuggets", "Minnesota Timberwolves", "Oklahoma Thunder", "Portland Trail Blaizers", "Utah Jazz"]
     
-    @IBOutlet weak var FirstNameTF: UITextField!
-    @IBOutlet weak var LastNameTF: UITextField!
     @IBOutlet weak var UsernameTF: UITextField!
-    @IBOutlet weak var CountryNameTF: UITextField!
+    @IBOutlet weak var PasswordTF: UITextField!
+    @IBOutlet weak var ConfirmPasswordTF: UITextField!
+    @IBOutlet weak var EmailTF: UITextField!
+    
     @IBOutlet weak var FavoriteNBATeamPicker: UIPickerView!
     @IBOutlet weak var NBALabel: UILabel!
     @IBOutlet weak var TeamImage: UIImageView!
@@ -37,41 +37,74 @@ class NextRegisterVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     
     @IBAction func FinishButtonTapped(sender: AnyObject)
     {
-        firstName = FirstNameTF.text
-        lastName = LastNameTF.text
-        username = UsernameTF.text
-        CountryName = CountryNameTF.text
+        Username = UsernameTF.text
+        Password = PasswordTF.text
+        ConfirmPassword = ConfirmPasswordTF.text
+        Email = EmailTF.text
         
-        if (firstName!.isEmpty)
-        {
-            let alert = UIAlertController(title: "First name", message: "You must fillin an first name", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "Okay", style: .default, handler: nil))
-            self.present(alert, animated: true)
-        }
-        else if (lastName!.isEmpty)
-        {
-            let alert = UIAlertController(title: "Second name", message: "You must fillin an second name", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "Okay", style: .default, handler: nil))
-            self.present(alert, animated: true)
-        }
-        else if (username!.isEmpty)
+        if (Username!.isEmpty)
         {
             let alert = UIAlertController(title: "Username", message: "You must fillin an username", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "Okay", style: .default, handler: nil))
             self.present(alert, animated: true)
         }
-        else if (CountryName!.isEmpty)
+        else if (Password!.isEmpty)
         {
-            let alert = UIAlertController(title: "Country", message: "You must confirm your country", preferredStyle: .alert)
+            let alert = UIAlertController(title: "Password", message: "You must fillin an password", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Okay", style: .default, handler: nil))
+            self.present(alert, animated: true)
+        }
+        else if (ConfirmPassword!.isEmpty)
+        {
+            let alert = UIAlertController(title: "Confirm Password", message: "You must confirm the password", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Okay", style: .default, handler: nil))
+            self.present(alert, animated: true)
+        }
+        else if (Email!.isEmpty)
+        {
+            let alert = UIAlertController(title: "Email", message: "You must fillin an email", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Okay", style: .default, handler: nil))
+            self.present(alert, animated: true)
+        }
+        else if Password != ConfirmPassword
+        {
+            let alert = UIAlertController(title: "Passwords must match", message: "You must fillin identical passwords", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "Okay", style: .default, handler: nil))
             self.present(alert, animated: true)
         }
         else
         {
-            submitAccount(email: self.email, password: self.password, firstName: self.firstName, lastName: self.lastName, username: self.username, CountryName: self.CountryName, NBA_Team: self.TeamChosen)
+            Auth.auth().createUser(withEmail: Email!, password: Password!) { user, error in
+                if error == nil && user != nil {
+                    print("User created!")
+                    
+                    let changeRequest = Auth.auth().currentUser?.createProfileChangeRequest()
+                    changeRequest?.displayName = self.Username
+                    changeRequest?.commitChanges { error in
+                        if error == nil {
+                            print("Username created!")
+                            self.dismiss(animated: false, completion: nil)
+                        }
+                        else {
+                            let alertController = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: .alert)
+                            let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+                            
+                            alertController.addAction(defaultAction)
+                            self.present(alertController, animated: true, completion: nil)
+                        }
+                    }
+                }
+                else {
+                    let alertController = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: .alert)
+                    let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+                    
+                    alertController.addAction(defaultAction)
+                    self.present(alertController, animated: true, completion: nil)
+                }
+            }
         }
         
-        performSegue(withIdentifier: "RegisteredSegue", sender: nil)
+//        performSegue(withIdentifier: "RegisteredSegue", sender: nil)
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int

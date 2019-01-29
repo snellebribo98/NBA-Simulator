@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class modesVC: UIViewController
 {
@@ -24,40 +25,21 @@ class modesVC: UIViewController
     
     var activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView()
     
+    @IBAction func unwindToModes(segue:UIStoryboardSegue) { }
+    
     @IBAction func RefreshButtonTapped(_ sender: Any)
     {
         idList.removeAll()
         teamDetailss.removeAll()
         
+        loadingLabel.isHidden = false
         loadingLabel.text = "Loading Data"
 
         startLoading()
         
         if idList.isEmpty && teamDetailss.isEmpty
         {
-            fetchTeams { (success3) -> Void in
-                if success3 {
-                    print("Teams: \(self.teamDetailss.count)")
-                    
-                    self.fetchPlayers { (success) -> Void in
-                        if success {
-                            // print(self.playerList)
-                            
-                            self.fetchPlayerStats(idList: self.idList) { (success2) -> Void in
-                                if success2 {
-                                    DispatchQueue.main.async {
-                                        self.stopLoading()
-                                        self.loadingLabel.isHidden = true
-
-                                        // print(self.teamDetailss)
-                                    }
-                                    // print(self.playerStatss)
-                                }
-                            }
-                        }
-                    }
-                }
-            }
+            fetchData()
         }
     }
         
@@ -66,23 +48,26 @@ class modesVC: UIViewController
         super.viewDidLoad()
         loadingLabel.text = "Loading Data"
         
+//        print("Username: ", Auth.auth().currentUser?.displayName as Any)
+        
         startLoading()
         
+        fetchData()
+    }
+    
+    func fetchData()
+    {
         fetchTeams { (success3) -> Void in
             if success3 {
                 print("Teams: \(self.teamDetailss.count)")
                 self.fetchPlayers { (success) -> Void in
                     if success {
-//                        print(self.playerList)
-                        
                         self.fetchPlayerStats(idList: self.idList) { (success2) -> Void in
                             if success2 {
                                 DispatchQueue.main.async {
                                     self.stopLoading()
                                     self.loadingLabel.isHidden = true
-//                                    print(self.teamDetailss)
                                 }
-//                                print(self.playerStatss)
                             }
                         }
                     }
@@ -90,53 +75,6 @@ class modesVC: UIViewController
             }
         }
     }
-    
-    func startLoading()
-    {
-        activityIndicator.style = .whiteLarge
-        activityIndicator.frame = CGRect(x: 0, y: 0, width: 125, height: 125)
-        activityIndicator.center = self.view.center
-        activityIndicator.hidesWhenStopped = true
-        view.addSubview(activityIndicator)
-        
-        activityIndicator.startAnimating()
-        UIApplication.shared.beginIgnoringInteractionEvents()
-    }
-    
-    func stopLoading()
-    {
-        self.activityIndicator.stopAnimating()
-        UIApplication.shared.endIgnoringInteractionEvents()
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
-    {
-        if segue.identifier == "currentSegue"
-        {
-            let barViewControllers = segue.destination as! UITabBarController
-            
-            let teamArray = Array(teamDetailss.values.map{ $0 })
-            let navTeam = barViewControllers.viewControllers![1] as! UINavigationController
-            let destinationTeamViewController = navTeam.topViewController as! TeamTV
-            destinationTeamViewController.teamDetailss = teamArray
-            
-            let navPlayer = barViewControllers.viewControllers![0] as! UINavigationController
-            let destinationPlayerViewController = navPlayer.topViewController as! PlayerTV
-            
-            var playerList = [Player]()
-            for (_,team) in teamDetailss {
-                playerList.append(contentsOf: team.players!)
-            }
-            destinationPlayerViewController.playerList = playerList
-        }
-        else if segue.identifier == "simulatorSegue"
-        {
-            let SRVC = segue.destination as! SimulatorVC
-            SRVC.teamDetailss = self.teamDetailss
-        }
-    }
-    
-    @IBAction func unwindToModes(segue:UIStoryboardSegue) { }
     
     func fetchTeams(completion: @escaping (_ success3: Bool) -> Void) {
         let url: URL = URL(string: "http://data.nba.net/10s/prod/v1/2018/teams.json")!
@@ -242,5 +180,55 @@ class modesVC: UIViewController
         subview.backgroundColor = UIColor(red: (0/255.0), green: (255/255.0), blue: (0/255.0), alpha: 1.0)
         
         Timer.scheduledTimer(withTimeInterval: 3, repeats: false, block: { _ in alert.dismiss(animated: true, completion: nil)} )
+    }
+    
+    func startLoading()
+    {
+        activityIndicator.style = .whiteLarge
+        activityIndicator.frame = CGRect(x: 0, y: 0, width: 125, height: 125)
+        activityIndicator.center = self.view.center
+        activityIndicator.hidesWhenStopped = true
+        view.addSubview(activityIndicator)
+        
+        activityIndicator.startAnimating()
+        UIApplication.shared.beginIgnoringInteractionEvents()
+    }
+    
+    func stopLoading()
+    {
+        self.activityIndicator.stopAnimating()
+        UIApplication.shared.endIgnoringInteractionEvents()
+    }
+    
+    @IBAction func handleLogout(_ target: UIButton) {
+        try! Auth.auth().signOut()
+        self.dismiss(animated: false, completion: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    {
+        if segue.identifier == "currentSegue"
+        {
+            let barViewControllers = segue.destination as! UITabBarController
+            
+            let teamArray = Array(teamDetailss.values.map{ $0 })
+            let navTeam = barViewControllers.viewControllers![1] as! UINavigationController
+            let destinationTeamViewController = navTeam.topViewController as! TeamTV
+            destinationTeamViewController.teamDetailss = teamArray
+            
+            let navPlayer = barViewControllers.viewControllers![0] as! UINavigationController
+            let destinationPlayerViewController = navPlayer.topViewController as! PlayerTV
+            
+            var playerList = [Player]()
+            for (_,team) in teamDetailss {
+                playerList.append(contentsOf: team.players!)
+            }
+            destinationPlayerViewController.playerList = playerList
+        }
+        else if segue.identifier == "simulatorSegue"
+        {
+            let SRVC = segue.destination as! SimulatorVC
+            SRVC.teamDetailss = self.teamDetailss
+        }
     }
 }
