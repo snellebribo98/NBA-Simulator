@@ -21,45 +21,42 @@
 		F34546FB21E779280015EEE3 /* TeamCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34546FA21E779280015EEE3 /* TeamCell.swift */; };
 		F34546FF21E78CBA0015EEE3 /* PlayerTV.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34546FE21E78CBA0015EEE3 /* PlayerTV.swift */; };
 		F345470121E78CDA0015EEE3 /* PlayerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F345470021E78CDA0015EEE3 /* PlayerCell.swift */; };
-		F360DDE922020D8100D875B1 /* heat.png in Resources */ = {isa = PBXBuildFile; fileRef = F360DDEB22020D8200D875B1 /* heat.png */; };
-		F360DDEC22020DA800D875B1 /* nba-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = F360DDEE22020DA800D875B1 /* nba-logo.png */; };
-		F360DDEF22020DE000D875B1 /* basketballApp.png in Resources */ = {isa = PBXBuildFile; fileRef = F360DDF122020DE000D875B1 /* basketballApp.png */; };
-		F360DDF222020DE300D875B1 /* lakers.ico in Resources */ = {isa = PBXBuildFile; fileRef = F360DDF422020DE300D875B1 /* lakers.ico */; };
-		F360DDF522020DE700D875B1 /* celtics.ico in Resources */ = {isa = PBXBuildFile; fileRef = F360DDF722020DE700D875B1 /* celtics.ico */; };
-		F360DDF822020DEB00D875B1 /* lebron.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F360DDFA22020DEB00D875B1 /* lebron.jpg */; };
-		F360DDFB22020DEE00D875B1 /* suns.png in Resources */ = {isa = PBXBuildFile; fileRef = F360DDFD22020DEE00D875B1 /* suns.png */; };
-		F360DDFE22020DF300D875B1 /* rockets.png in Resources */ = {isa = PBXBuildFile; fileRef = F360DE0022020DF300D875B1 /* rockets.png */; };
-		F360DE0122020DF600D875B1 /* memphis.png in Resources */ = {isa = PBXBuildFile; fileRef = F360DE0322020DF600D875B1 /* memphis.png */; };
-		F360DE0422020DF900D875B1 /* dallas.png in Resources */ = {isa = PBXBuildFile; fileRef = F360DE0622020DF900D875B1 /* dallas.png */; };
-		F360DE0722020DFC00D875B1 /* kings.png in Resources */ = {isa = PBXBuildFile; fileRef = F360DE0922020DFC00D875B1 /* kings.png */; };
-		F360DE0A22020E4600D875B1 /* warriors.png in Resources */ = {isa = PBXBuildFile; fileRef = F360DE0C22020E4600D875B1 /* warriors.png */; };
-		F360DE0D22020E4900D875B1 /* wizards.png in Resources */ = {isa = PBXBuildFile; fileRef = F360DE0F22020E4900D875B1 /* wizards.png */; };
-		F360DE1022020E4C00D875B1 /* spurs.png in Resources */ = {isa = PBXBuildFile; fileRef = F360DE1222020E4C00D875B1 /* spurs.png */; };
-		F360DE1322020E4F00D875B1 /* thunder.png in Resources */ = {isa = PBXBuildFile; fileRef = F360DE1522020E4F00D875B1 /* thunder.png */; };
-		F360DE1622020E5100D875B1 /* timberwolves.png in Resources */ = {isa = PBXBuildFile; fileRef = F360DE1822020E5100D875B1 /* timberwolves.png */; };
-		F360DE1922020E5400D875B1 /* pistons.png in Resources */ = {isa = PBXBuildFile; fileRef = F360DE1B22020E5400D875B1 /* pistons.png */; };
-		F360DE1C22020E5900D875B1 /* nuggets.png in Resources */ = {isa = PBXBuildFile; fileRef = F360DE1E22020E5900D875B1 /* nuggets.png */; };
-		F360DE1F22020E5C00D875B1 /* pacers.png in Resources */ = {isa = PBXBuildFile; fileRef = F360DE2122020E5C00D875B1 /* pacers.png */; };
-		F360DE2222020E5F00D875B1 /* pelicans.png in Resources */ = {isa = PBXBuildFile; fileRef = F360DE2422020E5F00D875B1 /* pelicans.png */; };
-		F360DE2522020E6200D875B1 /* lakers.png in Resources */ = {isa = PBXBuildFile; fileRef = F360DE2722020E6200D875B1 /* lakers.png */; };
-		F360DE2822020E6500D875B1 /* magic.png in Resources */ = {isa = PBXBuildFile; fileRef = F360DE2A22020E6500D875B1 /* magic.png */; };
-		F360DE2B22020E6800D875B1 /* clippers.png in Resources */ = {isa = PBXBuildFile; fileRef = F360DE2D22020E6800D875B1 /* clippers.png */; };
-		F360DE2E22020E6C00D875B1 /* hawks.png in Resources */ = {isa = PBXBuildFile; fileRef = F360DE3022020E6C00D875B1 /* hawks.png */; };
-		F360DE3122020E7100D875B1 /* hornets.png in Resources */ = {isa = PBXBuildFile; fileRef = F360DE3322020E7100D875B1 /* hornets.png */; };
-		F360DE3422020E7400D875B1 /* jazz.png in Resources */ = {isa = PBXBuildFile; fileRef = F360DE3622020E7400D875B1 /* jazz.png */; };
-		F360DE3722020E7800D875B1 /* blazers.png in Resources */ = {isa = PBXBuildFile; fileRef = F360DE3922020E7800D875B1 /* blazers.png */; };
-		F360DE3A22020E7C00D875B1 /* bucks.png in Resources */ = {isa = PBXBuildFile; fileRef = F360DE3C22020E7C00D875B1 /* bucks.png */; };
-		F360DE3D22020E8000D875B1 /* bulls.png in Resources */ = {isa = PBXBuildFile; fileRef = F360DE3F22020E8000D875B1 /* bulls.png */; };
-		F360DE4022020E8400D875B1 /* cavs.png in Resources */ = {isa = PBXBuildFile; fileRef = F360DE4222020E8400D875B1 /* cavs.png */; };
-		F360DE4322020E8800D875B1 /* nba teams.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F360DE4522020E8800D875B1 /* nba teams.jpg */; };
-		F360DE4E2202117E00D875B1 /* knicks.png in Resources */ = {isa = PBXBuildFile; fileRef = F360DE462202117C00D875B1 /* knicks.png */; };
-		F360DE4F2202117E00D875B1 /* philly.png in Resources */ = {isa = PBXBuildFile; fileRef = F360DE472202117C00D875B1 /* philly.png */; };
-		F360DE502202117E00D875B1 /* nba-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = F360DE482202117C00D875B1 /* nba-logo.png */; };
-		F360DE512202117E00D875B1 /* toronto.png in Resources */ = {isa = PBXBuildFile; fileRef = F360DE492202117D00D875B1 /* toronto.png */; };
-		F360DE522202117E00D875B1 /* nba teams.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F360DE4A2202117D00D875B1 /* nba teams.jpg */; };
-		F360DE532202117E00D875B1 /* celtics.png in Resources */ = {isa = PBXBuildFile; fileRef = F360DE4B2202117D00D875B1 /* celtics.png */; };
-		F360DE542202117E00D875B1 /* smits.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F360DE4C2202117D00D875B1 /* smits.jpg */; };
-		F360DE552202117E00D875B1 /* nets.png in Resources */ = {isa = PBXBuildFile; fileRef = F360DE4D2202117D00D875B1 /* nets.png */; };
+		F360DEBD22021ECA00D875B1 /* rockets.png in Resources */ = {isa = PBXBuildFile; fileRef = F360DE9E22021EC800D875B1 /* rockets.png */; };
+		F360DEBE22021ECA00D875B1 /* jazz.png in Resources */ = {isa = PBXBuildFile; fileRef = F360DE9F22021EC800D875B1 /* jazz.png */; };
+		F360DEBF22021ECA00D875B1 /* pistons.png in Resources */ = {isa = PBXBuildFile; fileRef = F360DEA022021EC800D875B1 /* pistons.png */; };
+		F360DEC022021ECA00D875B1 /* lakers.ico in Resources */ = {isa = PBXBuildFile; fileRef = F360DEA122021EC800D875B1 /* lakers.ico */; };
+		F360DEC122021ECA00D875B1 /* spurs.png in Resources */ = {isa = PBXBuildFile; fileRef = F360DEA222021EC800D875B1 /* spurs.png */; };
+		F360DEC222021ECA00D875B1 /* kings.png in Resources */ = {isa = PBXBuildFile; fileRef = F360DEA322021EC900D875B1 /* kings.png */; };
+		F360DEC322021ECA00D875B1 /* smits.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F360DEA422021EC900D875B1 /* smits.jpg */; };
+		F360DEC422021ECA00D875B1 /* lebron.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F360DEA522021EC900D875B1 /* lebron.jpg */; };
+		F360DEC522021ECA00D875B1 /* blazers.png in Resources */ = {isa = PBXBuildFile; fileRef = F360DEA622021EC900D875B1 /* blazers.png */; };
+		F360DEC622021ECA00D875B1 /* nba teams.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F360DEA722021EC900D875B1 /* nba teams.jpg */; };
+		F360DEC722021ECA00D875B1 /* timberwolves.png in Resources */ = {isa = PBXBuildFile; fileRef = F360DEA822021EC900D875B1 /* timberwolves.png */; };
+		F360DEC822021ECA00D875B1 /* memphis.png in Resources */ = {isa = PBXBuildFile; fileRef = F360DEA922021EC900D875B1 /* memphis.png */; };
+		F360DEC922021ECA00D875B1 /* bucks.png in Resources */ = {isa = PBXBuildFile; fileRef = F360DEAA22021EC900D875B1 /* bucks.png */; };
+		F360DECA22021ECA00D875B1 /* nba-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = F360DEAB22021EC900D875B1 /* nba-logo.png */; };
+		F360DECB22021ECA00D875B1 /* pelicans.png in Resources */ = {isa = PBXBuildFile; fileRef = F360DEAC22021EC900D875B1 /* pelicans.png */; };
+		F360DECC22021ECA00D875B1 /* bulls.png in Resources */ = {isa = PBXBuildFile; fileRef = F360DEAD22021EC900D875B1 /* bulls.png */; };
+		F360DECD22021ECA00D875B1 /* thunder.png in Resources */ = {isa = PBXBuildFile; fileRef = F360DEAE22021EC900D875B1 /* thunder.png */; };
+		F360DECE22021ECA00D875B1 /* dallas.png in Resources */ = {isa = PBXBuildFile; fileRef = F360DEAF22021EC900D875B1 /* dallas.png */; };
+		F360DECF22021ECA00D875B1 /* celtics.ico in Resources */ = {isa = PBXBuildFile; fileRef = F360DEB022021EC900D875B1 /* celtics.ico */; };
+		F360DED022021ECA00D875B1 /* heat.png in Resources */ = {isa = PBXBuildFile; fileRef = F360DEB122021EC900D875B1 /* heat.png */; };
+		F360DED122021ECA00D875B1 /* cavs.png in Resources */ = {isa = PBXBuildFile; fileRef = F360DEB222021ECA00D875B1 /* cavs.png */; };
+		F360DED222021ECA00D875B1 /* magic.png in Resources */ = {isa = PBXBuildFile; fileRef = F360DEB322021ECA00D875B1 /* magic.png */; };
+		F360DED322021ECA00D875B1 /* hornets.png in Resources */ = {isa = PBXBuildFile; fileRef = F360DEB422021ECA00D875B1 /* hornets.png */; };
+		F360DED422021ECA00D875B1 /* hawks.png in Resources */ = {isa = PBXBuildFile; fileRef = F360DEB522021ECA00D875B1 /* hawks.png */; };
+		F360DED522021ECA00D875B1 /* lakers.png in Resources */ = {isa = PBXBuildFile; fileRef = F360DEB622021ECA00D875B1 /* lakers.png */; };
+		F360DED622021ECA00D875B1 /* nuggets.png in Resources */ = {isa = PBXBuildFile; fileRef = F360DEB722021ECA00D875B1 /* nuggets.png */; };
+		F360DED722021ECA00D875B1 /* pacers.png in Resources */ = {isa = PBXBuildFile; fileRef = F360DEB822021ECA00D875B1 /* pacers.png */; };
+		F360DED822021ECA00D875B1 /* suns.png in Resources */ = {isa = PBXBuildFile; fileRef = F360DEB922021ECA00D875B1 /* suns.png */; };
+		F360DED922021ECA00D875B1 /* warriors.png in Resources */ = {isa = PBXBuildFile; fileRef = F360DEBA22021ECA00D875B1 /* warriors.png */; };
+		F360DEDA22021ECA00D875B1 /* wizards.png in Resources */ = {isa = PBXBuildFile; fileRef = F360DEBB22021ECA00D875B1 /* wizards.png */; };
+		F360DEDB22021ECA00D875B1 /* clippers.png in Resources */ = {isa = PBXBuildFile; fileRef = F360DEBC22021ECA00D875B1 /* clippers.png */; };
+		F360DEDD2202213B00D875B1 /* celtics.png in Resources */ = {isa = PBXBuildFile; fileRef = F360DEDC2202213A00D875B1 /* celtics.png */; };
+		F360DEDF2202214900D875B1 /* knicks.png in Resources */ = {isa = PBXBuildFile; fileRef = F360DEDE2202214900D875B1 /* knicks.png */; };
+		F360DEE12202215300D875B1 /* nets.png in Resources */ = {isa = PBXBuildFile; fileRef = F360DEE02202215300D875B1 /* nets.png */; };
+		F360DEE32202215F00D875B1 /* philly.png in Resources */ = {isa = PBXBuildFile; fileRef = F360DEE22202215F00D875B1 /* philly.png */; };
+		F360DEE52202216600D875B1 /* toronto.png in Resources */ = {isa = PBXBuildFile; fileRef = F360DEE42202216600D875B1 /* toronto.png */; };
 		F363A46E21EC93D700282A17 /* SimulatorResultVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F363A46D21EC93D700282A17 /* SimulatorResultVC.swift */; };
 		F386D15321E8AA8D009C8437 /* PlayerDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F386D15221E8AA8D009C8437 /* PlayerDetailVC.swift */; };
 		F3B565DB21FFAF4700ABD261 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F3B565DA21FFAF4700ABD261 /* GoogleService-Info.plist */; };
@@ -72,7 +69,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0434F7DB647A626588D7DBAD /* Pods_NBA_Score.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NBA_Score.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0434F7DB647A626588D7DBAD /* Pods_NBA_Score.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_NBA_Score.framework; path = "../../../Library/Developer/Xcode/DerivedData/NBA_Score-hhxpxgzvvcogfbfrkxabdqovakla/Build/Products/Debug-iphoneos/Pods_NBA_Score.framework"; sourceTree = "<group>"; };
 		55243D84A2C18BE7257550A7 /* Pods-NBA_Score.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NBA_Score.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NBA_Score/Pods-NBA_Score.debug.xcconfig"; sourceTree = "<group>"; };
 		770C2C8FCEFAC1BF44CAD97C /* Pods-NBA_Score.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NBA_Score.release.xcconfig"; path = "Pods/Target Support Files/Pods-NBA_Score/Pods-NBA_Score.release.xcconfig"; sourceTree = "<group>"; };
 		F310427C21D6577500CA20CD /* TeamDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamDetailVC.swift; sourceTree = "<group>"; };
@@ -90,48 +87,45 @@
 		F34546FA21E779280015EEE3 /* TeamCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamCell.swift; sourceTree = "<group>"; };
 		F34546FE21E78CBA0015EEE3 /* PlayerTV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerTV.swift; sourceTree = "<group>"; };
 		F345470021E78CDA0015EEE3 /* PlayerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerCell.swift; sourceTree = "<group>"; };
-		F360DDEA22020D8200D875B1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Base; path = Base.lproj/heat.png; sourceTree = "<group>"; };
-		F360DDED22020DA800D875B1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Base; path = "Base.lproj/nba-logo.png"; sourceTree = "<group>"; };
-		F360DDF022020DE000D875B1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Base; path = Base.lproj/basketballApp.png; sourceTree = "<group>"; };
-		F360DDF322020DE300D875B1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = image.ico; name = Base; path = Base.lproj/lakers.ico; sourceTree = "<group>"; };
-		F360DDF622020DE700D875B1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = image.ico; name = Base; path = Base.lproj/celtics.ico; sourceTree = "<group>"; };
-		F360DDF922020DEB00D875B1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = Base; path = Base.lproj/lebron.jpg; sourceTree = "<group>"; };
-		F360DDFC22020DEE00D875B1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Base; path = Base.lproj/suns.png; sourceTree = "<group>"; };
-		F360DDFF22020DF300D875B1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Base; path = Base.lproj/rockets.png; sourceTree = "<group>"; };
-		F360DE0222020DF600D875B1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Base; path = Base.lproj/memphis.png; sourceTree = "<group>"; };
-		F360DE0522020DF900D875B1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Base; path = Base.lproj/dallas.png; sourceTree = "<group>"; };
-		F360DE0822020DFC00D875B1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Base; path = Base.lproj/kings.png; sourceTree = "<group>"; };
-		F360DE0B22020E4600D875B1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Base; path = Base.lproj/warriors.png; sourceTree = "<group>"; };
-		F360DE0E22020E4900D875B1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Base; path = Base.lproj/wizards.png; sourceTree = "<group>"; };
-		F360DE1122020E4C00D875B1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Base; path = Base.lproj/spurs.png; sourceTree = "<group>"; };
-		F360DE1422020E4F00D875B1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Base; path = Base.lproj/thunder.png; sourceTree = "<group>"; };
-		F360DE1722020E5100D875B1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Base; path = Base.lproj/timberwolves.png; sourceTree = "<group>"; };
-		F360DE1A22020E5400D875B1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Base; path = Base.lproj/pistons.png; sourceTree = "<group>"; };
-		F360DE1D22020E5900D875B1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Base; path = Base.lproj/nuggets.png; sourceTree = "<group>"; };
-		F360DE2022020E5C00D875B1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Base; path = Base.lproj/pacers.png; sourceTree = "<group>"; };
-		F360DE2322020E5F00D875B1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Base; path = Base.lproj/pelicans.png; sourceTree = "<group>"; };
-		F360DE2622020E6200D875B1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Base; path = Base.lproj/lakers.png; sourceTree = "<group>"; };
-		F360DE2922020E6500D875B1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Base; path = Base.lproj/magic.png; sourceTree = "<group>"; };
-		F360DE2C22020E6800D875B1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Base; path = Base.lproj/clippers.png; sourceTree = "<group>"; };
-		F360DE2F22020E6C00D875B1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Base; path = Base.lproj/hawks.png; sourceTree = "<group>"; };
-		F360DE3222020E7100D875B1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Base; path = Base.lproj/hornets.png; sourceTree = "<group>"; };
-		F360DE3522020E7400D875B1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Base; path = Base.lproj/jazz.png; sourceTree = "<group>"; };
-		F360DE3822020E7800D875B1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Base; path = Base.lproj/blazers.png; sourceTree = "<group>"; };
-		F360DE3B22020E7C00D875B1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Base; path = Base.lproj/bucks.png; sourceTree = "<group>"; };
-		F360DE3E22020E8000D875B1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Base; path = Base.lproj/bulls.png; sourceTree = "<group>"; };
-		F360DE4122020E8400D875B1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Base; path = Base.lproj/cavs.png; sourceTree = "<group>"; };
-		F360DE4422020E8800D875B1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = Base; path = "Base.lproj/nba teams.jpg"; sourceTree = "<group>"; };
-		F360DE462202117C00D875B1 /* knicks.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = knicks.png; path = "../../../../NBA App/knicks.png"; sourceTree = "<group>"; };
-		F360DE472202117C00D875B1 /* philly.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = philly.png; path = "../../../../NBA App/philly.png"; sourceTree = "<group>"; };
-		F360DE482202117C00D875B1 /* nba-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "nba-logo.png"; path = "../../../../NBA App/nba-logo.png"; sourceTree = "<group>"; };
-		F360DE492202117D00D875B1 /* toronto.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = toronto.png; path = "../../../../NBA App/toronto.png"; sourceTree = "<group>"; };
-		F360DE4A2202117D00D875B1 /* nba teams.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "nba teams.jpg"; path = "../../../../NBA App/nba teams.jpg"; sourceTree = "<group>"; };
-		F360DE4B2202117D00D875B1 /* celtics.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = celtics.png; path = "../../../../NBA App/celtics.png"; sourceTree = "<group>"; };
-		F360DE4C2202117D00D875B1 /* smits.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = smits.jpg; path = "../../../../NBA App/smits.jpg"; sourceTree = "<group>"; };
-		F360DE4D2202117D00D875B1 /* nets.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = nets.png; path = "../../../../NBA App/nets.png"; sourceTree = "<group>"; };
+		F360DE9E22021EC800D875B1 /* rockets.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = rockets.png; path = docs_apps/rockets.png; sourceTree = SOURCE_ROOT; };
+		F360DE9F22021EC800D875B1 /* jazz.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = jazz.png; path = docs_apps/jazz.png; sourceTree = SOURCE_ROOT; };
+		F360DEA022021EC800D875B1 /* pistons.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = pistons.png; path = docs_apps/pistons.png; sourceTree = SOURCE_ROOT; };
+		F360DEA122021EC800D875B1 /* lakers.ico */ = {isa = PBXFileReference; lastKnownFileType = image.ico; name = lakers.ico; path = docs_apps/lakers.ico; sourceTree = SOURCE_ROOT; };
+		F360DEA222021EC800D875B1 /* spurs.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = spurs.png; path = docs_apps/spurs.png; sourceTree = SOURCE_ROOT; };
+		F360DEA322021EC900D875B1 /* kings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = kings.png; path = docs_apps/kings.png; sourceTree = SOURCE_ROOT; };
+		F360DEA422021EC900D875B1 /* smits.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = smits.jpg; path = docs_apps/smits.jpg; sourceTree = SOURCE_ROOT; };
+		F360DEA522021EC900D875B1 /* lebron.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = lebron.jpg; path = docs_apps/lebron.jpg; sourceTree = SOURCE_ROOT; };
+		F360DEA622021EC900D875B1 /* blazers.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = blazers.png; path = docs_apps/blazers.png; sourceTree = SOURCE_ROOT; };
+		F360DEA722021EC900D875B1 /* nba teams.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "nba teams.jpg"; path = "docs_apps/nba teams.jpg"; sourceTree = SOURCE_ROOT; };
+		F360DEA822021EC900D875B1 /* timberwolves.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = timberwolves.png; path = docs_apps/timberwolves.png; sourceTree = SOURCE_ROOT; };
+		F360DEA922021EC900D875B1 /* memphis.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = memphis.png; path = docs_apps/memphis.png; sourceTree = SOURCE_ROOT; };
+		F360DEAA22021EC900D875B1 /* bucks.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bucks.png; path = docs_apps/bucks.png; sourceTree = SOURCE_ROOT; };
+		F360DEAB22021EC900D875B1 /* nba-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "nba-logo.png"; path = "docs_apps/nba-logo.png"; sourceTree = SOURCE_ROOT; };
+		F360DEAC22021EC900D875B1 /* pelicans.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = pelicans.png; path = docs_apps/pelicans.png; sourceTree = SOURCE_ROOT; };
+		F360DEAD22021EC900D875B1 /* bulls.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bulls.png; path = docs_apps/bulls.png; sourceTree = SOURCE_ROOT; };
+		F360DEAE22021EC900D875B1 /* thunder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = thunder.png; path = docs_apps/thunder.png; sourceTree = SOURCE_ROOT; };
+		F360DEAF22021EC900D875B1 /* dallas.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = dallas.png; path = docs_apps/dallas.png; sourceTree = SOURCE_ROOT; };
+		F360DEB022021EC900D875B1 /* celtics.ico */ = {isa = PBXFileReference; lastKnownFileType = image.ico; name = celtics.ico; path = docs_apps/celtics.ico; sourceTree = SOURCE_ROOT; };
+		F360DEB122021EC900D875B1 /* heat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = heat.png; path = docs_apps/heat.png; sourceTree = SOURCE_ROOT; };
+		F360DEB222021ECA00D875B1 /* cavs.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = cavs.png; path = docs_apps/cavs.png; sourceTree = SOURCE_ROOT; };
+		F360DEB322021ECA00D875B1 /* magic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = magic.png; path = docs_apps/magic.png; sourceTree = SOURCE_ROOT; };
+		F360DEB422021ECA00D875B1 /* hornets.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = hornets.png; path = docs_apps/hornets.png; sourceTree = SOURCE_ROOT; };
+		F360DEB522021ECA00D875B1 /* hawks.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = hawks.png; path = docs_apps/hawks.png; sourceTree = SOURCE_ROOT; };
+		F360DEB622021ECA00D875B1 /* lakers.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = lakers.png; path = docs_apps/lakers.png; sourceTree = SOURCE_ROOT; };
+		F360DEB722021ECA00D875B1 /* nuggets.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = nuggets.png; path = docs_apps/nuggets.png; sourceTree = SOURCE_ROOT; };
+		F360DEB822021ECA00D875B1 /* pacers.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = pacers.png; path = docs_apps/pacers.png; sourceTree = SOURCE_ROOT; };
+		F360DEB922021ECA00D875B1 /* suns.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = suns.png; path = docs_apps/suns.png; sourceTree = SOURCE_ROOT; };
+		F360DEBA22021ECA00D875B1 /* warriors.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = warriors.png; path = docs_apps/warriors.png; sourceTree = SOURCE_ROOT; };
+		F360DEBB22021ECA00D875B1 /* wizards.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wizards.png; path = docs_apps/wizards.png; sourceTree = SOURCE_ROOT; };
+		F360DEBC22021ECA00D875B1 /* clippers.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = clippers.png; path = docs_apps/clippers.png; sourceTree = SOURCE_ROOT; };
+		F360DEDC2202213A00D875B1 /* celtics.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = celtics.png; path = docs_apps/celtics.png; sourceTree = SOURCE_ROOT; };
+		F360DEDE2202214900D875B1 /* knicks.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = knicks.png; path = docs_apps/knicks.png; sourceTree = SOURCE_ROOT; };
+		F360DEE02202215300D875B1 /* nets.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = nets.png; path = docs_apps/nets.png; sourceTree = SOURCE_ROOT; };
+		F360DEE22202215F00D875B1 /* philly.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = philly.png; path = docs_apps/philly.png; sourceTree = SOURCE_ROOT; };
+		F360DEE42202216600D875B1 /* toronto.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = toronto.png; path = docs_apps/toronto.png; sourceTree = SOURCE_ROOT; };
 		F363A46D21EC93D700282A17 /* SimulatorResultVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimulatorResultVC.swift; sourceTree = "<group>"; };
 		F386D15221E8AA8D009C8437 /* PlayerDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerDetailVC.swift; sourceTree = "<group>"; };
-		F3B565DA21FFAF4700ABD261 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		F3B565DA21FFAF4700ABD261 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../NBA-Score/NBA_Score/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F3CAA82521E4D44400FEC5A9 /* PlayerStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerStruct.swift; sourceTree = "<group>"; };
 		F3CAA82921E4D67D00FEC5A9 /* NBAPlayersStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NBAPlayersStruct.swift; sourceTree = "<group>"; };
 		F3CAA82F21E4F2FF00FEC5A9 /* TeamDetailsStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamDetailsStruct.swift; sourceTree = "<group>"; };
@@ -243,45 +237,42 @@
 		F324F25A21CE9C9F00806ABC /* docs */ = {
 			isa = PBXGroup;
 			children = (
-				F360DE4B2202117D00D875B1 /* celtics.png */,
-				F360DE462202117C00D875B1 /* knicks.png */,
-				F360DE4A2202117D00D875B1 /* nba teams.jpg */,
-				F360DE482202117C00D875B1 /* nba-logo.png */,
-				F360DE4D2202117D00D875B1 /* nets.png */,
-				F360DE472202117C00D875B1 /* philly.png */,
-				F360DE4C2202117D00D875B1 /* smits.jpg */,
-				F360DE492202117D00D875B1 /* toronto.png */,
-				F360DDF122020DE000D875B1 /* basketballApp.png */,
-				F360DDF422020DE300D875B1 /* lakers.ico */,
-				F360DDF722020DE700D875B1 /* celtics.ico */,
-				F360DDFA22020DEB00D875B1 /* lebron.jpg */,
-				F360DDFD22020DEE00D875B1 /* suns.png */,
-				F360DE0022020DF300D875B1 /* rockets.png */,
-				F360DE0322020DF600D875B1 /* memphis.png */,
-				F360DE0622020DF900D875B1 /* dallas.png */,
-				F360DE0922020DFC00D875B1 /* kings.png */,
-				F360DE0C22020E4600D875B1 /* warriors.png */,
-				F360DE0F22020E4900D875B1 /* wizards.png */,
-				F360DE1222020E4C00D875B1 /* spurs.png */,
-				F360DE1522020E4F00D875B1 /* thunder.png */,
-				F360DE1822020E5100D875B1 /* timberwolves.png */,
-				F360DE1B22020E5400D875B1 /* pistons.png */,
-				F360DE1E22020E5900D875B1 /* nuggets.png */,
-				F360DE2122020E5C00D875B1 /* pacers.png */,
-				F360DE2422020E5F00D875B1 /* pelicans.png */,
-				F360DE2722020E6200D875B1 /* lakers.png */,
-				F360DE2A22020E6500D875B1 /* magic.png */,
-				F360DE2D22020E6800D875B1 /* clippers.png */,
-				F360DE3022020E6C00D875B1 /* hawks.png */,
-				F360DDEB22020D8200D875B1 /* heat.png */,
-				F360DE3322020E7100D875B1 /* hornets.png */,
-				F360DE3622020E7400D875B1 /* jazz.png */,
-				F360DE3922020E7800D875B1 /* blazers.png */,
-				F360DE3C22020E7C00D875B1 /* bucks.png */,
-				F360DE3F22020E8000D875B1 /* bulls.png */,
-				F360DE4222020E8400D875B1 /* cavs.png */,
-				F360DE4522020E8800D875B1 /* nba teams.jpg */,
-				F360DDEE22020DA800D875B1 /* nba-logo.png */,
+				F360DEE42202216600D875B1 /* toronto.png */,
+				F360DEE22202215F00D875B1 /* philly.png */,
+				F360DEE02202215300D875B1 /* nets.png */,
+				F360DEDE2202214900D875B1 /* knicks.png */,
+				F360DEDC2202213A00D875B1 /* celtics.png */,
+				F360DEA622021EC900D875B1 /* blazers.png */,
+				F360DEAA22021EC900D875B1 /* bucks.png */,
+				F360DEAD22021EC900D875B1 /* bulls.png */,
+				F360DEB222021ECA00D875B1 /* cavs.png */,
+				F360DEB022021EC900D875B1 /* celtics.ico */,
+				F360DEBC22021ECA00D875B1 /* clippers.png */,
+				F360DEAF22021EC900D875B1 /* dallas.png */,
+				F360DEB522021ECA00D875B1 /* hawks.png */,
+				F360DEB122021EC900D875B1 /* heat.png */,
+				F360DEB422021ECA00D875B1 /* hornets.png */,
+				F360DE9F22021EC800D875B1 /* jazz.png */,
+				F360DEA322021EC900D875B1 /* kings.png */,
+				F360DEA122021EC800D875B1 /* lakers.ico */,
+				F360DEB622021ECA00D875B1 /* lakers.png */,
+				F360DEA522021EC900D875B1 /* lebron.jpg */,
+				F360DEB322021ECA00D875B1 /* magic.png */,
+				F360DEA922021EC900D875B1 /* memphis.png */,
+				F360DEA722021EC900D875B1 /* nba teams.jpg */,
+				F360DEAB22021EC900D875B1 /* nba-logo.png */,
+				F360DEB722021ECA00D875B1 /* nuggets.png */,
+				F360DEB822021ECA00D875B1 /* pacers.png */,
+				F360DEAC22021EC900D875B1 /* pelicans.png */,
+				F360DEA022021EC800D875B1 /* pistons.png */,
+				F360DE9E22021EC800D875B1 /* rockets.png */,
+				F360DEA422021EC900D875B1 /* smits.jpg */,
+				F360DEA222021EC800D875B1 /* spurs.png */,
+				F360DEB922021ECA00D875B1 /* suns.png */,
+				F360DEAE22021EC900D875B1 /* thunder.png */,
+				F360DEA822021EC900D875B1 /* timberwolves.png */,
+				F360DEBA22021ECA00D875B1 /* warriors.png */,
+				F360DEBB22021ECA00D875B1 /* wizards.png */,
 			);
 			path = docs;
 			sourceTree = "<group>";
@@ -356,49 +347,46 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F360DE552202117E00D875B1 /* nets.png in Resources */,
-				F360DE1F22020E5C00D875B1 /* pacers.png in Resources */,
-				F360DE2B22020E6800D875B1 /* clippers.png in Resources */,
-				F360DE3122020E7100D875B1 /* hornets.png in Resources */,
-				F360DE0D22020E4900D875B1 /* wizards.png in Resources */,
-				F360DDFE22020DF300D875B1 /* rockets.png in Resources */,
-				F360DE2822020E6500D875B1 /* magic.png in Resources */,
-				F360DE532202117E00D875B1 /* celtics.png in Resources */,
-				F360DE3722020E7800D875B1 /* blazers.png in Resources */,
-				F360DE1922020E5400D875B1 /* pistons.png in Resources */,
-				F360DE522202117E00D875B1 /* nba teams.jpg in Resources */,
+				F360DECE22021ECA00D875B1 /* dallas.png in Resources */,
+				F360DEE32202215F00D875B1 /* philly.png in Resources */,
+				F360DEDB22021ECA00D875B1 /* clippers.png in Resources */,
+				F360DED122021ECA00D875B1 /* cavs.png in Resources */,
+				F360DECA22021ECA00D875B1 /* nba-logo.png in Resources */,
+				F360DEC222021ECA00D875B1 /* kings.png in Resources */,
+				F360DED822021ECA00D875B1 /* suns.png in Resources */,
+				F360DECB22021ECA00D875B1 /* pelicans.png in Resources */,
+				F360DEC822021ECA00D875B1 /* memphis.png in Resources */,
+				F360DED022021ECA00D875B1 /* heat.png in Resources */,
+				F360DEBD22021ECA00D875B1 /* rockets.png in Resources */,
+				F360DECD22021ECA00D875B1 /* thunder.png in Resources */,
+				F360DEC122021ECA00D875B1 /* spurs.png in Resources */,
+				F360DEC722021ECA00D875B1 /* timberwolves.png in Resources */,
+				F360DED222021ECA00D875B1 /* magic.png in Resources */,
+				F360DEC422021ECA00D875B1 /* lebron.jpg in Resources */,
+				F360DEBF22021ECA00D875B1 /* pistons.png in Resources */,
+				F360DED922021ECA00D875B1 /* warriors.png in Resources */,
+				F360DECF22021ECA00D875B1 /* celtics.ico in Resources */,
 				F324F20F21CD28DA00806ABC /* LaunchScreen.storyboard in Resources */,
-				F360DE2522020E6200D875B1 /* lakers.png in Resources */,
-				F360DE0A22020E4600D875B1 /* warriors.png in Resources */,
-				F360DDF522020DE700D875B1 /* celtics.ico in Resources */,
-				F360DE0422020DF900D875B1 /* dallas.png in Resources */,
+				F360DEBE22021ECA00D875B1 /* jazz.png in Resources */,
+				F360DED322021ECA00D875B1 /* hornets.png in Resources */,
 				F3B565DB21FFAF4700ABD261 /* GoogleService-Info.plist in Resources */,
-				F360DE1322020E4F00D875B1 /* thunder.png in Resources */,
-				F360DE1022020E4C00D875B1 /* spurs.png in Resources */,
-				F360DDF222020DE300D875B1 /* lakers.ico in Resources */,
+				F360DEC522021ECA00D875B1 /* blazers.png in Resources */,
+				F360DEC622021ECA00D875B1 /* nba teams.jpg in Resources */,
+				F360DEC922021ECA00D875B1 /* bucks.png in Resources */,
+				F360DEDD2202213B00D875B1 /* celtics.png in Resources */,
+				F360DEE52202216600D875B1 /* toronto.png in Resources */,
+				F360DEDA22021ECA00D875B1 /* wizards.png in Resources */,
+				F360DEC022021ECA00D875B1 /* lakers.ico in Resources */,
 				F324F20C21CD28DA00806ABC /* Assets.xcassets in Resources */,
-				F360DDF822020DEB00D875B1 /* lebron.jpg in Resources */,
-				F360DDEC22020DA800D875B1 /* nba-logo.png in Resources */,
-				F360DDFB22020DEE00D875B1 /* suns.png in Resources */,
-				F360DE2E22020E6C00D875B1 /* hawks.png in Resources */,
 				F324F20A21CD28D800806ABC /* Main.storyboard in Resources */,
-				F360DE3D22020E8000D875B1 /* bulls.png in Resources */,
-				F360DDE922020D8100D875B1 /* heat.png in Resources */,
-				F360DE4022020E8400D875B1 /* cavs.png in Resources */,
-				F360DE502202117E00D875B1 /* nba-logo.png in Resources */,
-				F360DE4E2202117E00D875B1 /* knicks.png in Resources */,
-				F360DE3422020E7400D875B1 /* jazz.png in Resources */,
-				F360DE0722020DFC00D875B1 /* kings.png in Resources */,
-				F360DE3A22020E7C00D875B1 /* bucks.png in Resources */,
-				F360DE1C22020E5900D875B1 /* nuggets.png in Resources */,
-				F360DE512202117E00D875B1 /* toronto.png in Resources */,
-				F360DE542202117E00D875B1 /* smits.jpg in Resources */,
-				F360DE4322020E8800D875B1 /* nba teams.jpg in Resources */,
-				F360DDEF22020DE000D875B1 /* basketballApp.png in Resources */,
-				F360DE1622020E5100D875B1 /* timberwolves.png in Resources */,
-				F360DE2222020E5F00D875B1 /* pelicans.png in Resources */,
-				F360DE4F2202117E00D875B1 /* philly.png in Resources */,
-				F360DE0122020DF600D875B1 /* memphis.png in Resources */,
+				F360DED522021ECA00D875B1 /* lakers.png in Resources */,
+				F360DEE12202215300D875B1 /* nets.png in Resources */,
+				F360DECC22021ECA00D875B1 /* bulls.png in Resources */,
+				F360DED622021ECA00D875B1 /* nuggets.png in Resources */,
+				F360DED422021ECA00D875B1 /* hawks.png in Resources */,
+				F360DEDF2202214900D875B1 /* knicks.png in Resources */,
+				F360DED722021ECA00D875B1 /* pacers.png in Resources */,
+				F360DEC322021ECA00D875B1 /* smits.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -498,283 +486,6 @@
 				F324F20E21CD28DA00806ABC /* Base */,
 			);
 			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-		F360DDEB22020D8200D875B1 /* heat.png */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F360DDEA22020D8200D875B1 /* Base */,
-			);
-			name = heat.png;
-			path = "../../../../NBA App";
-			sourceTree = "<group>";
-		};
-		F360DDEE22020DA800D875B1 /* nba-logo.png */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F360DDED22020DA800D875B1 /* Base */,
-			);
-			name = "nba-logo.png";
-			sourceTree = "<group>";
-		};
-		F360DDF122020DE000D875B1 /* basketballApp.png */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F360DDF022020DE000D875B1 /* Base */,
-			);
-			name = basketballApp.png;
-			path = ../../../..;
-			sourceTree = "<group>";
-		};
-		F360DDF422020DE300D875B1 /* lakers.ico */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F360DDF322020DE300D875B1 /* Base */,
-			);
-			name = lakers.ico;
-			path = ../../../../../Downloads;
-			sourceTree = "<group>";
-		};
-		F360DDF722020DE700D875B1 /* celtics.ico */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F360DDF622020DE700D875B1 /* Base */,
-			);
-			name = celtics.ico;
-			path = ../../../../../Downloads;
-			sourceTree = "<group>";
-		};
-		F360DDFA22020DEB00D875B1 /* lebron.jpg */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F360DDF922020DEB00D875B1 /* Base */,
-			);
-			name = lebron.jpg;
-			path = "../../../../NBA App";
-			sourceTree = "<group>";
-		};
-		F360DDFD22020DEE00D875B1 /* suns.png */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F360DDFC22020DEE00D875B1 /* Base */,
-			);
-			name = suns.png;
-			path = "../../../../NBA App";
-			sourceTree = "<group>";
-		};
-		F360DE0022020DF300D875B1 /* rockets.png */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F360DDFF22020DF300D875B1 /* Base */,
-			);
-			name = rockets.png;
-			path = "../../../../NBA App";
-			sourceTree = "<group>";
-		};
-		F360DE0322020DF600D875B1 /* memphis.png */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F360DE0222020DF600D875B1 /* Base */,
-			);
-			name = memphis.png;
-			path = "../../../../NBA App";
-			sourceTree = "<group>";
-		};
-		F360DE0622020DF900D875B1 /* dallas.png */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F360DE0522020DF900D875B1 /* Base */,
-			);
-			name = dallas.png;
-			path = "../../../../NBA App";
-			sourceTree = "<group>";
-		};
-		F360DE0922020DFC00D875B1 /* kings.png */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F360DE0822020DFC00D875B1 /* Base */,
-			);
-			name = kings.png;
-			path = "../../../../NBA App";
-			sourceTree = "<group>";
-		};
-		F360DE0C22020E4600D875B1 /* warriors.png */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F360DE0B22020E4600D875B1 /* Base */,
-			);
-			name = warriors.png;
-			path = "../../../../NBA App";
-			sourceTree = "<group>";
-		};
-		F360DE0F22020E4900D875B1 /* wizards.png */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F360DE0E22020E4900D875B1 /* Base */,
-			);
-			name = wizards.png;
-			path = "../../../../NBA App";
-			sourceTree = "<group>";
-		};
-		F360DE1222020E4C00D875B1 /* spurs.png */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F360DE1122020E4C00D875B1 /* Base */,
-			);
-			name = spurs.png;
-			path = "../../../../NBA App";
-			sourceTree = "<group>";
-		};
-		F360DE1522020E4F00D875B1 /* thunder.png */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F360DE1422020E4F00D875B1 /* Base */,
-			);
-			name = thunder.png;
-			path = "../../../../NBA App";
-			sourceTree = "<group>";
-		};
-		F360DE1822020E5100D875B1 /* timberwolves.png */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F360DE1722020E5100D875B1 /* Base */,
-			);
-			name = timberwolves.png;
-			path = "../../../../NBA App";
-			sourceTree = "<group>";
-		};
-		F360DE1B22020E5400D875B1 /* pistons.png */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F360DE1A22020E5400D875B1 /* Base */,
-			);
-			name = pistons.png;
-			path = "../../../../NBA App";
-			sourceTree = "<group>";
-		};
-		F360DE1E22020E5900D875B1 /* nuggets.png */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F360DE1D22020E5900D875B1 /* Base */,
-			);
-			name = nuggets.png;
-			path = "../../../../NBA App";
-			sourceTree = "<group>";
-		};
-		F360DE2122020E5C00D875B1 /* pacers.png */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F360DE2022020E5C00D875B1 /* Base */,
-			);
-			name = pacers.png;
-			path = "../../../../NBA App";
-			sourceTree = "<group>";
-		};
-		F360DE2422020E5F00D875B1 /* pelicans.png */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F360DE2322020E5F00D875B1 /* Base */,
-			);
-			name = pelicans.png;
-			path = "../../../../NBA App";
-			sourceTree = "<group>";
-		};
-		F360DE2722020E6200D875B1 /* lakers.png */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F360DE2622020E6200D875B1 /* Base */,
-			);
-			name = lakers.png;
-			path = "../../../../NBA App";
-			sourceTree = "<group>";
-		};
-		F360DE2A22020E6500D875B1 /* magic.png */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F360DE2922020E6500D875B1 /* Base */,
-			);
-			name = magic.png;
-			path = "../../../../NBA App";
-			sourceTree = "<group>";
-		};
-		F360DE2D22020E6800D875B1 /* clippers.png */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F360DE2C22020E6800D875B1 /* Base */,
-			);
-			name = clippers.png;
-			path = "../../../../NBA App";
-			sourceTree = "<group>";
-		};
-		F360DE3022020E6C00D875B1 /* hawks.png */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F360DE2F22020E6C00D875B1 /* Base */,
-			);
-			name = hawks.png;
-			path = "../../../../NBA App";
-			sourceTree = "<group>";
-		};
-		F360DE3322020E7100D875B1 /* hornets.png */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F360DE3222020E7100D875B1 /* Base */,
-			);
-			name = hornets.png;
-			path = "../../../../NBA App";
-			sourceTree = "<group>";
-		};
-		F360DE3622020E7400D875B1 /* jazz.png */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F360DE3522020E7400D875B1 /* Base */,
-			);
-			name = jazz.png;
-			path = "../../../../NBA App";
-			sourceTree = "<group>";
-		};
-		F360DE3922020E7800D875B1 /* blazers.png */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F360DE3822020E7800D875B1 /* Base */,
-			);
-			name = blazers.png;
-			path = "../../../../NBA App";
-			sourceTree = "<group>";
-		};
-		F360DE3C22020E7C00D875B1 /* bucks.png */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F360DE3B22020E7C00D875B1 /* Base */,
-			);
-			name = bucks.png;
-			path = "../../../../NBA App";
-			sourceTree = "<group>";
-		};
-		F360DE3F22020E8000D875B1 /* bulls.png */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F360DE3E22020E8000D875B1 /* Base */,
-			);
-			name = bulls.png;
-			path = "../../../../NBA App";
-			sourceTree = "<group>";
-		};
-		F360DE4222020E8400D875B1 /* cavs.png */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F360DE4122020E8400D875B1 /* Base */,
-			);
-			name = cavs.png;
-			path = "../../../../NBA App";
-			sourceTree = "<group>";
-		};
-		F360DE4522020E8800D875B1 /* nba teams.jpg */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F360DE4422020E8800D875B1 /* Base */,
-			);
-			name = "nba teams.jpg";
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
