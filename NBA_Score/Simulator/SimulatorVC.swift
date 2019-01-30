@@ -5,49 +5,47 @@
 //  Created by Brian van de Velde on 29-12-18.
 //  Copyright © 2018 Brian van de Velde. All rights reserved.
 //
-//  ...
+//  This class shows a pickerview with two elements where the user can select the teams the user wants to simulate. There are labels that show the home and away teams rating, and a image view that shows the team image. When simulate is clicked there is a message shown for a couple of seconds, a simulation is made with the game result and a segue to the next view controller is performed.
 
 
 import UIKit
 
 class SimulatorVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
-    @IBAction func unwindToSimulator(segue:UIStoryboardSegue) { }
-    
+    /// outlets
     @IBOutlet weak var visitingImage: UIImageView!
     @IBOutlet weak var visitingOffenseLabel: UILabel!
     @IBOutlet weak var visitingDefenseLabel: UILabel!
     @IBOutlet weak var visitingTotalLabel: UILabel!
-    
     @IBOutlet weak var homeImage: UIImageView!
     @IBOutlet weak var homeOffenseLabel: UILabel!
     @IBOutlet weak var homeDefenseLabel: UILabel!
     @IBOutlet weak var homeOveralLabel: UILabel!
     @IBOutlet weak var homePicker: UIPickerView!
-    
     @IBOutlet weak var simulateButton: UIButton!
     
+    /// variables
     private var NBA_Data_Home = [String]()
     private var NBA_Data_Away = [String]()
-    
     private var homeComponent = 0
     private var awayComponent = 1
-    
     var teamDetailss = [String: Team]()
-    
     var homeScore: Int = 0
     var visitingScore: Int = 0
-    
     var TeamChosen: String = ""
     var awayTeamChosen: String = ""
-    
     var myTimer: Timer!
     
+    /// if this button is pressed the showwait function is called and the simulation function
     @IBAction func simulateButton(_ sender: Any) {
         showWait()
         
         self.simulator()
     }
     
+    /// unwind destination
+    @IBAction func unwindToSimulator(segue:UIStoryboardSegue) { }
+    
+    /// initializes view controller and calls function getnums and simulator
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -60,6 +58,7 @@ class SimulatorVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
         simulator()
     }
     
+    /// function that fills a list with all the teamIDs
     func getNums() {
         for teamdetail in teamDetailss
         {
@@ -69,6 +68,7 @@ class SimulatorVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
         print(NBA_Data_Away)
     }
     
+    /// updates the label of the team ratings and team image of the selected team
     func updateLabel(component: Int, row: Int) {
         if component == 0 {
             TeamChosen = NBA_Data_Home[row]
@@ -332,6 +332,7 @@ class SimulatorVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
         }
     }
     
+    /// the ratings are used to find a score for that team using randomizers
     func simulator() {
         let HO = teamDetailss[TeamChosen]?.offensiveRating
         let HD = teamDetailss[TeamChosen]?.defensiveRating
@@ -367,10 +368,12 @@ class SimulatorVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
         print(visitingScore)
     }
     
+    /// numbers of components in the pickerview
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 2
     }
     
+    /// number of rows in the pickerview
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         if component == homeComponent {
             return NBA_Data_Home.count
@@ -380,11 +383,13 @@ class SimulatorVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
         }
     }
     
+    /// updates the labels as soon as the view controller is loaded and calls function simulator
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         updateLabel(component: component, row: row)
         simulator()
     }
     
+    /// shows the fullname of the NBA teams in the pickerview
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         if component == homeComponent {
             let name = teamDetailss[NBA_Data_Home[row]]?.fullName
@@ -400,6 +405,7 @@ class SimulatorVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
         }
     }
     
+    /// alert function that shows a message for 2 seconds and then performs the segue to the next view controller
     func showWait() {
         print("hoi")
         let alert = UIAlertController(title: "Crunching the numbers!", message: "Please wait", preferredStyle: .alert)
@@ -415,6 +421,7 @@ class SimulatorVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
         print("hey")
     }
     
+    /// prepares the home and away team name and both scores to the next view controller
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "simulatorResultSegue" {
             let SRVC = segue.destination as! SimulatorResultVC
