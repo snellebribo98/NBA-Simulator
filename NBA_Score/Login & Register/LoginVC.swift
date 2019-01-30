@@ -16,6 +16,7 @@ class LoginVC: UIViewController {
     @IBOutlet weak var UserEmailTF: UITextField!
     @IBOutlet weak var UserPasswordTF: UITextField!
     @IBOutlet weak var login: UIButton!
+    @IBOutlet weak var NBAImage: UIImageView!
     
     /// variables
     var activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView()
