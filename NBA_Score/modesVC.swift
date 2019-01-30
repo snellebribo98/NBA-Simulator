@@ -11,6 +11,7 @@
 import UIKit
 import Firebase
 
+
 class modesVC: UIViewController {
     /// variables
     var playerss: Players?
@@ -62,7 +63,6 @@ class modesVC: UIViewController {
     func fetchData() {
         fetchTeams { (success3) -> Void in
             if success3 {
-                print("Teams: \(self.teamDetailss.count)")
                 self.fetchPlayers { (success) -> Void in
                     if success {
                         self.fetchPlayerStats(idList: self.idList) { (success2) -> Void in

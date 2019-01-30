@@ -10,6 +10,7 @@
 
 import UIKit
 
+
 class SimulatorResultVC: UIViewController {
     /// outlets
     @IBOutlet weak var homeImage: UIImageView!

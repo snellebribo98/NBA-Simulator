@@ -10,6 +10,7 @@
 
 import UIKit
 
+
 class PlayerTV: UITableViewController, UISearchBarDelegate {
     /// variables
     var playerList: [Player]?
@@ -24,7 +25,6 @@ class PlayerTV: UITableViewController, UISearchBarDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         playerList?.sort(by: {$0.lastName < $1.lastName})
-        print("Players:", playerList!.count)
         
         playerTableView.dataSource = self
         playerTableView.delegate = self

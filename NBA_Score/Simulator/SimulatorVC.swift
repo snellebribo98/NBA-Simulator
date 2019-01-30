@@ -10,6 +10,7 @@
 
 import UIKit
 
+
 class SimulatorVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     /// outlets
     @IBOutlet weak var visitingImage: UIImageView!
@@ -46,6 +47,7 @@ class SimulatorVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
     @IBAction func unwindToSimulator(segue:UIStoryboardSegue) { }
     
     /// initializes view controller and calls function getnums and simulator
+    /// updates the labels according to which teams are selected in the picker
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -65,17 +67,12 @@ class SimulatorVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
             NBA_Data_Away.append(teamdetail.key)
             NBA_Data_Home.append(teamdetail.key)
         }
-        print(NBA_Data_Away)
     }
     
     /// updates the label of the team ratings and team image of the selected team
     func updateLabel(component: Int, row: Int) {
         if component == 0 {
             TeamChosen = NBA_Data_Home[row]
-            
-            print("HOME")
-            print("H1", NBA_Data_Home[0])
-            print("H2", TeamChosen)
             
             homeOffenseLabel.text = String((teamDetailss[TeamChosen]?.offensiveRating)!)
             homeDefenseLabel.text = String((teamDetailss[TeamChosen]?.defensiveRating)!)
@@ -352,7 +349,6 @@ class SimulatorVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
             let HU = max(HO!, HD!, H!) + 79
             homeScore = Int.random(in: HL ... HU)
         }
-        print(homeScore)
         
         let awayBlowout = Int.random(in: 1 ... 5)
         if awayBlowout == 5 {
@@ -365,7 +361,6 @@ class SimulatorVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
             let VU = max(VO!, VD!, V!) + 69
             visitingScore = Int.random(in: VL ... VU)
         }
-        print(visitingScore)
     }
     
     /// numbers of components in the pickerview
@@ -407,7 +402,6 @@ class SimulatorVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
     
     /// alert function that shows a message for 2 seconds and then performs the segue to the next view controller
     func showWait() {
-        print("hoi")
         let alert = UIAlertController(title: "Crunching the numbers!", message: "Please wait", preferredStyle: .alert)
         self.present(alert, animated: true, completion: nil)
         
@@ -418,7 +412,6 @@ class SimulatorVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
         Timer.scheduledTimer(withTimeInterval: 2, repeats: false, block: { _ in alert.dismiss(animated: true, completion: { () -> Void in
             self.performSegue(withIdentifier: "simulatorResultSegue", sender: Any?.self)
         })})
-        print("hey")
     }
     
     /// prepares the home and away team name and both scores to the next view controller

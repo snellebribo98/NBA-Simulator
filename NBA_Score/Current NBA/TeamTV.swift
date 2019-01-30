@@ -10,6 +10,7 @@
 
 import UIKit
 
+
 class TeamTV: UITableViewController, UISearchBarDelegate {
     /// variables
     var teamDetail: Team?
@@ -34,7 +35,6 @@ class TeamTV: UITableViewController, UISearchBarDelegate {
     
     /// specifies length of tableview
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print(teamDetailss.count)
         return teamDetailss.count
     }
     

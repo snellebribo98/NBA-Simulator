@@ -10,6 +10,7 @@
 
 import UIKit
 
+
 class PlayerDetailVC: UIViewController {
     /// outlets
     @IBOutlet weak var PlayerFirstnameLabel: UILabel!
@@ -39,17 +40,6 @@ class PlayerDetailVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         updateUI()
-        print(playerList)
-        print("-----")
-        print("Def Reb pg = ", playerList?.stats?.defRebpg)
-        print("Off Reb pg = ", playerList?.stats?.offRebpg)
-        print("fieldgoal rating = ", playerList?.stats?.fgRating)
-        print("freetrow rating = ", playerList?.stats?.ftRating)
-        print("-----")
-        print("Overal weight = ", playerList?.stats?.overallRatingWeighted)
-        print("defence weight = ", playerList?.stats?.defensiveRatingWeighted)
-        print("offensive weight = ", playerList?.stats?.offensiveRatingWeighted)
-
     }
     
     /// link teamID to teamchosen to show layout of the team the player plays for

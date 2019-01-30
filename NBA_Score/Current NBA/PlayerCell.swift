@@ -10,6 +10,7 @@
 
 import UIKit
 
+
 class PlayerCell: UITableViewCell {
     /// outlets
     @IBOutlet weak var playerLastLabel: UILabel!

@@ -10,6 +10,7 @@
 
 import UIKit
 
+
 class TeamDetailVC: UIViewController {
     /// outlets
     @IBOutlet weak var teamNameLabel: UILabel!
@@ -31,8 +32,6 @@ class TeamDetailVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         updateUI()
-        
-        print(teamDetails)
     }
     
     /// updates the text in the view controller

@@ -10,6 +10,7 @@
 
 import UIKit
 
+
 class TeamCell: UITableViewCell {
     /// outlets
     @IBOutlet weak var titleLabel: UILabel!

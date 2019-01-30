@@ -11,6 +11,7 @@
 import UIKit
 import Firebase
 
+
 class NextRegisterVC: UIViewController {
     /// variables
     var Username: String?

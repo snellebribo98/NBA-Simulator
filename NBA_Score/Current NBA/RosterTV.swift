@@ -10,6 +10,7 @@
 
 import UIKit
 
+
 class RosterTV: UITableViewController, UISearchBarDelegate {
     /// variables
     var playerList = [Player]()
@@ -24,7 +25,6 @@ class RosterTV: UITableViewController, UISearchBarDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         playerList.sort(by: {$0.lastName < $1.lastName})
-        print(playerList)
         
         rosterTableView.dataSource = self
         rosterTableView.delegate = self
