@@ -2,6 +2,117 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:../../basketballApp.png">
+   </FileRef>
+   <FileRef
+      location = "group:../../../Downloads/lakers.ico">
+   </FileRef>
+   <FileRef
+      location = "group:../../../Downloads/celtics.ico">
+   </FileRef>
+   <FileRef
+      location = "group:../../NBA App/lebron.jpg">
+   </FileRef>
+   <FileRef
+      location = "group:../../NBA App/suns.png">
+   </FileRef>
+   <FileRef
+      location = "group:../../NBA App/rockets.png">
+   </FileRef>
+   <FileRef
+      location = "group:../../NBA App/memphis.png">
+   </FileRef>
+   <FileRef
+      location = "group:../../NBA App/dallas.png">
+   </FileRef>
+   <FileRef
+      location = "group:../../NBA App/kings.png">
+   </FileRef>
+   <FileRef
+      location = "group:../../NBA App/warriors.png">
+   </FileRef>
+   <FileRef
+      location = "group:../../NBA App/wizards.png">
+   </FileRef>
+   <FileRef
+      location = "group:../../NBA App/spurs.png">
+   </FileRef>
+   <FileRef
+      location = "group:../../NBA App/thunder.png">
+   </FileRef>
+   <FileRef
+      location = "group:../../NBA App/timberwolves.png">
+   </FileRef>
+   <FileRef
+      location = "group:../../NBA App/pistons.png">
+   </FileRef>
+   <FileRef
+      location = "group:../../NBA App/nuggets.png">
+   </FileRef>
+   <FileRef
+      location = "group:../../NBA App/pacers.png">
+   </FileRef>
+   <FileRef
+      location = "group:../../NBA App/pelicans.png">
+   </FileRef>
+   <FileRef
+      location = "group:../../NBA App/lakers.png">
+   </FileRef>
+   <FileRef
+      location = "group:../../NBA App/magic.png">
+   </FileRef>
+   <FileRef
+      location = "group:../../NBA App/clippers.png">
+   </FileRef>
+   <FileRef
+      location = "group:../../NBA App/hawks.png">
+   </FileRef>
+   <FileRef
+      location = "group:../../NBA App/heat.png">
+   </FileRef>
+   <FileRef
+      location = "group:../../NBA App/hornets.png">
+   </FileRef>
+   <FileRef
+      location = "group:../../NBA App/jazz.png">
+   </FileRef>
+   <FileRef
+      location = "group:../../NBA App/blazers.png">
+   </FileRef>
+   <FileRef
+      location = "group:../../NBA App/bucks.png">
+   </FileRef>
+   <FileRef
+      location = "group:../../NBA App/bulls.png">
+   </FileRef>
+   <FileRef
+      location = "group:../../NBA App/cavs.png">
+   </FileRef>
+   <FileRef
+      location = "group:NBA_Score/docs/nba teams.jpg">
+   </FileRef>
+   <FileRef
+      location = "group:NBA_Score/docs/nba-logo.png">
+   </FileRef>
+   <FileRef
+      location = "group:NBA_Score/docs/celtics.png">
+   </FileRef>
+   <FileRef
+      location = "group:NBA_Score/docs/knicks.png">
+   </FileRef>
+   <FileRef
+      location = "group:NBA_Score/docs/nets.png">
+   </FileRef>
+   <FileRef
+      location = "group:NBA_Score/docs/smits.jpg">
+   </FileRef>
+   <FileRef
+      location = "group:NBA_Score/docs/philly.png">
+   </FileRef>
+   <FileRef
+      location = "group:NBA_Score/docs/toronto.png">
+   </FileRef>
+   <FileRef
       location = "group:NBA_Score.xcodeproj">
    </FileRef>
    <FileRef
