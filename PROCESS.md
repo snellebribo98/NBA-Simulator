@@ -62,5 +62,5 @@ Was sick
 Today I made some inprovements in the player detail VC, normally for most foreign players their birthplace was shown in the college label. I hardcoded it to be "Didn't go to college". Made an app icon today. Linked my app to firebase and implemented a login and register page were users can login and signup with their email and password. I wanted to add a username to it (which I will leave in there for any future work) and the plan was to show that username in the modesVC with "Welcome (Username)!". Also when the searchbar was activated and you scrolled down in either of the three tableviewcontrollers and clicked on a cell and returned you would end up all the way back up in the tablview. By adding a cancel button this problem is fixed. A user can press the cancel button and the searchbar is deactivated.
 
 # day 17 (wednesday)
-
+Today I changed the layout of the entire app because I made the app for the Iphone XR which has a large screen. Today I changed the layout so it would fit the Iphone SE as well. 
 
