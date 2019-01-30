@@ -51,6 +51,7 @@ Brian van de Velde
 ## Files
 - docs with all the images, and sources
 - NBA_Score holds the code of my app
+  * I wasn't able to make a code file and move all my code there, because when I did my app wouldn't work anymore. Excuse me for the inconvenience.
 - the pods file holds the files that connect the app with firebase
 
 ## Sources
