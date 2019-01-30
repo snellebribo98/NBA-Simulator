@@ -55,4 +55,12 @@ Hackathon
 # day 14 (friday)
 Today I made a delay between getting from the simulatorVC to the simulatorResultVC. First it was very simple and easy just to simulate a game between two teams. So I made a alert that takes 2 seconds that shows something like "crunching numbers" and after that performs the segue to the next vc. First the simulate button performed the show segue but now the simulate button will be an action that calls the function alert and then the alert will call perform the segue from vc to vc. I finished the searchbar for the teams today, turned out I made a typo. Also made a searchbar for the roster tableview, exactly the same as the player searchbar. A couple of days ago the player searchbar only searched the lastnames of players, which in my mind is inconvenient if you only know the player by first name, so now the searchbar searches for both the first- and last name. Unfortunately I couldn't figure out how to search for both at the same time (now if you look for lebron james for example you get no result because you look for the whole name), but in my mind that is not necessary because if you already know his first- or last name it is not needed to search for the whole name. Also I made a loading label in de modesVC so the user knows what is going on (a description of it).
 
+# day 15 (monday)
+Was sick
+
+# day 16 (tuesday)
+Today I made some inprovements in the player detail VC, normally for most foreign players their birthplace was shown in the college label. I hardcoded it to be "Didn't go to college". Made an app icon today. Linked my app to firebase and implemented a login and register page were users can login and signup with their email and password. I wanted to add a username to it (which I will leave in there for any future work) and the plan was to show that username in the modesVC with "Welcome (Username)!". Also when the searchbar was activated and you scrolled down in either of the three tableviewcontrollers and clicked on a cell and returned you would end up all the way back up in the tablview. By adding a cancel button this problem is fixed. A user can press the cancel button and the searchbar is deactivated.
+
+# day 17 (wednesday)
+
 
