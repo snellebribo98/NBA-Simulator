@@ -45,4 +45,10 @@ You're an NBA fan and like to watch some games once in a while. But as a NBA "Ro
 - unfamiliar users can get an indication which team is more likely to win in reallife.
 - familiar users can use this when a player is traded to a team and both teams haven't played eachother yet in reallife.
 
-##
+## Student
+Brian van de Velde 
+
+## Files
+
+## Sources
+In de docs folder there is a file named "AA-"
