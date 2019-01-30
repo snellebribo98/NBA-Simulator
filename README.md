@@ -2,7 +2,7 @@
 
 ## Screenshot's of the app
 If the user isn't logged in it will see the login screen
-
+![If the user isn't logged in it will see the login screen](login.png)
 
 If the user doesn't have an account yet it can register
 
