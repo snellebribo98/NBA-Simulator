@@ -125,7 +125,7 @@
 		F360DEE42202216600D875B1 /* toronto.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = toronto.png; path = docs_apps/toronto.png; sourceTree = SOURCE_ROOT; };
 		F363A46D21EC93D700282A17 /* SimulatorResultVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimulatorResultVC.swift; sourceTree = "<group>"; };
 		F386D15221E8AA8D009C8437 /* PlayerDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerDetailVC.swift; sourceTree = "<group>"; };
-		F3B565DA21FFAF4700ABD261 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../NBA-Score/NBA_Score/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		F3B565DA21FFAF4700ABD261 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../NBA-Score/NBA_Score/GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		F3CAA82521E4D44400FEC5A9 /* PlayerStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerStruct.swift; sourceTree = "<group>"; };
 		F3CAA82921E4D67D00FEC5A9 /* NBAPlayersStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NBAPlayersStruct.swift; sourceTree = "<group>"; };
 		F3CAA82F21E4F2FF00FEC5A9 /* TeamDetailsStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamDetailsStruct.swift; sourceTree = "<group>"; };
