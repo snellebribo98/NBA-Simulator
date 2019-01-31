@@ -53,4 +53,5 @@ Brian van de Velde
 - the pods file holds the files that connect the app with firebase
 
 ## Sources
-In de docs_apps folder there is a file named "AA-imageSources" that has all the links of the images used in my app. Non of these images are created by me, and are pulled from these websites.
+* In de docs_apps folder there is a file named "AA-imageSources" that has all the links of the images used in my app. Non of these images are created by me, and are pulled from these websites. 
+* Firebase - https://firebase.google.com
