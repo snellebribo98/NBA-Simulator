@@ -41,6 +41,12 @@ Brian van de Velde
 - docs_app has the images used in my app
 - NBA_Score holds the code of my app
   * I wasn't able to make a code file and move all my code there, because when I did my app wouldn't work anymore. Apologies for the inconvenience.
+  * The following things should be in the code map:
+   - NBA_Score.xcodeproj folder
+   - NBA_Score.xcworkspace folder
+   - NBA_Score folder
+   - Podfile file
+   - Podfile.lock file
 - the pods file holds the files that connect the app with firebase
 
 ## Sources
