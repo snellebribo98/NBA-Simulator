@@ -13,9 +13,9 @@ Structure of the app
   - Click the refresh button: All the data will be loaded again
   - Click the logout button: The user will logout and is directed to [loginVC](https://github.com/snellebribo98/NBA-Simulator/blob/master/NBA_Score/Login%20%26%20Register/LoginVC.swift)
 * The API's are loaded with the help of the following structs:
-  - ...
-  - ...
-  - ...
+  - [NBAPlayersStruct](https://github.com/snellebribo98/NBA-Simulator/blob/master/NBA_Score/structs/NBAPlayersStruct.swift)
+  - [PlayerStruct](https://github.com/snellebribo98/NBA-Simulator/blob/master/NBA_Score/structs/PlayerStruct.swift)
+  - [TeamDetailsStruct](https://github.com/snellebribo98/NBA-Simulator/blob/master/NBA_Score/structs/TeamDetailsStruct.swift)
   - How the data works: 
 
 ## Clearly describe challenges that your have met during development. Document all important changes that your have made with regard to your design document (from the PROCESS.md). Here, we can see how much you have learned in the past month. Defend your decisions by writing an argument of a most a single paragraph. Why was it good to do it different than you thought before? Are there trade-offs for your current solution? In an ideal world, given much more time, would you choose another solution?
