@@ -1,1 +1,1 @@
-![afbeelding van app](NBAData.png)
+![afbeelding van app](docs/NBAData.png)
