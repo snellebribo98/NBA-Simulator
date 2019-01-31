@@ -36,6 +36,9 @@ You're an NBA fan and like to watch some games once in a while. But as a NBA "Ro
 ## Student
 Brian van de Velde 
 
+## Product demo
+[NBA Simulator demo](https://youtu.be/c5FHYhbpvMM)
+
 ## Files
 - docs has the sources of docs_apps and screenshots of app
 - docs_app has the images used in my app
