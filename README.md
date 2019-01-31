@@ -40,7 +40,7 @@ Brian van de Velde
 - docs has the sources of docs_apps and screenshots of app
 - docs_app has the images used in my app
 - NBA_Score holds the code of my app
-  * I wasn't able to make a code file and move all my code there, because when I did my app wouldn't work anymore. Excuse me for the inconvenience.
+  * I wasn't able to make a code file and move all my code there, because when I did my app wouldn't work anymore. Apologies me for the inconvenience.
 - the pods file holds the files that connect the app with firebase
 
 ## Sources
