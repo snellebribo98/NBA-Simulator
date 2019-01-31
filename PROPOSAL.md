@@ -30,4 +30,4 @@ Some apps that have some simularities are:
 
 Hardest part will be to get all the data in the correct places
 
-![afbeelding van app](NBAVisualisatie.png)
+![afbeelding van app](docs/NBAVisualisatie.png)
